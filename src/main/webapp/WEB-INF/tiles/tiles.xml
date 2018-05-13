@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+	<!-- Templates -->
+	<definition name="baseLayout" template="/WEB-INF/pages/layout/base-layout.jsp">
+	</definition>
+
+	<definition name="home" extends="baseLayout">
+		<put-attribute name="title" value="Mikatama Unika Indonesia - Solution Expert in Display and Stall" />
+		<put-attribute name="header" value="/WEB-INF/pages/layout/header.jsp" />
+		<put-attribute name="body" value="/WEB-INF/pages/view/home.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/pages/layout/footer.jsp" />
+		<put-list-attribute name="page_level_styles">
+			<add-attribute value="/assets/pages/css/about.min.css" type="string" />
+		</put-list-attribute>
+	</definition>
+	
+	
+	<definition name="product" extends="baseLayout">
+		<put-attribute name="title" value="Products &amp; Services - Mikatama Unika Indonesia" />
+		<put-attribute name="header" value="/WEB-INF/pages/layout/header.jsp" />
+		<put-attribute name="body" value="/WEB-INF/pages/view/catalog.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/pages/layout/footer.jsp" />
+		<put-list-attribute name="page_style_plugins">
+			<add-attribute value="/assets/global/plugins/cubeportfolio/css/cubeportfolio.css" type="string" />
+		</put-list-attribute>
+		<put-list-attribute name="page_level_styles">
+			<add-attribute value="/assets/pages/css/portfolio.min.css" type="string" />
+		</put-list-attribute>
+		<put-list-attribute name="page_level_plugins">
+			<add-attribute value="/assets/global/plugins/cubeportfolio/js/jquery.cubeportfolio.min.js" type="string" />
+		</put-list-attribute>
+		<put-list-attribute name="page_level_scripts">
+			<add-attribute value="/assets/pages/scripts/portfolio-1.min.js" type="string" />
+		</put-list-attribute>
+	</definition>
+	
+	<definition name="culture" extends="baseLayout">
+		<put-attribute name="title" value="Our Culture - Mikatama Unika Indonesia" />
+		<put-attribute name="header" value="/WEB-INF/pages/layout/header.jsp" />
+		<put-attribute name="body" value="/WEB-INF/pages/view/culture.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/pages/layout/footer.jsp" />
+		<put-list-attribute name="page_style_plugins">
+			<add-attribute value="/assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css" type="string" />
+			<add-attribute value="/assets/global/plugins/fancybox/source/jquery.fancybox.css" type="string" />
+		</put-list-attribute>
+		<put-list-attribute name="page_level_styles">
+			<add-attribute value="/assets/pages/css/search.min.css" type="string" />
+		</put-list-attribute>
+		<put-list-attribute name="page_level_plugins">
+			<add-attribute value="/assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js" type="string" />
+			<add-attribute value="/assets/global/plugins/fancybox/source/jquery.fancybox.pack.js" type="string" />
+		</put-list-attribute>
+		<put-list-attribute name="page_level_scripts">
+			<add-attribute value="/assets/pages/scripts/search.min.js" type="string" />
+		</put-list-attribute>
+	</definition>
+	
+	<definition name="how_we_work" extends="baseLayout">
+		<put-attribute name="title" value="How We Work - Mikatama Unika Indonesia" />
+		<put-attribute name="header" value="/WEB-INF/pages/layout/header.jsp" />
+		<put-attribute name="body" value="/WEB-INF/pages/view/how_we_work.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/pages/layout/footer.jsp" />
+	</definition>
+	
+	<definition name="login" template="/WEB-INF/pages/view/login.jsp">
+		<put-attribute name="title" value="Mikatama Unika Indonesia - Login" />
+	</definition>
+	
+	<definition name="dashboard" template="/WEB-INF/pages/cms/index-template.jsp">
+		<put-attribute name="title" value="Mikatama Unika Indonesia - Login" />
+	</definition>
+</tiles-definitions>
