@@ -39,17 +39,13 @@ public class LoginController {
 		User userDetail = userLoginService.getUserByUsername(user.getUsername());
 		//List<User> listUserDetail = userLoginService.getUser();
 		//User userDetail = listUserDetail.get(0);
-		logger.info(userDetail.getPassword());
-		logger.info(userDetail.getSalt());
 		if (userDetail == null) {
-			logger.info("111");
 			bindingResult.rejectValue("notification", "login.username.password.incorrect");
 			modelAndView = new ModelAndView("login");
 			return modelAndView;
 		} else {
 			if (StringUtils.isEmpty(userDetail.getSalt())) {
 				if (userDetail.getPassword().equals(user.getPassword())) {
-					logger.info("222");
 					modelAndView = new ModelAndView("dashboard");
 
 					request.getSession().setAttribute("userSession", userDetail);
@@ -65,7 +61,6 @@ public class LoginController {
 
 					return modelAndView;
 				} else {
-					logger.info("333");
 					bindingResult.rejectValue("notification", "login.username.password.incorrect");
 					modelAndView = new ModelAndView("login");
 				}
@@ -78,7 +73,6 @@ public class LoginController {
 					
 					return modelAndView;
 				}else{
-					logger.info("555");
 					bindingResult.rejectValue("notification",
 							"login.username.password.incorrect");
 					modelAndView = new ModelAndView("login");
