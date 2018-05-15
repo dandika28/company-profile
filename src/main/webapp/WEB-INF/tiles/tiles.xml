@@ -71,5 +71,11 @@
 	
 	<definition name="dashboard" template="/WEB-INF/pages/cms/index-template.jsp">
 		<put-attribute name="title" value="Mikatama Unika Indonesia - Login" />
+		<put-attribute name="body" value="/WEB-INF/pages/cms/dashboard-template.jsp" />
 	</definition>
+
+	<definition name="ourCulture" extends="dashboard">
+		<put-attribute name="body" value="/WEB-INF/pages/cms/our_culture.jsp" />
+	</definition>
+
 </tiles-definitions>

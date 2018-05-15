@@ -1,12 +1,24 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
-
-</body>
-</html>
+<div class="page-content-wrapper">
+    <div class="page-content">
+        <div class="page-bar">
+            <ul class="page-breadcrumb">
+                <li><i class="fa fa-dashboard"></i> Dashboard</li>
+            </ul>
+        </div>
+        <h3 class="page-title">Dashboard</h3>
+        <div class="box box-info">
+            <div class="box-header with-border">
+                <h3 class="box-title">Welcome</h3>
+                <div class="box-tools pull-right">
+                    <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                </div><!-- /.box-tools -->
+            </div><!-- /.box-header -->
+            <div class="box-body">
+                <p>Sample text welcome write here sample text welcome write here sample text welcome write here sample text welcome write here sample text welcome write here sample text welcome write here sample text welcome write here sample text welcome write here sample text welcome write here sample text welcome write here</p>
+                <p>
+                    <a href="" class="btn btn-primary btn-lg"><i class="fa fa-download"></i> Download User Guide</a>&nbsp;
+                </p>
+            </div><!-- /.box-body -->
+        </div>
+    </div>
+</div>
