@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
 <div class="page-wrapper-row full-height">
 	<div class="page-wrapper-middle">
@@ -40,75 +42,18 @@
 									<div class="col-md-7">
 										<div class="search-container ">
 											<ul>
-												<li class="search-item clearfix"><a
-													href="javascriptt:;"> <img
-														src="/assets/pages/img/page_general_search/discipline.jpg" />
-												</a>
-													<div class="search-content">
-														<h2 class="search-title">
-															<a href="javascript:;">Disiplin</a>
-														</h2>
-														<p class="search-desc">Seluruh karyawan tanpa
-															terkecuali harus memiliki sikap disiplin yang tinggi baik
-															disiplin terhadap waktu, target kerja, pengendalian biaya
-															dan lain-lain.</p>
-													</div></li>
-												<li class="search-item clearfix"><a href="javascript:;">
-														<img src="/assets/pages/img/page_general_search/honesty.jpg" />
-												</a>
-													<div class="search-content">
-														<h2 class="search-title">
-															<a href="javascript:;">Jujur</a>
-														</h2>
-														<p class="search-desc">Kejujuran menjadi landasan
-															budaya kerja yang sangat penting dan harus dimiliki oleh
-															semua stakeholder perusahaan</p>
-													</div></li>
-												<li class="search-item clearfix"><a href="javascript:;">
-														<img src="/assets/pages/img/page_general_search/teamwork.jpg" />
-												</a>
-													<div class="search-content">
-														<h2 class="search-title">
-															<a href="javascript:;">Kompak</a>
-														</h2>
-														<p class="search-desc">Kekompakan dalam arti positif
-															antar bagian/divisi menjadi syarat mutlak untuk dapat
-															menjaga pertumbuhan bisnis</p>
-													</div></li>
-												<li class="search-item clearfix"><a href="javascript:;">
-														<img src="/assets/pages/img/page_general_search/innovative.jpg" />
-												</a>
-													<div class="search-content">
-														<h2 class="search-title">
-															<a href="javascript:;">Inovatif</a>
-														</h2>
-														<p class="search-desc">Selalu berusaha untuk
-															memperbaharui produk yang lebih berkualitas</p>
-													</div></li>
-												<li class="search-item clearfix"><a href="javascript:;">
-														<img src="/assets/pages/img/page_general_search/leadership.jpg" />
-												</a>
-													<div class="search-content">
-														<h2 class="search-title">
-															<a href="javascript:;">Leadership</a>
-														</h2>
-														<p class="search-desc">Menanamkan nilai kepemimpinan
-															kepada seluruh anggota perusahaan agar lebih menjiwai
-															konsep dipimpin dan memimpin</p>
-													</div></li>
-												<li class="search-item clearfix"><a href="javascript:;">
-														<img src="/assets/pages/img/page_general_search/economical.jpg" />
-												</a>
-													<div class="search-content">
-														<h2 class="search-title">
-															<a href="javascript:;">Ekonomis</a>
-														</h2>
-														<p class="search-desc">Selalu berusaha agar produk
-															tetap bernilai ekonomis dengan kualitas terbaik</p>
-													</div></li>
+												<c:forEach var="ourCulture" items="${ourCultures}">
+				                                    <li class="search-item clearfix">
+													    <a href="#"> <img src="/assets/pages/img/page_general_search/discipline.jpg"></a>
+													    <div class="search-content">
+													        <h2 class="search-title">
+																<a href="#">${ourCulture.title}</a>
+															</h2>
+													        <p class="search-desc">${ourCulture.content}</p>
+													    </div>
+													</li>
+				                                </c:forEach>
 											</ul>
-											<!-- BEGIN PAGINATION -->
-											<!-- END PAGINATION -->
 										</div>
 									</div>
 									<div class="col-md-5">
