@@ -3,6 +3,7 @@ package com.mikatama.cp.controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.mikatama.cp.service.OurCommitmentService;
 import com.mikatama.cp.service.OurCultureService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,6 +19,9 @@ public class IndexController {
 
 	@Autowired
 	private OurCultureService ourCultureService;
+
+	@Autowired
+	private OurCommitmentService ourCommitmentService;
 
 	@RequestMapping({ "/", "/home" })
 	public ModelAndView home() {
@@ -37,6 +41,7 @@ public class IndexController {
 	public ModelAndView culture() {
 		ModelAndView view = new ModelAndView("culture");
 		view.addObject("ourCultures", ourCultureService.getOurCulture());
+		view.addObject("ourCommitments", ourCommitmentService.getOurCommitments());
 
 		return view;
 	}

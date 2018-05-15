@@ -184,6 +184,11 @@ body {
 									<i class="fa fa-angle-right"></i> How We Work
 								</a>
 							</li>
+							<li>
+								<a href="ourCommitment" class="name">
+									<i class="fa fa-angle-right"></i> Our Commitment
+								</a>
+							</li>
 						</ul>
 					</li> <!-- End Sidebar Menu  -->
 				</ul>
@@ -200,7 +205,7 @@ body {
 	<!-- BEGIN FOOTER -->
 	<div class="page-footer">
 		<div class="page-footer-inner">
-			<strong>Copyright &copy; 2018 <a href="#">Bigrafis</a>.
+			<strong>Copyright &copy; 2018 <a href="#">Mikatama</a>.
 			</strong> All rights reserved.
 		</div>
 	</div>

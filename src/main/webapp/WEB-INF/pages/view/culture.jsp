@@ -69,23 +69,13 @@
 												<!-- END ACTIONS -->
 											</div>
 											<div class="portlet-body">
-												<div class="note note-success">
-													<h4 class="block">Standar Kualitas</h4>
-													<p>Selalu menjaga dan berusaha meningkatan kualitas
-														produk sehingga mampu diterima oleh semua kalangan</p>
-												</div>
-												<div class="note note-info">
-													<h4 class="block">Waktu Produksi Yang Cepat</h4>
-													<p>Selalu berusaha untuk menyelesaikan pekerjaan
-														sebelum jatuh tempo sehingga barang dapat terdistribusi
-														lebih cepat</p>
-												</div>
-												<div class="note note-danger">
-													<h4 class="block">Profesionalisme</h4>
-													<p>Selalu berkomitem dalam menjalin hubungan bisnis
-														yang saling menguntungkan dan setara sehingga hubungan
-														tersebut terjalin secara professional antara mitra bisnis</p>
-												</div>
+												<c:forEach var="ourCommitment" items="${ourCommitments}">
+				                                    <div class="note ${ourCommitment.style}">
+														<h4 class="block">${ourCommitment.title}</h4>
+														<p>${ourCommitment.content}</p>
+													</div>
+				                                </c:forEach>
+												
 											</div>
 										</div>
 										<!-- END PORTLET-->
