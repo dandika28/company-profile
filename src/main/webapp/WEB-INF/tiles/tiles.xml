@@ -78,4 +78,8 @@
 		<put-attribute name="body" value="/WEB-INF/pages/cms/our_culture.jsp" />
 	</definition>
 
+	<definition name="ourCommitment" extends="dashboard">
+		<put-attribute name="body" value="/WEB-INF/pages/cms/our_commitments.jsp" />
+	</definition>
+
 </tiles-definitions>

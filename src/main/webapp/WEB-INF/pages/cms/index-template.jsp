@@ -180,13 +180,13 @@ body {
 								</a>
 							</li>
 							<li>
-								<a href="howWeWork" class="name">
-									<i class="fa fa-angle-right"></i> How We Work
+								<a href="ourCommitment" class="name">
+									<i class="fa fa-angle-right"></i> Our Commitment
 								</a>
 							</li>
 							<li>
-								<a href="ourCommitment" class="name">
-									<i class="fa fa-angle-right"></i> Our Commitment
+								<a href="howWeWork" class="name">
+									<i class="fa fa-angle-right"></i> How We Work
 								</a>
 							</li>
 						</ul>

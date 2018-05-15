@@ -6,10 +6,10 @@
     <div class="page-content">
         <div class="page-bar">
             <ul class="page-breadcrumb">
-                <li><i class="fa fa-dashboard"></i> Our Culture</li>
+                <li><i class="fa fa-dashboard"></i> Our Commitments</li>
             </ul>
         </div>
-        <h3 class="page-title">Our Culture</h3>
+        <h3 class="page-title">Our Commitments</h3>
         <div class="box box-info">
             <div class="box-header with-border">
                 <h3 class="box-title">Table List</h3>
@@ -25,22 +25,21 @@
                                 <th> # </th>
                                 <th> Title </th>
                                 <th> Content </th>
-                                <th> Picture </th>
+                                <th> Style </th>
                             </tr>
                         </thead>
                         <tbody>
-                            <c:if test="${not empty ourCultures}">
-                                <c:forEach var="ourCulture"
-                                    items="${ourCultures}">
+                            <c:if test="${not empty ourCommitments}">
+                                <c:forEach var="ourCommitment" items="${ourCommitments}">
                                     <tr>
-                                        <td>${ourCulture.id}</td>
-                                        <td>${ourCulture.title}</td>
-                                        <td>${ourCulture.content}</td>
-                                        <td>dummy gambar</td>
+                                        <td>${ourCommitment.id}</td>
+                                        <td>${ourCommitment.title}</td>
+                                        <td>${ourCommitment.content}</td>
+                                        <td>${ourCommitment.style}</td>
                                     </tr>
                                 </c:forEach>
                             </c:if>
-                            <c:if test="${empty ourCultures}">
+                            <c:if test="${empty ourCommitments}">
                                 <tr>
                                     <td colspan="4">No data found</td>
                                 </tr>
