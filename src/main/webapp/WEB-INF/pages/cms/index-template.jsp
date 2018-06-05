@@ -154,7 +154,7 @@ body {
 					</li>
 					<li class="heading">
 					</li>
-					<li><a href="http://localhost/bigrafis/crud/index"
+					<li><a href="/dashboard"
 						class="name"> <i class="fa fa-dashboard"></i> <span
 							class="title">Dashboard</span></a></li>
 					<li><a href="#"> <i class="fa fa-lock"></i> <span
@@ -175,17 +175,17 @@ body {
 						</a>
 						<ul class="sub-menu">
 							<li>
-								<a href="ourCulture" class="name">
+								<a href="/content/culture" class="name">
 									<i class="fa fa-angle-right"></i> Our Culture
 								</a>
 							</li>
 							<li>
-								<a href="ourCommitment" class="name">
+								<a href="/content/commitment" class="name">
 									<i class="fa fa-angle-right"></i> Our Commitment
 								</a>
 							</li>
 							<li>
-								<a href="howWeWork" class="name">
+								<a href="/content/ourwork" class="name">
 									<i class="fa fa-angle-right"></i> How We Work
 								</a>
 							</li>
@@ -257,6 +257,9 @@ body {
 	<script src="/assets/metronic/js/jquery.sparkline.min.js"></script>
 	<script src="/assets/metronic/js/index.js"></script>
 	<script src="/assets/metronic/js/tasks.js"></script>
+	
+	<script language="javascript" type="text/javascript" src="/assets/js/tinymce/tinymce.min.js"></script>
+	<script src="/assets/js/tinymce/jquery.tinymce.min.js"></script>
 
 	<script>
 		jQuery(document).ready(function() {
@@ -272,6 +275,23 @@ body {
 			//Index.initChat();
 			//Index.initMiniCharts();
 			//Tasks.initDashboardWidget();
+		});
+	</script>
+	
+	<script language="javascript" type="text/javascript">
+	  tinyMCE.init({
+	    theme : "modern",
+	    mode: "exact",
+	    elements : "elm1",
+	    theme_advanced_toolbar_location : "top",
+	    theme_advanced_buttons1 : "bold,italic,underline,strikethrough,separator,"
+	    + "justifyleft,justifycenter,justifyright,justifyfull,formatselect,"
+	    + "bullist,numlist,outdent,indent",
+	    theme_advanced_buttons2 : "link,unlink,anchor,image,separator,"
+	    +"undo,redo,cleanup,code,separator,sub,sup,charmap",
+	    theme_advanced_buttons3 : "",
+	    height:"350px",
+	    width:"400px",
 		});
 	</script>
 </body>

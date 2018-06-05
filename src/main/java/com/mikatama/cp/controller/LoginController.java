@@ -37,8 +37,6 @@ public class LoginController {
 		System.out.println("Username: " + user.getUsername());
 
 		User userDetail = userLoginService.getUserByUsername(user.getUsername());
-		//List<User> listUserDetail = userLoginService.getUser();
-		//User userDetail = listUserDetail.get(0);
 		if (userDetail == null) {
 			bindingResult.rejectValue("notification", "login.username.password.incorrect");
 			modelAndView = new ModelAndView("login");

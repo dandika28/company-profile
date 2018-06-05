@@ -51,7 +51,7 @@
 										</div>
 										<div class="card-desc">
 											<span> Menjadi perusahaan manufaktur unggulan dalam
-												bidang acrylic melalui karya yang selalu inovatif <br /><br /></span>
+												bidang acrylic melalui karya yang selalu inovatif</span>
 										</div>
 									</div>
 								</div>

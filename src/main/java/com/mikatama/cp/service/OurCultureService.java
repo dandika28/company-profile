@@ -6,5 +6,18 @@ import java.util.List;
 
 public interface OurCultureService {
 
-    List<OurCulture> getOurCulture();
+
+	public List<OurCulture> getContentCulture();
+
+	public OurCulture getContentCultureById(int id);
+
+	public void updateImageContentCultureById(int id, String imageName);
+
+	public void updateContentCulture(OurCulture culture);
+
+	public void deleteContentCultureById(int id);
+
+	public boolean insertContentCulture(OurCulture culture);
+
+	public String getLatestId();
 }

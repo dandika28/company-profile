@@ -30,7 +30,7 @@
 			<add-attribute value="/assets/pages/css/portfolio.min.css" type="string" />
 		</put-list-attribute>
 		<put-list-attribute name="page_level_plugins">
-			<add-attribute value="/assets/global/plugins/cubeportfolio/js/jquery.cubeportfolio.min.js" type="string" />
+			<add-attribute value="/assets/global/plugins/cubeportfolio/js/jquery.cubeportfolio.js" type="string" />
 		</put-list-attribute>
 		<put-list-attribute name="page_level_scripts">
 			<add-attribute value="/assets/pages/scripts/portfolio-1.min.js" type="string" />
@@ -75,11 +75,72 @@
 	</definition>
 
 	<definition name="ourCulture" extends="dashboard">
-		<put-attribute name="body" value="/WEB-INF/pages/cms/our_culture.jsp" />
+		<put-attribute name="body" value="/WEB-INF/pages/cms/dashboard/our_culture.jsp" />
 	</definition>
 
 	<definition name="ourCommitment" extends="dashboard">
-		<put-attribute name="body" value="/WEB-INF/pages/cms/our_commitments.jsp" />
+		<put-attribute name="body" value="/WEB-INF/pages/cms/dashboard/our_commitments.jsp" />
+	</definition>
+	
+	<definition name="editCulture" extends="dashboard">
+		<put-attribute name="body" value="/WEB-INF/pages/cms/dashboard/edit_culture.jsp"/>
+	</definition>
+	
+	<definition name="editCommitment" extends="dashboard">
+		<put-attribute name="body" value="/WEB-INF/pages/cms/dashboard/edit_commitment.jsp"/>
+	</definition>
+	
+	<definition name="ourWork" extends="dashboard">
+		<put-attribute name="body" value="/WEB-INF/pages/cms/dashboard/our_work.jsp"/>
+	</definition>
+	
+	<definition name="addOurWork" extends="dashboard">
+		<put-attribute name="body" value="/WEB-INF/pages/cms/dashboard/add_work.jsp"/>
+	</definition>
+	
+	<definition name="addOurCommitment" extends="dashboard">
+		<put-attribute name="body" value="/WEB-INF/pages/cms/dashboard/add_commitment.jsp"/>
+	</definition>
+	
+	<definition name="addOurCulture" extends="dashboard">
+		<put-attribute name="body" value="/WEB-INF/pages/cms/dashboard/add_culture.jsp"/>
+	</definition>
+	
+	<definition name="editOurWork" extends="dashboard">
+		<put-attribute name="body" value="/WEB-INF/pages/cms/dashboard/edit_our_work.jsp"/>
+	</definition>
+	
+	<definition name="product_detail" template="/WEB-INF/pages/product/product_desc.jsp">
+	</definition>
+	
+	<definition name="orderProduct" extends="baseLayout">
+		<put-attribute name="title" value="Order Product - Mikatama Unika Indonesia" />
+		<put-attribute name="header" value="/WEB-INF/pages/layout/header.jsp" />
+		<put-attribute name="body" value="/WEB-INF/pages/product/order_product.jsp"/>
+		<put-attribute name="footer" value="/WEB-INF/pages/layout/footer.jsp" />
+		<put-list-attribute name="page_level_scripts">
+			<add-attribute value="/assets/global/plugins/jquery-migrate.min.js" type="string" />
+			<add-attribute value="/assets/global/plugins/jquery-ui/jquery-ui.min.js" type="string" />
+			<add-attribute value="/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="string" />
+			<add-attribute value="/assets/global/plugins/jquery.cokie.min.js" type="string" />
+			<add-attribute value="/assets/global/plugins/uniform/jquery.uniform.min.js" type="string" />
+			<add-attribute value="/assets/global/plugins/jquery-validation/js/jquery.validate.min.js" type="string" />
+			<add-attribute value="/assets/global/plugins/jquery-validation/js/additional-methods.min.js" type="string" />
+			<add-attribute value="/assets/global/plugins/bootstrap-wizard/jquery.bootstrap.wizard.min.js" type="string" />
+			<add-attribute value="/assets/global/plugins/select2/js/select2.min.js" type="string" />
+			<add-attribute value="/assets/metronic/js/metronic.js" type="string" />
+			<add-attribute value="/assets/metronic/js/form-wizard.js" type="string" />
+		</put-list-attribute>
+	</definition>
+	
+	<definition name="confirmations" extends="baseLayout">
+		<put-attribute name="title" value="Confirmation - Mikatama Unika Indonesia"/>
+		<put-attribute name="header" value="/WEB-INF/pages/layout/header.jsp" />
+		<put-attribute name="body" value="/WEB-INF/pages/view/confirmation.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/pages/layout/footer.jsp" />
+	</definition>
+	
+	<definition name="confirmation" template="/WEB-INF/pages/view/confirmation.jsp">
 	</definition>
 
 </tiles-definitions>

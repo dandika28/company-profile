@@ -1,19 +1,23 @@
 package com.mikatama.cp.bean;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class OurCulture {
     private Integer id;
     private String title;
     private String content;
     private String image;
+    private MultipartFile imageFile;
 
     public OurCulture() {
     }
 
-    public OurCulture(Integer id, String title, String content, String image) {
+    public OurCulture(Integer id, String title, String content, String image, MultipartFile imageFile) {
         this.id = id;
         this.title = title;
         this.content = content;
         this.image = image;
+        this.imageFile=imageFile;
     }
 
     public Integer getId() {
@@ -47,4 +51,14 @@ public class OurCulture {
     public void setImage(String image) {
         this.image = image;
     }
+
+	public MultipartFile getMultipartFile() {
+		return imageFile;
+	}
+
+	public void setMultipartFile(MultipartFile imageFile) {
+		this.imageFile = imageFile;
+	}
+    
+    
 }

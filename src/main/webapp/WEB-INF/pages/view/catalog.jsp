@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
 <div class="page-wrapper-row full-height">
 	<div class="page-wrapper-middle">
@@ -42,16 +44,17 @@
 									</div>
 								</div>
 								<div id="js-grid-juicy-projects" class="cbp">
+								<c:forEach var="product" items="${productList }">
 									<div class="cbp-item graphic">
 										<div class="cbp-caption">
 											<div class="cbp-caption-defaultWrap">
-												<img src="/assets/global/img/portfolio/grafir.jpg" alt="">
+												<img src="/assets/img/product/${product.image}" alt="">
 											</div>
 											<div class="cbp-caption-activeWrap">
 												<div class="cbp-l-caption-alignCenter">
 													<div class="cbp-l-caption-body">
 														<a
-															href="/assets/global/plugins/cubeportfolio/ajax/project1.html"
+															href="detail?id=${product.id }"
 															class="cbp-singlePage cbp-l-caption-buttonLeft btn red uppercase btn red uppercase"
 															rel="nofollow">more info</a> <a
 															href="/assets/global/img/portfolio/1200x900/57.jpg"
@@ -62,115 +65,9 @@
 											</div>
 										</div>
 										<div
-											class="cbp-l-grid-projects-title uppercase text-center uppercase text-center">Acrylic
-											Grafir</div>
-										<div
-											class="cbp-l-grid-projects-desc uppercase text-center uppercase text-center">Merupakan
-											salah satu produk inovatif, cetakan gambar dibuat dengan
-											grafir mesin laser PT Mikatama Unika Indonesia</div>
+											class="cbp-l-grid-projects-title uppercase text-center uppercase text-center">${product.productName }</div>
 									</div>
-									<div class="cbp-item web-design logos">
-										<div class="cbp-caption">
-											<div class="cbp-caption-defaultWrap">
-												<img src="/assets/global/img/portfolio/plakat.jpg" alt="">
-											</div>
-											<div class="cbp-caption-activeWrap">
-												<div class="cbp-l-caption-alignCenter">
-													<div class="cbp-l-caption-body">
-														<a
-															href="/assets/global/plugins/cubeportfolio/ajax/project2.html"
-															class="cbp-singlePage cbp-l-caption-buttonLeft btn red uppercase btn red uppercase"
-															rel="nofollow">more info</a> <a
-															href="/assets/global/img/portfolio/1200x900/50.jpg"
-															class="cbp-lightbox cbp-l-caption-buttonRight btn red uppercase btn red uppercase"
-															data-title="World Clock Widget<br>by Paul Flavius Nechita">buy</a>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="cbp-l-grid-projects-title uppercase text-center">Plakat
-											Mikatama</div>
-										<div class="cbp-l-grid-projects-desc uppercase text-center">Produk
-											Unggulan yang sangat diminati</div>
-									</div>
-									<div class="cbp-item graphic logos">
-										<div class="cbp-caption">
-											<div class="cbp-caption-defaultWrap">
-												<img src="/assets/global/img/portfolio/scorpion.jpg" alt="">
-											</div>
-											<div class="cbp-caption-activeWrap">
-												<div class="cbp-l-caption-alignCenter">
-													<div class="cbp-l-caption-body">
-														<a
-															href="/assets/global/plugins/cubeportfolio/ajax/project1.html"
-															class="cbp-singlePage cbp-l-caption-buttonLeft btn red uppercase btn red uppercase"
-															rel="nofollow">more info</a> <a
-															href="http://vimeo.com/14912890"
-															class="cbp-lightbox cbp-l-caption-buttonRight btn red uppercase btn red uppercase"
-															data-title="To-Do Dashboard<br>by Tiberiu Neamu">buy</a>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="cbp-l-grid-projects-title uppercase text-center">Acrylic
-											Scorpion</div>
-										<div class="cbp-l-grid-projects-desc uppercase text-center">Merupakan
-											salah satu produk inovatif PT Mikatama Unika Indonesia, dapat
-											dijadikan sebagai koleksi/hadiah.</div>
-									</div>
-									<div class="cbp-item web-design graphic">
-										<div class="cbp-caption">
-											<div class="cbp-caption-defaultWrap">
-												<img src="/assets/global/img/portfolio/short_acrylic.jpg"
-													alt="">
-											</div>
-											<div class="cbp-caption-activeWrap">
-												<div class="cbp-l-caption-alignCenter">
-													<div class="cbp-l-caption-body">
-														<a
-															href="/assets/global/plugins/cubeportfolio/ajax/project2.html"
-															class="cbp-singlePage cbp-l-caption-buttonLeft btn red uppercase btn red uppercase"
-															rel="nofollow">more info</a> <a
-															href="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/4900333&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"
-															class="cbp-lightbox cbp-l-caption-buttonRight btn red uppercase btn red uppercase"
-															data-title="Events and  More<br>by Tiberiu Neamu">buy</a>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="cbp-l-grid-projects-title uppercase text-center">Short
-											Acrylic</div>
-										<div class="cbp-l-grid-projects-desc uppercase text-center">PT
-											Mikatama Unika Indonesia bekerjasama dengan PT Standardpen
-											Industries.digunakan untuk tempat alat tulis. (pena, pensil,
-											stabilo dll)</div>
-									</div>
-									<div class="cbp-item identity web-design">
-										<div class="cbp-caption">
-											<div class="cbp-caption-defaultWrap">
-												<img src="/assets/global/img/portfolio/tissue_box.jpg"
-													alt="">
-											</div>
-											<div class="cbp-caption-activeWrap">
-												<div class="cbp-l-caption-alignCenter">
-													<div class="cbp-l-caption-body">
-														<a
-															href="/assets/global/plugins/cubeportfolio/ajax/project1.html"
-															class="cbp-singlePage cbp-l-caption-buttonLeft btn red uppercase btn red uppercase"
-															rel="nofollow">more info</a> <a
-															href="/assets/global/img/portfolio/1200x900/4.jpg"
-															class="cbp-lightbox cbp-l-caption-buttonRight btn red uppercase btn red uppercase"
-															data-title="WhereTO App<br>by Tiberiu Neamu">buy</a>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="cbp-l-grid-projects-title uppercase text-center">Tissue
-											Box</div>
-										<div class="cbp-l-grid-projects-desc uppercase text-center">Produk
-											hasil kerjasama dengan PT Surya Madistrindo yang digunakan
-											sebagai tempat tissue</div>
-									</div>
+									</c:forEach>
 								</div>
 								<!-- <div id="js-loadMore-juicy-projects"
 									class="cbp-l-loadMore-button">

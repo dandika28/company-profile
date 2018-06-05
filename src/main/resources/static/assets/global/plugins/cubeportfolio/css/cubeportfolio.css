@@ -2392,7 +2392,9 @@
   top: 0;
   bottom: 0;
   font: 400 13px/30px "Open Sans", sans-serif;
-  height: 30px; }
+  height: 30px;
+  visibility: hidden;
+}
 
 @media only screen and (max-width: 768px) {
   .cbp-popup-singlePage-counter {

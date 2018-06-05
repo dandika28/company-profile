@@ -44,12 +44,12 @@
 											<ul>
 												<c:forEach var="ourCulture" items="${ourCultures}">
 				                                    <li class="search-item clearfix">
-													    <a href="#"> <img src="/assets/pages/img/page_general_search/discipline.jpg"></a>
+													    <a href="#"> <img src="/assets/img/page_culture/${ourCulture.image }"></a>
 													    <div class="search-content">
 													        <h2 class="search-title">
 																<a href="#">${ourCulture.title}</a>
 															</h2>
-													        <p class="search-desc">${ourCulture.content}</p>
+													        ${ourCulture.content}
 													    </div>
 													</li>
 				                                </c:forEach>

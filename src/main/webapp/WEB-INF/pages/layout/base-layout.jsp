@@ -70,9 +70,22 @@
 	rel="stylesheet" type="text/css" id="style_color" />
 <link href="/assets/layouts/layout3/css/custom.min.css" rel="stylesheet"
 	type="text/css" />
+<link href="/assets/layouts/layout3/css/custom.css" rel="stylesheet"
+	type="text/css" />
 <!-- END THEME LAYOUT STYLES -->
 
 <link rel="shortcut icon" href="favicon.png" />
+
+<link rel="stylesheet" href="/assets/metronic/css/w3.css" type="text/css"/>
+<style>
+.mySlides {
+	display: none
+}
+
+.demo {
+	cursor: pointer
+}
+</style>
 
 <script src="/assets/custom/zdesk-widget.js" type="text/javascript"></script>
 </head>
@@ -103,6 +116,8 @@
 	<!-- END QUICK NAV -->
 
 	<!-- BEGIN CORE PLUGINS -->
+	<script src="/assets/metronic/js/metronic.js"
+		type="text/javascript"></script>
 	<script src="/assets/global/plugins/jquery.min.js"
 		type="text/javascript"></script>
 	<script src="/assets/global/plugins/bootstrap/js/bootstrap.min.js"
@@ -149,5 +164,19 @@
 	<script src="/assets/layouts/global/scripts/quick-nav.min.js"
 		type="text/javascript"></script>
 	<!-- END THEME LAYOUT SCRIPTS -->
+	<script src="/assets/metronic/js/custom-script.js"
+		type="text/javascript"></script>
+	
+	<script>
+		jQuery(document).ready(function() {
+			// initiate layout and plugins
+			Metronic.init(); // init metronic core components
+			Layout.init(); // init current layout
+			QuickSidebar.init(); // init quick sidebar
+			Demo.init(); // init demo features
+			FormWizard.init();
+		});
+	</script>
+
 </body>
 </html>
