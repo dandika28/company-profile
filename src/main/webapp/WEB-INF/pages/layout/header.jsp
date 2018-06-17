@@ -9,7 +9,7 @@
 			<!-- BEGIN LOGO -->
 			<div class="page-logo">
 				<a href="index.html"> <img
-					src="/assets/layouts/layout3/img/logo_mikatama.png" alt="logo"
+					src="${pageContext.request.contextPath}/assets/layouts/layout3/img/logo_mikatama.png" alt="logo"
 					class="logo-default" style="height: 35px;">
 				</a>
 			</div>
@@ -64,7 +64,7 @@
 							Services<span class="arrow"></span>
 					</a></li>
 					<li aria-haspopup="true"
-						class="menu-dropdown classic-menu-dropdown scroll-to-bottom "><a
+						class="menu-dropdown classic-menu-dropdown scroll-to-bottom "><a href="${pageContext.request.contextPath}/contact"
 						class="scroll-to-bottom">Contact Us<span class="arrow scroll-to-bottom"></span>
 					</a></li>
 				</ul>

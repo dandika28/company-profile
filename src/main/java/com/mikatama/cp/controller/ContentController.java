@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -40,8 +41,11 @@ public class ContentController {
 	
 	@Autowired
 	private ContentHowWorkService contentHowWorkService;
+	
+	@Value("${path.location.image.culture}")
+	private String UPLOADED_FOLDER;
 
-    @RequestMapping(value = "/content/culture", method = RequestMethod.GET)
+    @RequestMapping(value = "/dashboard/content/culture", method = RequestMethod.GET)
     public ModelAndView getOurCulture(HttpServletRequest request, HttpServletResponse response,
                              @ModelAttribute("userLogin") User user) {
 
@@ -57,7 +61,7 @@ public class ContentController {
         return modelAndView;
     }
     
-    @GetMapping(value="/content/culture/add")
+    @GetMapping(value="/dashboard/content/culture/add")
     public ModelAndView insertOurCulture(HttpServletRequest request, @ModelAttribute("ourCulture") OurCulture ourCulture){
     	 ModelAndView view = new ModelAndView("addOurCulture");
     	 
@@ -71,7 +75,7 @@ public class ContentController {
     	 return view;
     }
     
-    @PostMapping(value="/content/culture/add")
+    @PostMapping(value="/dashboard/content/culture/add")
     public ModelAndView insertPostOurCulture(HttpServletRequest request, HttpServletResponse response,
     		@ModelAttribute("ourCulture") OurCulture culture, BindingResult bindingResult){
     	
@@ -85,12 +89,12 @@ public class ContentController {
     	
     	boolean successInsert = ourCultureService.insertContentCulture(culture);
     	if(successInsert=true)
-    		return modelAndView = new ModelAndView("redirect:/content/culture");
+    		return modelAndView = new ModelAndView("redirect:/dashboard/content/culture");
     	else
     		return modelAndView;
     }
     
-    @RequestMapping(value = "/content/culture/edit", method = RequestMethod.GET)
+    @RequestMapping(value = "/dashboard/content/culture/edit", method = RequestMethod.GET)
     public ModelAndView getEditCulture(HttpServletRequest request, HttpServletResponse response, 
     		@ModelAttribute("ourCulture") OurCulture ourCulture,
     		@RequestParam(value="id", required = true) String id){
@@ -109,7 +113,7 @@ public class ContentController {
     	return view;
     }
     
-    @PostMapping(value = "/content/culture/edit")
+    @PostMapping(value = "/dashboard/content/culture/edit")
     public ModelAndView getEditCulture(HttpServletRequest request, HttpServletResponse response, 
     		@ModelAttribute("ourCulture") OurCulture ourCulture,
     		BindingResult bindingResult){
@@ -129,7 +133,7 @@ public class ContentController {
     	return view;
     }
     
-    @RequestMapping(value = "/content/commitment", method = RequestMethod.GET)
+    @RequestMapping(value = "/dashboard/content/commitment", method = RequestMethod.GET)
     public ModelAndView getOurCommitment(HttpServletRequest request, HttpServletResponse response) {
         ModelAndView modelAndView = new ModelAndView("ourCommitment");
 
@@ -143,7 +147,7 @@ public class ContentController {
         return modelAndView;
     }
     
-    @GetMapping(value="/content/commitment/add")
+    @GetMapping(value="/dashboard/content/commitment/add")
     public ModelAndView addCommitment(HttpServletRequest request, @ModelAttribute("ourCommitment") OurCommitment ourCommitment){
     	ModelAndView view = new ModelAndView("addOurCommitment");
     	
@@ -157,20 +161,20 @@ public class ContentController {
     	return view;
     }
     
-    @PostMapping(value="/content/commitment/add")
+    @PostMapping(value="/dashboard/content/commitment/add")
     public ModelAndView saveContentCommitment(HttpServletRequest request, 
     		HttpServletResponse response, @ModelAttribute("ourCommitment") OurCommitment commitment, BindingResult bindingResult){
     	
-    	ModelAndView modelAndView = new ModelAndView("addOurWork");
+    	ModelAndView modelAndView = new ModelAndView("addOurCommitment");
     	
     	boolean successInsert = ourCommitmentService.insertContentCommitment(commitment);
     	if(successInsert=true)
-    		return modelAndView = new ModelAndView("redirect:/content/commitment");
+    		return modelAndView = new ModelAndView("redirect:/dashboard/content/commitment");
     	else
     		return modelAndView;
     }
     
-    @GetMapping(value = "/content/commitment/edit")
+    @GetMapping(value = "/dashboard/content/commitment/edit")
     public ModelAndView getEditCommitment(HttpServletRequest request, HttpServletResponse response,
     		@ModelAttribute("ourCommitment") OurCommitment ourCommitment,
     		@RequestParam(value="id", required = true) String id){
@@ -189,7 +193,7 @@ public class ContentController {
     	return view;
     }
     
-    @PostMapping(value = "/content/commitment/edit")
+    @PostMapping(value = "/dashboard/content/commitment/edit")
     public ModelAndView postEditCulture(HttpServletRequest request, HttpServletResponse response,
     		@ModelAttribute("ourCommitment") OurCommitment commitment, BindingResult bindingResult){
     	ModelAndView view = new ModelAndView("editCommitment");
@@ -207,7 +211,7 @@ public class ContentController {
     	return view;
     }
     
-    @GetMapping(value="/content/commitment/delete")
+    @GetMapping(value="/dashboard/content/commitment/delete")
     public String deleteCommitment(HttpServletRequest request, @RequestParam("id") String id){
     	
     	if(request.getSession().getAttribute("userSession")==null){
@@ -215,10 +219,10 @@ public class ContentController {
         }
     	
     	ourCommitmentService.deleteContentCommitmentById(Integer.parseInt(id));
-    	return "redirect:/content/commitment";
+    	return "redirect:/dashboard/content/commitment";
     }
     
-    @GetMapping(value="/content/culture/delete")
+    @GetMapping(value="/dashboard/content/culture/delete")
     public String deleteCulture(HttpServletRequest request, @RequestParam("id") String id){
     	
     	if(request.getSession().getAttribute("userSession")==null){
@@ -226,7 +230,7 @@ public class ContentController {
         }
     	
     	ourCultureService.deleteContentCultureById(Integer.parseInt(id));
-    	return "redirect:/content/culture";
+    	return "redirect:/dashboard/content/culture";
     }
     
     @SuppressWarnings("unused")
@@ -235,7 +239,7 @@ public class ContentController {
     		@RequestParam("id") String id, @RequestParam("file") MultipartFile file,
     		RedirectAttributes redirectAttributes){
     	
-    	String pathLocation = "src/main/resources/static/assets/img/page_culture/";
+    	String pathLocation = UPLOADED_FOLDER;
 
     	if(request.getSession().getAttribute("userSession")==null){
         	return "redirect:/login";
@@ -258,10 +262,10 @@ public class ContentController {
     	if(uploadImageSuccess=true)
     		ourCultureService.updateImageContentCultureById(Integer.parseInt(id), file.getOriginalFilename());
     	
-    	return "redirect:/content/culture/edit?id="+id;
+    	return "redirect:/dashboard/content/culture/edit?id="+id;
     }
 
-    @GetMapping(value = "/content/ourwork")
+    @GetMapping(value = "/dashboard/content/ourwork")
     public ModelAndView getContentHowWork(HttpServletRequest request, HttpServletResponse response){
     	
     	ModelAndView view = new ModelAndView("ourWork");
@@ -275,7 +279,7 @@ public class ContentController {
     	return view;
     }
     
-    @GetMapping(value = "/content/ourwork/edit")
+    @GetMapping(value = "/dashboard/content/ourwork/edit")
     public ModelAndView getContentHowWorkById(HttpServletRequest request, 
     		@RequestParam(value="id", required = true) String id,
     		@ModelAttribute("contentHowWork") ContentHowWork ourWork){
@@ -291,7 +295,7 @@ public class ContentController {
     	return view;
     }
     
-    @PostMapping(value = "content/ourwork/edit")
+    @PostMapping(value = "/dashboard/content/ourwork/edit")
     public ModelAndView postContentHowWork(HttpServletRequest request, HttpServletResponse response, 
     		@ModelAttribute("contentHowWork") ContentHowWork ourWork, BindingResult bindingResult){
     	
@@ -309,7 +313,7 @@ public class ContentController {
     	return view;
     }
     
-    @GetMapping(value = "/content/ourwork/add")
+    @GetMapping(value = "/dashboard/content/ourwork/add")
     public ModelAndView addContentHowWork(HttpServletRequest request,
     		@ModelAttribute("contentHowWork") ContentHowWork ourWork){
     	
@@ -324,7 +328,7 @@ public class ContentController {
     	return view;
     }
     
-    @PostMapping(value = "/content/ourwork/add")
+    @PostMapping(value = "/dashboard/content/ourwork/add")
     public ModelAndView saveContentHowWork(HttpServletRequest request, HttpServletResponse response,
     		@ModelAttribute("contentHowWork") ContentHowWork ourWork, BindingResult bindingResult){
     	
@@ -332,12 +336,12 @@ public class ContentController {
     	
     	boolean successInsert = contentHowWorkService.insertContentHowWork(ourWork);
     	if(successInsert=true)
-    		return modelAndView = new ModelAndView("redirect:/content/ourwork");
+    		return modelAndView = new ModelAndView("redirect:/dashboard/content/ourwork");
     	else
     		return modelAndView;
     }
     
-    @GetMapping(value = "/content/ourwork/delete")
+    @GetMapping(value = "/dashboard/content/ourwork/delete")
     public String deleteOurWork(HttpServletRequest request, @RequestParam("id") String id){
     	
     	if(request.getSession().getAttribute("userSession")==null){
@@ -345,7 +349,7 @@ public class ContentController {
         }
     	
     	contentHowWorkService.deleteContentHowWorkById(Integer.parseInt(id));
-    	return "redirect:/content/ourwork";
+    	return "redirect:/dashboard/content/ourwork";
     	
     }
     

@@ -44,7 +44,7 @@ public class LoginController {
 		} else {
 			if (StringUtils.isEmpty(userDetail.getSalt())) {
 				if (userDetail.getPassword().equals(user.getPassword())) {
-					modelAndView = new ModelAndView("dashboard");
+					modelAndView = new ModelAndView("redirect:/dashboard/order");
 
 					request.getSession().setAttribute("userSession", userDetail);
 
@@ -65,7 +65,7 @@ public class LoginController {
 
 			} else {
 				if(authenticateUser(userDetail, user.getPassword())){
-					modelAndView = new ModelAndView("dashboard");
+					modelAndView = new ModelAndView("redirect:/dashboard/order");
 					
 					request.getSession().setAttribute("userSession", userDetail);
 					

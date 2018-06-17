@@ -20,17 +20,18 @@
 				</div>
 				<!-- /.box-tools -->
 			</div>
-			<div class="col-xs-6" style="padding:5px;margin:0 0 0 5px;">
+			<!-- /.box-header -->
+			<div class="box-body">
+				<div class="col-xs-6" style="padding: 5px; margin: 0 0 0 5px;">
 					<!-- Button ADD  -->
-					<a href="/content/culture/add" class="add-anchor add_button btn btn-primary" >
-						<!--a href="http://localhost/bigrafis/crud/users/add" class='add-anchor add_button btn btn-primary'-->
-						<i class="fa fa-plus-circle"></i> <span class="add">Add
+					<a
+						href="${pageContext.request.contextPath}/dashboard/content/culture/add"
+						class="add-anchor add_button btn btn-primary"> <i
+						class="fa fa-plus-circle"></i> <span class="add">Add
 							Content</span>
 					</a>
 					<!-- Akhir Button ADD  -->
 				</div>
-			<!-- /.box-header -->
-			<div class="box-body">
 				<div class="table-scrollable">
 					<table class="table table-striped table-hover">
 						<thead>
@@ -52,10 +53,12 @@
 										<td>${ourCulture.image }</td>
 										<td class="td-action">
 											<ul class="tools list-unstyled table-menu">
-												<li><a href="/content/culture/edit?id=${ourCulture.id }" class="edit_button"><i
-														class="fa fa-pencil"></i> Edit</a></li>
-												<li><a href="/content/culture/delete?id=${ourCulture.id }" class="delete-row"><i
-														class="fa fa-trash-o"></i> Delete</a></li>
+												<li><a
+													href="${pageContext.request.contextPath}/dashboard/content/culture/edit?id=${ourCulture.id }"
+													class="edit_button"><i class="fa fa-pencil"></i> Edit</a></li>
+												<li><a
+													href="${pageContext.request.contextPath}/dashboard/content/culture/delete?id=${ourCulture.id }"
+													class="delete-row"><i class="fa fa-trash-o"></i> Delete</a></li>
 											</ul>
 										</td>
 									</tr>
@@ -63,7 +66,7 @@
 							</c:if>
 							<c:if test="${empty ourCultures}">
 								<tr>
-									<td colspan="4">No data found</td>
+									<td colspan="5">No data found</td>
 								</tr>
 							</c:if>
 						</tbody>

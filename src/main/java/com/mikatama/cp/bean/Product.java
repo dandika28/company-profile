@@ -1,5 +1,9 @@
 package com.mikatama.cp.bean;
 
+import java.util.List;
+
+import org.springframework.web.multipart.MultipartFile;
+
 public class Product {
 
 	private int id;
@@ -9,6 +13,7 @@ public class Product {
 	private int stock;
 	private int status;
 	private String image;
+	private List<MultipartFile> files;
 
 	public int getId() {
 		return id;
@@ -65,5 +70,15 @@ public class Product {
 	public void setImage(String image) {
 		this.image = image;
 	}
+
+	public List<MultipartFile> getFiles() {
+		return files;
+	}
+
+	public void setFiles(List<MultipartFile> files) {
+		this.files = files;
+	}
+
+
 	
 }

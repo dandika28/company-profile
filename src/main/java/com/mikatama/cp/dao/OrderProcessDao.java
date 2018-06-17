@@ -12,4 +12,8 @@ public interface OrderProcessDao {
 
 	public String getLatestId();
 
+	public OrderProcess getOrderById(int id);
+
+	public void updateOrderStatusById(int status, int id);
+
 }

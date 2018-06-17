@@ -1,5 +1,7 @@
 package com.mikatama.cp.bean;
 
+import java.util.Date;
+
 import org.springframework.web.multipart.MultipartFile;
 
 public class OrderProcess {
@@ -7,7 +9,7 @@ public class OrderProcess {
 	private String orderId;
 	private String productId;
 	private int total;
-	private String name;
+	private String fullname;
 	private String address;
 	private String phone;
 	private String email;
@@ -15,6 +17,7 @@ public class OrderProcess {
 	private String imageName;
 	private String updateBy;
 	private int status;
+	private Date createdDate;
 
 	public String getOrderId() {
 		return orderId;
@@ -40,12 +43,12 @@ public class OrderProcess {
 		this.total = total;
 	}
 
-	public String getName() {
-		return name;
+	public String getFullname() {
+		return fullname;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setFullname(String fullname) {
+		this.fullname = fullname;
 	}
 
 	public String getAddress() {
@@ -102,6 +105,14 @@ public class OrderProcess {
 
 	public void setStatus(int status) {
 		this.status = status;
+	}
+
+	public Date getCreatedDate() {
+		return createdDate;
+	}
+
+	public void setCreatedDate(Date createdDate) {
+		this.createdDate = createdDate;
 	}
 	
 	

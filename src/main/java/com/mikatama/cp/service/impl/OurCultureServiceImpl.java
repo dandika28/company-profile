@@ -5,6 +5,7 @@ import com.mikatama.cp.dao.OurCultureDao;
 import com.mikatama.cp.service.OurCultureService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -19,6 +20,9 @@ public class OurCultureServiceImpl implements OurCultureService {
 	
 	@Autowired
 	OurCultureDao ourCultureDao;
+	
+	@Value("${path.location.image.culture}")
+	private String UPLOADED_FOLDER;
 	
 	@Override
 	public List<OurCulture> getContentCulture(){
@@ -40,7 +44,7 @@ public class OurCultureServiceImpl implements OurCultureService {
 			ourCulture.setContent(culture.getContent());
 			ourCulture.setImage(culture.getMultipartFile().getOriginalFilename());
 			
-			String pathLocation = "src/main/resources/static/assets/img/page_culture/";
+			String pathLocation = UPLOADED_FOLDER;
 			MultipartFile file = culture.getMultipartFile();
 			
 			boolean uploadImageSuccess = false;

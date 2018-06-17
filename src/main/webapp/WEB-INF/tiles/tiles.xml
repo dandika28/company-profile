@@ -13,7 +13,7 @@
 		<put-attribute name="body" value="/WEB-INF/pages/view/home.jsp" />
 		<put-attribute name="footer" value="/WEB-INF/pages/layout/footer.jsp" />
 		<put-list-attribute name="page_level_styles">
-			<add-attribute value="/assets/pages/css/about.min.css" type="string" />
+			<add-attribute value="assets/pages/css/about.min.css" type="string" />
 		</put-list-attribute>
 	</definition>
 	
@@ -24,16 +24,16 @@
 		<put-attribute name="body" value="/WEB-INF/pages/view/catalog.jsp" />
 		<put-attribute name="footer" value="/WEB-INF/pages/layout/footer.jsp" />
 		<put-list-attribute name="page_style_plugins">
-			<add-attribute value="/assets/global/plugins/cubeportfolio/css/cubeportfolio.css" type="string" />
+			<add-attribute value="assets/global/plugins/cubeportfolio/css/cubeportfolio.css" type="string" />
 		</put-list-attribute>
 		<put-list-attribute name="page_level_styles">
-			<add-attribute value="/assets/pages/css/portfolio.min.css" type="string" />
+			<add-attribute value="assets/pages/css/portfolio.min.css" type="string" />
 		</put-list-attribute>
 		<put-list-attribute name="page_level_plugins">
-			<add-attribute value="/assets/global/plugins/cubeportfolio/js/jquery.cubeportfolio.js" type="string" />
+			<add-attribute value="assets/global/plugins/cubeportfolio/js/jquery.cubeportfolio.js" type="string" />
 		</put-list-attribute>
 		<put-list-attribute name="page_level_scripts">
-			<add-attribute value="/assets/pages/scripts/portfolio-1.min.js" type="string" />
+			<add-attribute value="assets/pages/scripts/portfolio-1.min.js" type="string" />
 		</put-list-attribute>
 	</definition>
 	
@@ -43,18 +43,18 @@
 		<put-attribute name="body" value="/WEB-INF/pages/view/culture.jsp" />
 		<put-attribute name="footer" value="/WEB-INF/pages/layout/footer.jsp" />
 		<put-list-attribute name="page_style_plugins">
-			<add-attribute value="/assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css" type="string" />
-			<add-attribute value="/assets/global/plugins/fancybox/source/jquery.fancybox.css" type="string" />
+			<add-attribute value="assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css" type="string" />
+			<add-attribute value="assets/global/plugins/fancybox/source/jquery.fancybox.css" type="string" />
 		</put-list-attribute>
 		<put-list-attribute name="page_level_styles">
-			<add-attribute value="/assets/pages/css/search.min.css" type="string" />
+			<add-attribute value="assets/pages/css/search.min.css" type="string" />
 		</put-list-attribute>
 		<put-list-attribute name="page_level_plugins">
-			<add-attribute value="/assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js" type="string" />
-			<add-attribute value="/assets/global/plugins/fancybox/source/jquery.fancybox.pack.js" type="string" />
+			<add-attribute value="assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js" type="string" />
+			<add-attribute value="assets/global/plugins/fancybox/source/jquery.fancybox.pack.js" type="string" />
 		</put-list-attribute>
 		<put-list-attribute name="page_level_scripts">
-			<add-attribute value="/assets/pages/scripts/search.min.js" type="string" />
+			<add-attribute value="assets/pages/scripts/search.min.js" type="string" />
 		</put-list-attribute>
 	</definition>
 	
@@ -62,6 +62,13 @@
 		<put-attribute name="title" value="How We Work - Mikatama Unika Indonesia" />
 		<put-attribute name="header" value="/WEB-INF/pages/layout/header.jsp" />
 		<put-attribute name="body" value="/WEB-INF/pages/view/how_we_work.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/pages/layout/footer.jsp" />
+	</definition>
+		
+	<definition name="contactUs" extends="baseLayout">
+		<put-attribute name="title" value="How We Work - Mikatama Unika Indonesia" />
+		<put-attribute name="header" value="/WEB-INF/pages/layout/header.jsp" />
+		<put-attribute name="body" value="/WEB-INF/pages/view/contact.jsp" />
 		<put-attribute name="footer" value="/WEB-INF/pages/layout/footer.jsp" />
 	</definition>
 	
@@ -119,28 +126,41 @@
 		<put-attribute name="body" value="/WEB-INF/pages/product/order_product.jsp"/>
 		<put-attribute name="footer" value="/WEB-INF/pages/layout/footer.jsp" />
 		<put-list-attribute name="page_level_scripts">
-			<add-attribute value="/assets/global/plugins/jquery-migrate.min.js" type="string" />
-			<add-attribute value="/assets/global/plugins/jquery-ui/jquery-ui.min.js" type="string" />
-			<add-attribute value="/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="string" />
-			<add-attribute value="/assets/global/plugins/jquery.cokie.min.js" type="string" />
-			<add-attribute value="/assets/global/plugins/uniform/jquery.uniform.min.js" type="string" />
-			<add-attribute value="/assets/global/plugins/jquery-validation/js/jquery.validate.min.js" type="string" />
-			<add-attribute value="/assets/global/plugins/jquery-validation/js/additional-methods.min.js" type="string" />
-			<add-attribute value="/assets/global/plugins/bootstrap-wizard/jquery.bootstrap.wizard.min.js" type="string" />
-			<add-attribute value="/assets/global/plugins/select2/js/select2.min.js" type="string" />
-			<add-attribute value="/assets/metronic/js/metronic.js" type="string" />
-			<add-attribute value="/assets/metronic/js/form-wizard.js" type="string" />
+			<add-attribute value="assets/global/plugins/jquery-migrate.min.js" type="string" />
+			<add-attribute value="assets/global/plugins/jquery-ui/jquery-ui.min.js" type="string" />
+			<add-attribute value="assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="string" />
+			<add-attribute value="assets/global/plugins/jquery.cokie.min.js" type="string" />
+			<add-attribute value="assets/global/plugins/uniform/jquery.uniform.min.js" type="string" />
+			<add-attribute value="assets/global/plugins/jquery-validation/js/jquery.validate.min.js" type="string" />
+			<add-attribute value="assets/global/plugins/jquery-validation/js/additional-methods.min.js" type="string" />
+			<add-attribute value="assets/global/plugins/bootstrap-wizard/jquery.bootstrap.wizard.min.js" type="string" />
+			<add-attribute value="assets/global/plugins/select2/js/select2.min.js" type="string" />
+			<add-attribute value="assets/metronic/js/metronic.js" type="string" />
+			<add-attribute value="assets/metronic/js/form-wizard.js" type="string" />
 		</put-list-attribute>
 	</definition>
 	
-	<definition name="confirmations" extends="baseLayout">
-		<put-attribute name="title" value="Confirmation - Mikatama Unika Indonesia"/>
-		<put-attribute name="header" value="/WEB-INF/pages/layout/header.jsp" />
-		<put-attribute name="body" value="/WEB-INF/pages/view/confirmation.jsp" />
-		<put-attribute name="footer" value="/WEB-INF/pages/layout/footer.jsp" />
+	<definition name="confirmation" template="/WEB-INF/pages/view/confirmation.jsp">
 	</definition>
 	
-	<definition name="confirmation" template="/WEB-INF/pages/view/confirmation.jsp">
+	<definition name="dashboardProduct" extends="dashboard">
+		<put-attribute name="body" value="/WEB-INF/pages/cms/dashboard/product.jsp"/>
+	</definition>
+	
+	<definition name="editProduct" extends="dashboard">
+		<put-attribute name="body" value="/WEB-INF/pages/cms/dashboard/edit_product.jsp"/>
+	</definition>
+	
+	<definition name="detailProduct" extends="dashboard">
+		<put-attribute name="body" value="/WEB-INF/pages/cms/dashboard/detail_product.jsp"/>
+	</definition>
+	
+	<definition name="addProduct" extends="dashboard">
+		<put-attribute name="body" value="/WEB-INF/pages/cms/dashboard/add_product.jsp"/>
+	</definition>
+
+	<definition name="editOrder" extends="dashboard">
+		<put-attribute name="body" value="/WEB-INF/pages/cms/dashboard/edit_order.jsp"/>
 	</definition>
 
 </tiles-definitions>

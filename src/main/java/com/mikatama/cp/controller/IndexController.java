@@ -1,5 +1,7 @@
 package com.mikatama.cp.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -19,6 +21,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.mikatama.cp.bean.OrderProcess;
 import com.mikatama.cp.bean.Product;
+import com.mikatama.cp.bean.ProductImage;
 import com.mikatama.cp.bean.User;
 
 @Controller
@@ -94,12 +97,19 @@ public class IndexController {
 	}
 	
 	@GetMapping(value="detail")
-	public ModelAndView test(HttpServletRequest request, @RequestParam(value="id", required=true) String id,
+	public ModelAndView detailProduct(HttpServletRequest request, @RequestParam(value="id", required=true) String id,
 			@ModelAttribute("orderProcess") OrderProcess orderProcess){
 		ModelAndView view = new ModelAndView("product_detail");
-		
-		view.addObject("slideShow", productService.getProductImage(Integer.parseInt(id)));
+		List<ProductImage> lists = productService.getProductImageListByProductId(Integer.parseInt(id));
+		view.addObject("moreProducts", productService.getRandomProductByLimit(5));
+		view.addObject("productImage", lists);
 		view.addObject("product", productService.getProductById(Integer.parseInt(id)));
+		return view;
+	}
+	
+	@GetMapping(value="contact")
+	public ModelAndView contactUs(HttpServletRequest request, HttpServletResponse response){
+		ModelAndView view = new ModelAndView("contactUs");
 		return view;
 	}
 

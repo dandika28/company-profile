@@ -50,7 +50,7 @@
 										</div>
 										<div class="portlet-body form">
 											<div class="form-section">
-												<form:form action="${contextPath}/confirmation" class="form-horizontal"
+												<form:form action="${pageContext.request.contextPath}/confirmation" class="form-horizontal"
 													id="submit_form" method="POST" autocomplete="off" enctype="multipart/form-data"
 													modelAttribute="orderProcess">
 													<div class="form-wizard">
@@ -94,7 +94,7 @@
 																		</label>
 																		<div class="col-md-4">
 																			<form:input type="text" class="form-control"
-																				name="fullname" path="name" />
+																				name="fullname" path="fullname" />
 																			<span class="help-block"> Provide your
 																				fullname </span>
 																		</div>
@@ -139,12 +139,12 @@
 																		<label class="control-label col-md-3"></label>
 																		<div class="col-md-4">
 																			<p
-																				class="warning-message msg-not-uploaded file-mobile error mb10"
+																				class="warning-message msg-not-uploaded order file-mobile error mb10"
 																				data-msgerror="Mohon lampirkan foto KTP"
 																				data-type="mobile"></p>
 																			<!-- <p class="warning-message msg-maximum-upload error mb10" data-msgerror="Maximum upload only 2 file attachment"></p> -->
 																			<p
-																				class="warning-message msg-maximum-upload file-mobile error mb10"
+																				class="warning-message msg-maximum-upload order file-mobile error mb10"
 																				data-msgerror="Maksimum lampiran hanya 1 gambar"
 																				data-errsize="Masukkan gambar dengan ukuran file yang lebih kecil"
 																				data-type="mobile"></p>
@@ -152,15 +152,16 @@
 																				data-type="mobile">
 																				<div class="rounded">
 																					<img class="inner-text"
-																						src="/assets/img/camera.png" alt="Camera Icon" />
+																						src="${pageContext.request.contextPath}/assets/img/camera.png" alt="Camera Icon" />
 																				</div>
-																				<div class="input-file">
-																					<form:input class="input-file-upload file-mobile"
+																				<div class="input-file order">
+																					<form:input id="file" class="input-file-upload order file-mobile form-control"
 																						name="file" accept="image/*" type="file"
 																						path="file" />
+																					<span class="help-block"> Provide your sample </span>
 																				</div>
 																			</div>
-																			<div class="listPreviewUpload file-mobile"
+																			<div class="listPreviewUpload order file-mobile"
 																				data-type="mobile"></div>
 																		</div>
 																	</div>
@@ -199,7 +200,7 @@
 																	<div class="form-group">
 																		<label class="control-label col-md-3">Sample:</label>
 																		<div class="col-md-4">
-																			<div class="listPreviewUpload file-mobile"
+																			<div class="listPreviewUpload order file-mobile"
 																				data-type="mobile"></div>
 																		</div>
 																	</div>

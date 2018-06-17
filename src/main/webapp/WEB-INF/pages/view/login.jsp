@@ -26,17 +26,17 @@
 	href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all"
 	rel="stylesheet" type="text/css" />
 <link
-	href="/assets/global/plugins/font-awesome/css/font-awesome.min.css"
+	href="assets/global/plugins/font-awesome/css/font-awesome.min.css"
 	rel="stylesheet" type="text/css" />
 <link
-	href="/assets/global/plugins/simple-line-icons/simple-line-icons.min.css"
+	href="assets/global/plugins/simple-line-icons/simple-line-icons.min.css"
 	rel="stylesheet" type="text/css" />
-<link href="/assets/global/plugins/bootstrap/css/bootstrap.min.css"
+<link href="assets/global/plugins/bootstrap/css/bootstrap.min.css"
 	rel="stylesheet" type="text/css" />
-<link href="/assets/pages/css/login-custom.css"
+<link href="assets/pages/css/login-custom.css"
 	rel="stylesheet" type="text/css" />
 <link
-	href="/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css"
+	href="assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css"
 	rel="stylesheet" type="text/css" />
 <!-- END GLOBAL MANDATORY STYLES -->
 
@@ -45,9 +45,9 @@
 	classname="java.util.List" ignore="true" />
 
 <!-- BEGIN THEME GLOBAL STYLES -->
-<link href="/assets/global/css/components-md.min.css" rel="stylesheet"
+<link href="assets/global/css/components-md.min.css" rel="stylesheet"
 	id="style_components" type="text/css" />
-<link href="/assets/global/css/plugins-md.min.css" rel="stylesheet"
+<link href="assets/global/css/plugins-md.min.css" rel="stylesheet"
 	type="text/css" />
 <!-- END THEME GLOBAL STYLES -->
 
@@ -56,26 +56,26 @@
 	classname="java.util.List" ignore="true" />
 
 <!-- BEGIN THEME LAYOUT STYLES -->
-<link href="/assets/layouts/layout3/css/layout.min.css" rel="stylesheet"
+<link href="assets/layouts/layout3/css/layout.min.css" rel="stylesheet"
 	type="text/css" />
-<link href="/assets/layouts/layout3/css/themes/default.min.css"
+<link href="assets/layouts/layout3/css/themes/default.min.css"
 	rel="stylesheet" type="text/css" id="style_color" />
-<link href="/assets/layouts/layout3/css/custom.min.css" rel="stylesheet"
+<link href="assets/layouts/layout3/css/custom.min.css" rel="stylesheet"
 	type="text/css" />
 <!-- END THEME LAYOUT STYLES -->
 
 <link rel="shortcut icon" href="favicon.png" />
 
-<script src="/assets/custom/zdesk-widget.js" type="text/javascript"></script>
+<script src="assets/custom/zdesk-widget.js" type="text/javascript"></script>
 </head>
 
 <body class="page-container-bg-solid page-md login">
 	<div class="logo">
 		<a href="${pageContext.request.contextPath}/home"><img
-			src="/assets/layouts/layout3/img/logo_mikatama.png"></a>
+			src="assets/layouts/layout3/img/logo_mikatama.png"></a>
 	</div>
 	<div class="content">
-		<form:form class="login-form" action="${contextPath }/loginProcess" method="post"
+		<form:form class="login-form" action="${pageContext.request.contextPath}/loginProcess" method="post"
 			novalidate="novalidate" modelAttribute="userLogin">
 			<h3 class="form-title">Sign In</h3>
 			<div class="alert alert-danger display-hide">
@@ -103,34 +103,34 @@
 	</div>
 
 	<!-- BEGIN CORE PLUGINS -->
-	<script src="/assets/global/plugins/jquery.min.js"
+	<script src="assets/global/plugins/jquery.min.js"
 		type="text/javascript"></script>
-	<script src="/assets/global/plugins/bootstrap/js/bootstrap.min.js"
+	<script src="assets/global/plugins/bootstrap/js/bootstrap.min.js"
 		type="text/javascript"></script>
-	<script src="/assets/global/plugins/js.cookie.min.js"
-		type="text/javascript"></script>
-	<script
-		src="/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js"
-		type="text/javascript"></script>
-	<script src="/assets/global/plugins/jquery.blockui.min.js"
+	<script src="assets/global/plugins/js.cookie.min.js"
 		type="text/javascript"></script>
 	<script
-		src="/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js"
+		src="assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js"
+		type="text/javascript"></script>
+	<script src="assets/global/plugins/jquery.blockui.min.js"
+		type="text/javascript"></script>
+	<script
+		src="assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js"
 		type="text/javascript"></script>
 	<!-- END CORE PLUGINS -->
 
 	<!-- BEGIN THEME GLOBAL SCRIPTS -->
-	<script src="/assets/global/scripts/app.min.js" type="text/javascript"></script>
+	<script src="assets/global/scripts/app.min.js" type="text/javascript"></script>
 	<!-- END THEME GLOBAL SCRIPTS -->
 
 	<!-- BEGIN THEME LAYOUT SCRIPTS -->
-	<script src="/assets/layouts/layout3/scripts/layout.min.js"
+	<script src="assets/layouts/layout3/scripts/layout.min.js"
 		type="text/javascript"></script>
-	<script src="/assets/layouts/layout3/scripts/demo.min.js"
+	<script src="assets/layouts/layout3/scripts/demo.min.js"
 		type="text/javascript"></script>
-	<script src="/assets/layouts/global/scripts/quick-sidebar.min.js"
+	<script src="assets/layouts/global/scripts/quick-sidebar.min.js"
 		type="text/javascript"></script>
-	<script src="/assets/layouts/global/scripts/quick-nav.min.js"
+	<script src="assets/layouts/global/scripts/quick-nav.min.js"
 		type="text/javascript"></script>
 	<!-- END THEME LAYOUT SCRIPTS -->
 </body>

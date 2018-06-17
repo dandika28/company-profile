@@ -3,7 +3,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <style>
 .totalOrder{
 	font-size: 12px;
@@ -22,34 +22,39 @@
     width:70px;
 }
 
+.other-products{
+
+}
+
 </style>
 
 <div class="portfolio-content">
 	<div class="cbp-l-project-title">${product.productName }</div>
 	<div class="cbp-l-project-container">
 		<div class="cbp-l-project-desc">
-			<div class="col-md-6">
+			<div class="col-md-5">
 				<div class="w3-content" style="max-width: 300px">
-					<c:forEach var="slideShowImage" items="${slideShow }">
-						<img class="mySlides" src="/assets/img/product/${slideShowImage }"
+					<c:forEach var="slideShowImage" items="${productImage }">
+						<img class="mySlides" src="<c:url value="images/product/${slideShowImage.image }" />"
 							style="width: 288px; height: 288px;">
+							
 					</c:forEach>
 
 					<div class="w3-row-padding w3-section">
-						<c:forEach var="item" items="${slideShow }" varStatus="status">
+						<c:forEach var="item" items="${productImage }" varStatus="status">
 							<div class="w3-col s4">
 								<img class="demo w3-opacity w3-hover-opacity-off"
-									src="/assets/img/product/${item }" style="width: 74px; height: 74px;"
-									onclick="currentDiv(${status.count})">
+									src="<c:url value="images/product/${item.image }" />" alt="" onclick="currentDiv(${status.count})" style="width: 74px; height: 74px;">
 							</div>
 						</c:forEach>
 					</div>
 				</div>
 			</div>
-			<div class="col-md-6">
-			<form:form action="${contextPath }/order" method="post" modelAttribute="orderProcess" autocomplete="off">
+			<div class="col-md-7" style="padding: 10px;">
+			<form:form action="${pageContext.request.contextPath}/order" method="post" modelAttribute="orderProcess" autocomplete="off">
 				<div class="cbp-l-project-desc-title">
-					<span>Project Description</span>
+					<span>Rp. <fmt:formatNumber value = "${product.price }" 
+					type = "currency" pattern="##,##0.00;-##,##0.00"/></span>
 				</div>
 				<div class="cbp-l-project-desc-text">${product.productDesc }</div>
 				<form:input class="totalOrder" type="number" step="1" max="500" value="" path="total"/>
@@ -62,46 +67,25 @@
 		</div>
 		<div class="cbp-l-project-details">
 			<div class="cbp-l-project-details-title">
-				<span>Project Details</span>
+				<span>Other products</span>
 			</div>
 			<ul class="cbp-l-project-details-list">
-				<li><strong>Client</strong>John Doe</li>
-				<li><strong>Date</strong>22 December 2013</li>
-				<li><strong>Categories</strong>Logo, Graphic</li>
-			</ul>
-			<a href="#" target="_blank"
-				class="cbp-l-project-details-visit btn red uppercase">visit the
-				site</a>
-		</div>
-	</div>
-	<div class="cbp-l-project-container">
-		<div class="cbp-l-project-related">
-			<div class="cbp-l-project-desc-title">
-				<span>Related Projects</span>
-			</div>
-			<ul class="cbp-l-project-related-wrap">
-				<li class="cbp-l-project-related-item"><a
-					href="../assets/global/plugins/cubeportfolio/ajax/project1.html"
-					class="cbp-singlePage cbp-l-project-related-link" rel="nofollow">
-						<img src="../assets/global/img/portfolio/600x600/1.jpg" alt="">
-						<div class="cbp-l-project-related-title">Speed Detector</div>
-				</a></li>
-				<li class="cbp-l-project-related-item"><a
-					href="../assets/global/plugins/cubeportfolio/ajax/project2.html"
-					class="cbp-singlePage cbp-l-project-related-link" rel="nofollow">
-						<img src="../assets/global/img/portfolio/600x600/5.jpg" alt="">
-						<div class="cbp-l-project-related-title">World Clock Widget</div>
-				</a></li>
-				<li class="cbp-l-project-related-item"><a
-					href="../assets/global/plugins/cubeportfolio/ajax/project1.html"
-					class="cbp-singlePage cbp-l-project-related-link" rel="nofollow">
-						<img src="../assets/global/img/portfolio/600x600/27.jpg" alt="">
-						<div class="cbp-l-project-related-title">To-Do Dashboard</div>
-				</a></li>
+			<c:forEach var="product" items="${moreProducts }">
+				<li class="list-product clearfix">
+					<a href="detail?id=${product.id }"
+						class="cbp-singlePage" rel="nofollow">
+						<img alt="" src="<c:url value="images/product/${product.image }" />">
+					</a>
+					<div class="content">
+						<h2 class="content-title">${product.productName }</h2>
+						<p>Rp. <fmt:formatNumber value = "${product.price }" 
+								type = "currency" pattern="##,##0.00;-##,##0.00"/></p>
+					</div>
+				</li>
+			</c:forEach>
 			</ul>
 		</div>
 	</div>
-	<br> <br> <br>
 </div>
 
 <script>

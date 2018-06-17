@@ -7,6 +7,7 @@ import java.nio.file.Paths;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -20,11 +21,14 @@ public class OrderProcessServiceImpl implements OrderProcessService {
 	@Autowired
 	OrderProcessDao orderProcessDao;
 	
+	@Value("${path.location.image.order}")
+	private String UPLOADED_FOLDER;
+	
 	@Override
 	public boolean insertOrder(OrderProcess orderProcess){
 		boolean success = false;
 		try {
-			String pathLocation = "src/main/resources/static/assets/img/order/";
+			String pathLocation = UPLOADED_FOLDER;
 			MultipartFile file = orderProcess.getFile();
 			
 			boolean uploadImageSuccess = false;
@@ -59,6 +63,25 @@ public class OrderProcessServiceImpl implements OrderProcessService {
 	@Override
 	public List<OrderProcess> getOrderProcess(){
 		return orderProcessDao.getOrder();
+	}
+	
+	@Override
+	public boolean updateOrderStatusById(int status, int id){
+		boolean success = false;
+		try {
+			orderProcessDao.updateOrderStatusById(status, id);
+			success = true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			success = false;
+		}
+		
+		return success;
+	}
+	
+	@Override
+	public OrderProcess getOrderById(int id){
+		return orderProcessDao.getOrderById(id);
 	}
 	
 	@Override

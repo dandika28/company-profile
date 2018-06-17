@@ -65,8 +65,7 @@
 										</div>
 										<div class="card-desc">
 											<span> Meningkatkan nilai perusahaan melalui
-												kreativitas, dan pengembangan kompetensi Sumber Daya Manusia
-											</span>
+												kreativitas, dan pengembangan kompetensi SDM</span>
 										</div>
 									</div>
 								</div>

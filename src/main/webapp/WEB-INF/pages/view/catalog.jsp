@@ -48,7 +48,7 @@
 									<div class="cbp-item graphic">
 										<div class="cbp-caption">
 											<div class="cbp-caption-defaultWrap">
-												<img src="/assets/img/product/${product.image}" alt="">
+												<img src="<c:url value="images/product/${product.image }" />" alt="">
 											</div>
 											<div class="cbp-caption-activeWrap">
 												<div class="cbp-l-caption-alignCenter">
@@ -56,10 +56,7 @@
 														<a
 															href="detail?id=${product.id }"
 															class="cbp-singlePage cbp-l-caption-buttonLeft btn red uppercase btn red uppercase"
-															rel="nofollow">more info</a> <a
-															href="/assets/global/img/portfolio/1200x900/57.jpg"
-															class="cbp-lightbox cbp-l-caption-buttonRight btn red uppercase btn red uppercase"
-															data-title="Dashboard<br>by Paul Flavius Nechita">buy</a>
+															rel="nofollow">Buy</a>
 													</div>
 												</div>
 											</div>

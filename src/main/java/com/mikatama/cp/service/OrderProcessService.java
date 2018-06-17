@@ -12,4 +12,8 @@ public interface OrderProcessService {
 
 	public String getLatestId();
 
+	public OrderProcess getOrderById(int id);
+
+	public boolean updateOrderStatusById(int status, int id);
+
 }

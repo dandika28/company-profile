@@ -64,10 +64,10 @@
 														<div class="mt-author">
 															<div class="mt-avatar">
 																<c:if test="${ourWork.process eq 'customer' }">
-																	<img src="../assets/pages/media/users/client.png" />
+																	<img src="assets/pages/media/users/client.png" />
 																</c:if>
 																<c:if test="${ourWork.process eq 'company' }">
-																	<img src="../assets/pages/media/users/call_center.png" />
+																	<img src="assets/pages/media/users/call_center.png" />
 																</c:if>
 															</div>
 														</div>
