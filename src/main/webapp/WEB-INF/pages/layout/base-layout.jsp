@@ -155,12 +155,13 @@
 	<!-- END PAGE LEVEL SCRIPTS -->
 
 	<!-- BEGIN THEME LAYOUT SCRIPTS -->
-	<script src="assets/layouts/layout3/scripts/layout.min.js"
+	<script src="assets/layouts/layout3/scripts/layout.js"
 		type="text/javascript"></script>
 	<script src="assets/layouts/layout3/scripts/demo.min.js"
 		type="text/javascript"></script>
 	<script src="assets/layouts/global/scripts/quick-sidebar.min.js"
 		type="text/javascript"></script>
+	<!-- script src="assets/metronic/js/layout.js"></script-->
 	<script src="assets/layouts/global/scripts/quick-nav.min.js"
 		type="text/javascript"></script>
 	<!-- END THEME LAYOUT SCRIPTS -->

@@ -155,13 +155,13 @@
 																						src="${pageContext.request.contextPath}/assets/img/camera.png" alt="Camera Icon" />
 																				</div>
 																				<div class="input-file order">
-																					<form:input id="file" class="input-file-upload order file-mobile form-control"
+																					<form:input id="file" class="input-file-upload-order file-mobile form-control"
 																						name="file" accept="image/*" type="file"
 																						path="file" />
 																					<span class="help-block"> Provide your sample </span>
 																				</div>
 																			</div>
-																			<div class="listPreviewUpload order file-mobile"
+																			<div class="listPreviewUpload-order file-mobile"
 																				data-type="mobile"></div>
 																		</div>
 																	</div>

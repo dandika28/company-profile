@@ -6,21 +6,21 @@
 			<div class="page-content-wrapper">
 				<!-- BEGIN CONTENT BODY -->
 				<!-- BEGIN PAGE HEAD-->
-				<!-- <div class="page-head">
+				<div class="page-head" style="height:10px;">
 					<div class="container">
-						BEGIN PAGE TITLE
+						<!-- BEGIN PAGE TITLE -->
 						<div class="page-title">
-							<h1>Home</h1>
+							<h1></h1>
 						</div>
-						END PAGE TITLE
-						BEGIN PAGE TOOLBAR
+						<!-- END PAGE TITLE -->
+						<!-- BEGIN PAGE TOOLBAR -->
 						<div class="page-toolbar">
-							BEGIN THEME PANEL
-							END THEME PANEL
+							<!-- BEGIN THEME PANEL -->
+							<!-- END THEME PANEL -->
 						</div>
-						END PAGE TOOLBAR
+						<!-- END PAGE TOOLBAR -->
 					</div>
-				</div> -->
+				</div>
 				<!-- END PAGE HEAD-->
 				<!-- BEGIN PAGE CONTENT BODY -->
 				<div class="page-content">

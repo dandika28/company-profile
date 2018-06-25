@@ -8,14 +8,14 @@
 		<div class="container">
 			<!-- BEGIN LOGO -->
 			<div class="page-logo">
-				<a href="index.html"> <img
-					src="${pageContext.request.contextPath}/assets/layouts/layout3/img/logo_mikatama.png" alt="logo"
-					class="logo-default" style="height: 35px;">
+				<a href="${pageContext.request.contextPath}/home"> <img
+					src="${pageContext.request.contextPath}/assets/layouts/layout3/img/logo_mikatama.png"
+					alt="logo" class="logo-default" style="height: 35px;">
 				</a>
 			</div>
 			<!-- END LOGO -->
 			<!-- BEGIN RESPONSIVE MENU TOGGLER -->
-			<a href="javascript:;" class="menu-toggler"></a>
+			<a href="javascript:;" class="menu-toggler responsive-toggler"></a>
 			<!-- END RESPONSIVE MENU TOGGLER -->
 			<!-- BEGIN TOP NAVIGATION MENU -->
 			<!-- END TOP NAVIGATION MENU -->
@@ -26,8 +26,7 @@
 	<div class="page-header-menu">
 		<div class="container">
 			<!-- BEGIN HEADER SEARCH BOX -->
-			<form class="search-form" action="page_general_search.html"
-				method="GET">
+			<form class="search-form" action="#" method="GET">
 				<div class="input-group">
 					<input type="text" class="form-control" placeholder="Search"
 						name="query"> <span class="input-group-btn"> <a
@@ -43,29 +42,27 @@
 				<ul class="nav navbar-nav">
 					<li aria-haspopup="true"
 						class="menu-dropdown classic-menu-dropdown "><a
-						href="${pageContext.request.contextPath}/home">Home<span class="arrow"></span></a></li>
-					<li aria-haspopup="true"
-						class="menu-dropdown classic-menu-dropdown "><a
-						href="javascript:;">Overview<span class="arrow"></span>
-					</a>
-						<ul class="dropdown-menu pull-left">
-							<li aria-haspopup="true" class=" "><a
-								href="${pageContext.request.contextPath}/culture" class="nav-link  "> <i
-									class="icon-users"></i> Our Culture
-							</a></li>
-							<li aria-haspopup="true" class=" "><a
-								href="${pageContext.request.contextPath}/how_we_work" class="nav-link  "> <i
-									class="icon-book-open"></i> How We Work
-							</a></li>
-						</ul></li>
+						href="${pageContext.request.contextPath}/home">Home<span
+							class="arrow"></span></a></li>
+
+					<li aria-haspopup="true" class=" "><a
+						href="${pageContext.request.contextPath}/culture"> Our Culture<span
+							class="arrow"></span>
+					</a></li>
+					<li aria-haspopup="true" class=" "><a
+						href="${pageContext.request.contextPath}/how_we_work"> How We Work<span
+							class="arrow"></span>
+					</a></li>
 					<li aria-haspopup="true"
 						class="menu-dropdown classic-menu-dropdown "><a
 						href="${pageContext.request.contextPath}/product">Products &
 							Services<span class="arrow"></span>
 					</a></li>
 					<li aria-haspopup="true"
-						class="menu-dropdown classic-menu-dropdown scroll-to-bottom "><a href="${pageContext.request.contextPath}/contact"
-						class="scroll-to-bottom">Contact Us<span class="arrow scroll-to-bottom"></span>
+						class="menu-dropdown classic-menu-dropdown scroll-to-bottom "><a
+						href="${pageContext.request.contextPath}/contact"
+						class="scroll-to-bottom">Contact Us<span
+							class="arrow scroll-to-bottom"></span>
 					</a></li>
 				</ul>
 			</div>

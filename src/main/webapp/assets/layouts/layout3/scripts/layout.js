@@ -42,29 +42,32 @@ var Layout = function () {
         });
 
         // handle scrolling to top on responsive menu toggler click when header is fixed for mobile view
-        $('body').on('click', '.page-header-top-fixed .page-header-top .menu-toggler', function(){
+        $('body').on('click', '.page-header-top-fixed .page-header-top', function(){
             App.scrollTop();
         });     
     };
+    
+ // handle menu toggler icon click
+    $(".page-header .menu-toggler").on("click", function(event) {
+    	console.log("click")
+        if (App.getViewPort().width < resBreakpointMd) {
+            var menu = $(".page-header .page-header-menu");
+            if (menu.is(":visible")) {
+            	console.log("here")
+                menu.slideUp(300);
+            } else {  
+            	console.log("dieu")
+                menu.slideDown(300);
+            }
+
+            if ($('body').hasClass('page-header-top-fixed')) {
+                App.scrollTop();
+            }
+        }
+    });
 
     // Handles main menu
     var handleMainMenu = function () {
-
-        // handle menu toggler icon click
-        $(".page-header .menu-toggler").on("click", function(event) {
-            if (App.getViewPort().width < resBreakpointMd) {
-                var menu = $(".page-header .page-header-menu");
-                if (menu.is(":visible")) {
-                    menu.slideUp(300);
-                } else {  
-                    menu.slideDown(300);
-                }
-
-                if ($('body').hasClass('page-header-top-fixed')) {
-                    App.scrollTop();
-                }
-            }
-        });
 
         // handle sub dropdown menu click for mobile devices only
         $(".hor-menu .menu-dropdown > a, .hor-menu .dropdown-submenu > a").on("click", function(e) {                
@@ -271,7 +274,8 @@ var Layout = function () {
             $('.hor-menu').find('li.open').removeClass('open');
 
             if (App.getViewPort().width < resBreakpointMd && $('.page-header-menu').is(":visible")) { // close the menu on mobile view while laoding a page 
-                $('.page-header .menu-toggler').click();
+                console.log("disini ga")
+            	$('.page-header .menu-toggler').click();
             }
         },
 

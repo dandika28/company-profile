@@ -44,7 +44,7 @@ $(document).ready(function(){
 			dataType    = $(this).attr('data-type'),
 			dataNumber	= $(this).attr('data-number'),
 			_spaceError;
-		console.log("kesini ga")
+		console.log("input file upload")
 			$(this).hide();
 		 if (screenWidth > 767 || deviceWidth > 767) {
              _spaceError = 100;
@@ -86,13 +86,13 @@ $(document).ready(function(){
 	      _this.attr('uploaded-mobile', 1);
 	      $('.input-file-area.file-mobile .input-file').css('z-index', -1);
       }
-	}).on('change', '.input-file-upload.order', function(evt){
+	}).on('change', '.input-file-upload-order', function(evt){
 		var _this		= $(this),
 		screenWidth	= screen.width,
 		dataType    = $(this).attr('data-type'),
 		dataNumber	= $(this).attr('data-number'),
 		_spaceError;
-	console.log("kesini ga")
+	console.log("input-file-upload order")
 		$(this).hide();
 	 if (screenWidth > 767 || deviceWidth > 767) {
          _spaceError = 100;
@@ -123,7 +123,7 @@ $(document).ready(function(){
       reader.onload = (function() {
           return function(e) {
               var _filename = files[0].name;
-          $('.listPreviewUpload.order.file-mobile').append('<div class="wrap-preview"><div class="box-image"><img title="'+_filename+'" src="'+e.target.result+'" class="thumb preview"/></div><div class="title">'+_filename+'</div><span class="cancel-file-upload order" data-type="'+dataType+'"></span></div>').fadeIn(500);
+          $('.listPreviewUpload-order.file-mobile').append('<div class="wrap-preview"><div class="box-image"><img title="'+_filename+'" src="'+e.target.result+'" class="thumb preview"/></div><div class="title">'+_filename+'</div></div>').fadeIn(500);
           
           };
       })(files);
@@ -139,12 +139,13 @@ $(document).ready(function(){
               isIE          = (navigator.appName=="Microsoft Internet Explorer"),
               dataType      = $(this).attr('data-type'),
               dataNumber	= $(this).attr('data-number');
-		console.log("number = " + dataNumber)
+		console.log("cancel file upload");
 		
 		
 		$('.input-file-upload.file-mobile.number-'+dataNumber).show();
         $('.listPreviewUpload.file-mobile.number-'+dataNumber).find('.wrap-preview').remove();
         $('.input-file-area.file-mobile .input-file').css('z-index', 2);
+        //$('.listPreviewUpload.file-mobile.number-'+dataNumber).find('.input-file-upload.file-mobile').attr("uploaded-mobile", "");
         $('.listPreviewUpload.file-mobile.number-'+dataNumber).find('.input-file-upload.file-mobile').attr("uploaded-mobile", "");
         $('.listPreviewUpload.file-mobile.number-'+dataNumber).find('.input-file-upload.file-mobile').val("");
         if(isIE) {
@@ -152,21 +153,22 @@ $(document).ready(function(){
         }
         $('.listPreviewUpload.file-mobile.number-'+dataNumber).hide();
         //$('.msg-maximum-upload.file-mobile').hide();
-    }).on('click', '.cancel-file-upload.order', function(){
+    }).on('click', '.cancel-file-upload-order', function(){
     	var   _this         = $(this),
         isIE          = (navigator.appName=="Microsoft Internet Explorer"),
         dataType      = $(this).attr('data-type'),
         dataNumber	= $(this).attr('data-number');
-
-      $('.input-file-upload.file-mobile').show();
-	  $('.listPreviewUpload.file-mobile').find('.wrap-preview').remove();
+    	console.log("cancel file upload order");
+    	
+      $('.input-file-upload-order.file-mobile').show();
+	  $('.listPreviewUpload-order.file-mobile').find('.wrap-preview').remove();
 	  $('.input-file-area.file-mobile .input-file').css('z-index', 2);
-	  $('.listPreviewUpload.file-mobile').find('.input-file-upload.file-mobile').attr("uploaded-mobile", "");
-	  $('.listPreviewUpload.file-mobile').find('.input-file-upload.file-mobile').val("");
+	  $('.listPreviewUpload-order.file-mobile').find('.input-file-upload-order.file-mobile').attr("uploaded-mobile", "");
+	  $('.listPreviewUpload-order.file-mobile').find('.input-file-upload-order.file-mobile').val("");
 	  if(isIE) {
-	      $(".input-file-upload.file-mobile").replaceWith($(".input-file-upload.file-mobile").clone(true));
+	      $(".input-file-upload-order.file-mobile").replaceWith($(".input-file-upload-order.file-mobile").clone(true));
 	  }
-	  $('.listPreviewUpload.file-mobile').hide();
+	  $('.listPreviewUpload-order.file-mobile').hide();
     }).on('click', '.add-product', function(){
     	$( "<div class='col-md-4'><input class='input-file-upload file-mobile' name='file accept='image/*' type='file' path='files' multiple='multiple' style='margin-left:-10px;'/><div class='row'></div><div class='listPreviewUpload file-mobile' data-type='mobile'></div></div>" ).insertBefore( ".add-product" );
     });
