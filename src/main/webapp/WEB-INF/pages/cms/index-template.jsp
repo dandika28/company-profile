@@ -214,10 +214,18 @@ body {
 	</div>
 	<!-- END FOOTER -->
 
-	<!--JS Plugins-->
+	<!-- BEGIN PAGE LEVEL PLUGINS -->
+	<tilesx:useAttribute id="page_level_plugins" name="page_level_plugins"
+		classname="java.util.List" ignore="true" />
+	<c:forEach var="item" items="${ page_level_plugins }">
+		<script src="${ item }" type="text/javascript"></script>
+	</c:forEach>
+	<!-- END PAGE LEVEL PLUGINS -->
+
+	<!--JS Plugins
 	<script
 		src="${pageContext.request.contextPath}/assets/metronic/js/plugins/jQuery/jQuery-2.1.4.min.js"></script>
-	<!--Bootstrap JS-->
+	<!--Bootstrap JS
 	<script
 		src="${pageContext.request.contextPath}/assets/metronic/js/bootstrap.min.js"></script>
 	<!--Alertify JS-->

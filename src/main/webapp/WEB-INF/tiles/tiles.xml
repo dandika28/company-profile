@@ -84,42 +84,81 @@
 	<definition name="orderDashboard" template="/WEB-INF/pages/cms/index-template.jsp">
 		<put-attribute name="title" value="Mikatama Unika Indonesia - Dashboard" />
 		<put-attribute name="body" value="/WEB-INF/pages/cms/dashboard/order.jsp" />
+		<put-list-attribute name="page_level_plugins">
+		</put-list-attribute>
 	</definition>
 
 	<definition name="ourCulture" extends="dashboard">
+	<put-attribute name="title" value="Mikatama Unika Indonesia - Dashboard Culture" />
 		<put-attribute name="body" value="/WEB-INF/pages/cms/dashboard/our_culture.jsp" />
+		<put-list-attribute name="page_level_plugins">
+			<add-attribute value="/mikatama/assets/metronic/js/plugins/jQuery/jQuery-2.1.4.min.js" type="string" />
+			<add-attribute value="/mikatama/assets/metronic/js/bootstrap.min.js" type="string" />
+		</put-list-attribute>
 	</definition>
 
 	<definition name="ourCommitment" extends="dashboard">
 		<put-attribute name="body" value="/WEB-INF/pages/cms/dashboard/our_commitments.jsp" />
+		<put-list-attribute name="page_level_plugins">
+			<add-attribute value="/mikatama/assets/metronic/js/plugins/jQuery/jQuery-2.1.4.min.js" type="string" />
+			<add-attribute value="/mikatama/assets/metronic/js/bootstrap.min.js" type="string" />
+		</put-list-attribute>
 	</definition>
 	
 	<definition name="editCulture" extends="dashboard">
 		<put-attribute name="body" value="/WEB-INF/pages/cms/dashboard/edit_culture.jsp"/>
+		<put-list-attribute name="page_level_plugins">
+			<add-attribute value="/mikatama/assets/metronic/js/plugins/jQuery/jQuery-2.1.4.min.js" type="string" />
+			<add-attribute value="/mikatama/assets/metronic/js/bootstrap.min.js" type="string" />
+		</put-list-attribute>
 	</definition>
 	
 	<definition name="editCommitment" extends="dashboard">
 		<put-attribute name="body" value="/WEB-INF/pages/cms/dashboard/edit_commitment.jsp"/>
+		<put-list-attribute name="page_level_plugins">
+			<add-attribute value="/mikatama/assets/metronic/js/plugins/jQuery/jQuery-2.1.4.min.js" type="string" />
+			<add-attribute value="/mikatama/assets/metronic/js/bootstrap.min.js" type="string" />
+		</put-list-attribute>
 	</definition>
 	
 	<definition name="ourWork" extends="dashboard">
 		<put-attribute name="body" value="/WEB-INF/pages/cms/dashboard/our_work.jsp"/>
+		<put-list-attribute name="page_level_plugins">
+			<add-attribute value="/mikatama/assets/metronic/js/plugins/jQuery/jQuery-2.1.4.min.js" type="string" />
+			<add-attribute value="/mikatama/assets/metronic/js/bootstrap.min.js" type="string" />
+		</put-list-attribute>
 	</definition>
 	
 	<definition name="addOurWork" extends="dashboard">
 		<put-attribute name="body" value="/WEB-INF/pages/cms/dashboard/add_work.jsp"/>
+		<put-list-attribute name="page_level_plugins">
+			<add-attribute value="/mikatama/assets/metronic/js/plugins/jQuery/jQuery-2.1.4.min.js" type="string" />
+			<add-attribute value="/mikatama/assets/metronic/js/bootstrap.min.js" type="string" />
+		</put-list-attribute>
 	</definition>
 	
 	<definition name="addOurCommitment" extends="dashboard">
 		<put-attribute name="body" value="/WEB-INF/pages/cms/dashboard/add_commitment.jsp"/>
+		<put-list-attribute name="page_level_plugins">
+			<add-attribute value="/mikatama/assets/metronic/js/plugins/jQuery/jQuery-2.1.4.min.js" type="string" />
+			<add-attribute value="/mikatama/assets/metronic/js/bootstrap.min.js" type="string" />
+		</put-list-attribute>
 	</definition>
 	
 	<definition name="addOurCulture" extends="dashboard">
 		<put-attribute name="body" value="/WEB-INF/pages/cms/dashboard/add_culture.jsp"/>
+		<put-list-attribute name="page_level_plugins">
+			<add-attribute value="/mikatama/assets/metronic/js/plugins/jQuery/jQuery-2.1.4.min.js" type="string" />
+			<add-attribute value="/mikatama/assets/metronic/js/bootstrap.min.js" type="string" />
+		</put-list-attribute>
 	</definition>
 	
 	<definition name="editOurWork" extends="dashboard">
 		<put-attribute name="body" value="/WEB-INF/pages/cms/dashboard/edit_our_work.jsp"/>
+		<put-list-attribute name="page_level_plugins">
+			<add-attribute value="/mikatama/assets/metronic/js/plugins/jQuery/jQuery-2.1.4.min.js" type="string" />
+			<add-attribute value="/mikatama/assets/metronic/js/bootstrap.min.js" type="string" />
+		</put-list-attribute>
 	</definition>
 	
 	<definition name="product_detail" template="/WEB-INF/pages/product/product_desc.jsp">
@@ -150,22 +189,42 @@
 	
 	<definition name="dashboardProduct" extends="dashboard">
 		<put-attribute name="body" value="/WEB-INF/pages/cms/dashboard/product.jsp"/>
+		<put-list-attribute name="page_level_plugins">
+			<add-attribute value="/mikatama/assets/metronic/js/plugins/jQuery/jQuery-2.1.4.min.js" type="string" />
+			<add-attribute value="/mikatama/assets/metronic/js/bootstrap.min.js" type="string" />
+		</put-list-attribute>
 	</definition>
 	
 	<definition name="editProduct" extends="dashboard">
 		<put-attribute name="body" value="/WEB-INF/pages/cms/dashboard/edit_product.jsp"/>
+		<put-list-attribute name="page_level_plugins">
+			<add-attribute value="/mikatama/assets/metronic/js/plugins/jQuery/jQuery-2.1.4.min.js" type="string" />
+			<add-attribute value="/mikatama/assets/metronic/js/bootstrap.min.js" type="string" />
+		</put-list-attribute>
 	</definition>
 	
 	<definition name="detailProduct" extends="dashboard">
 		<put-attribute name="body" value="/WEB-INF/pages/cms/dashboard/detail_product.jsp"/>
+		<put-list-attribute name="page_level_plugins">
+			<add-attribute value="/mikatama/assets/metronic/js/plugins/jQuery/jQuery-2.1.4.min.js" type="string" />
+			<add-attribute value="/mikatama/assets/metronic/js/bootstrap.min.js" type="string" />
+		</put-list-attribute>
 	</definition>
 	
 	<definition name="addProduct" extends="dashboard">
 		<put-attribute name="body" value="/WEB-INF/pages/cms/dashboard/add_product.jsp"/>
+		<put-list-attribute name="page_level_plugins">
+			<add-attribute value="/mikatama/assets/metronic/js/plugins/jQuery/jQuery-2.1.4.min.js" type="string" />
+			<add-attribute value="/mikatama/assets/metronic/js/bootstrap.min.js" type="string" />
+		</put-list-attribute>
 	</definition>
 
 	<definition name="editOrder" extends="dashboard">
 		<put-attribute name="body" value="/WEB-INF/pages/cms/dashboard/edit_order.jsp"/>
+		<put-list-attribute name="page_level_plugins">
+			<add-attribute value="/mikatama/assets/metronic/js/plugins/jQuery/jQuery-2.1.4.min.js" type="string" />
+			<add-attribute value="/mikatama/assets/metronic/js/bootstrap.min.js" type="string" />
+		</put-list-attribute>
 	</definition>
 	
 	<definition name="test" template="/WEB-INF/pages/cms/dashboard/test.jsp">

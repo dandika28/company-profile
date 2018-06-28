@@ -2,16 +2,11 @@
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-	rel="stylesheet" media="screen" />
-
 <link href="${pageContext.request.contextPath}/assets/css/starter-template.css" rel="stylesheet" media="screen" />
 <link href="${pageContext.request.contextPath}/assets/css/datatables.min.css" rel="stylesheet" media="screen" />
-
+ 
 <script
-  src="${pageContext.request.contextPath}/assets/js/datatable/jquery-3.1.1.min.js"
-  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-  crossorigin="anonymous"></script>
+  src="${pageContext.request.contextPath}/assets/js/datatable/jquery-3.1.1.min.js"></script>
 
 <script src="${pageContext.request.contextPath}/assets/js/datatable/bootstrap.min.js"></script>
 
