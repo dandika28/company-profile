@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.mikatama.cp.bean.OrderProcess;
+import com.mikatama.cp.bean.OrderProduct;
 import com.mikatama.cp.dao.OrderProcessDao;
 import com.mikatama.cp.service.OrderProcessService;
 
@@ -25,7 +25,7 @@ public class OrderProcessServiceImpl implements OrderProcessService {
 	private String UPLOADED_FOLDER;
 	
 	@Override
-	public boolean insertOrder(OrderProcess orderProcess){
+	public boolean insertOrder(OrderProduct orderProcess){
 		boolean success = false;
 		try {
 			String pathLocation = UPLOADED_FOLDER;
@@ -61,7 +61,7 @@ public class OrderProcessServiceImpl implements OrderProcessService {
 	}
 	
 	@Override
-	public List<OrderProcess> getOrderProcess(){
+	public List<OrderProduct> getOrderProcess(){
 		return orderProcessDao.getOrder();
 	}
 	
@@ -80,7 +80,7 @@ public class OrderProcessServiceImpl implements OrderProcessService {
 	}
 	
 	@Override
-	public OrderProcess getOrderById(int id){
+	public OrderProduct getOrderById(int id){
 		return orderProcessDao.getOrderById(id);
 	}
 	

@@ -2,29 +2,36 @@ package com.mikatama.cp.bean;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Transient;
+
 import org.springframework.web.multipart.MultipartFile;
 
-public class OrderProcess {
+@Entity
+public class OrderProduct {
 
-	private String orderId;
+	@Id
+	private String id;
 	private String productId;
 	private int total;
 	private String fullname;
 	private String address;
 	private String phone;
 	private String email;
+	@Transient
 	private MultipartFile file;
 	private String imageName;
 	private String updateBy;
 	private int status;
-	private Date createdDate;
+	private Date created_date;
 
 	public String getOrderId() {
-		return orderId;
+		return id;
 	}
 
 	public void setOrderId(String orderId) {
-		this.orderId = orderId;
+		this.id = orderId;
 	}
 
 	public String getProductId() {
@@ -108,11 +115,11 @@ public class OrderProcess {
 	}
 
 	public Date getCreatedDate() {
-		return createdDate;
+		return created_date;
 	}
 
 	public void setCreatedDate(Date createdDate) {
-		this.createdDate = createdDate;
+		this.created_date = createdDate;
 	}
 	
 	

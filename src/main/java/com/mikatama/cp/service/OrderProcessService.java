@@ -2,17 +2,17 @@ package com.mikatama.cp.service;
 
 import java.util.List;
 
-import com.mikatama.cp.bean.OrderProcess;
+import com.mikatama.cp.bean.OrderProduct;
 
 public interface OrderProcessService {
 
-	public boolean insertOrder(OrderProcess orderProcess);
+	public boolean insertOrder(OrderProduct orderProcess);
 
-	public List<OrderProcess> getOrderProcess();
+	public List<OrderProduct> getOrderProcess();
 
 	public String getLatestId();
 
-	public OrderProcess getOrderById(int id);
+	public OrderProduct getOrderById(int id);
 
 	public boolean updateOrderStatusById(int status, int id);
 

@@ -8,12 +8,17 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -21,17 +26,24 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.mikatama.cp.bean.OrderProcess;
+import com.google.gson.Gson;
+import com.mikatama.cp.bean.OrderProduct;
+import com.mikatama.cp.bean.OrderProductModel;
 import com.mikatama.cp.bean.Product;
 import com.mikatama.cp.bean.ProductAttribute;
 import com.mikatama.cp.bean.ProductImage;
 import com.mikatama.cp.bean.User;
 import com.mikatama.cp.service.OrderProcessService;
 import com.mikatama.cp.service.ProductService;
+import com.mikatama.cp.util.AppUtil;
+import com.mikatama.cp.util.DataTableRequest;
+import com.mikatama.cp.util.DataTableResults;
+import com.mikatama.cp.util.PaginationCriteria;
 
 @Controller
 public class OrderController {
@@ -46,10 +58,13 @@ public class OrderController {
 	private String UPLOADED_FOLDER;
 	
 	//private static String UPLOADED_FOLDER = "F://temp//mikatama//";
+	
+	@PersistenceContext
+	private EntityManager entityManager;
 
 	@PostMapping("/order")
 	public ModelAndView postOrderProduct(HttpServletRequest request, HttpServletResponse response,
-			@ModelAttribute("orderProcess") OrderProcess orderProcess, BindingResult bindingResult){
+			@ModelAttribute("orderProcess") OrderProduct orderProcess, BindingResult bindingResult){
 		
 		ModelAndView modelAndView = new ModelAndView("orderProduct");
 		
@@ -58,7 +73,7 @@ public class OrderController {
 	
 	@PostMapping("/confirmation")
 	public ModelAndView confirmationOrderProduct(HttpServletRequest request, HttpServletResponse response, 
-			@ModelAttribute("orderProcess") OrderProcess orderProcess, BindingResult bindingResult){
+			@ModelAttribute("orderProcess") OrderProduct orderProcess, BindingResult bindingResult){
 		
 		ModelAndView modelAndView = new ModelAndView();
 		
@@ -240,30 +255,62 @@ public class OrderController {
 	public ModelAndView dashboardOrder(HttpServletRequest request, HttpServletResponse response,
 			@ModelAttribute("userLogin") User user){
 		
-		ModelAndView modelAndView = new ModelAndView("dashboard");
+		ModelAndView modelAndView = new ModelAndView("orderDashboard");
 		
 		if(request.getSession().getAttribute("userSession")==null){
 			return modelAndView = new ModelAndView("redirect:/login");
 		}
 		
-		List<OrderProcess> list = orderService.getOrderProcess();
+		//List<OrderProcess> list = orderService.getOrderProcess();
 		
-		modelAndView.addObject("orders", list);
+		//modelAndView.addObject("orders", list);
 		
 		return modelAndView;
+	}
+	
+	@GetMapping("/dashboard/order/paginated")
+	@ResponseBody
+	public String dashboardOrderPaginated(HttpServletRequest request, HttpServletResponse response, Model model){
+		
+		DataTableRequest<OrderProduct> dataTableInRQ = new DataTableRequest<OrderProduct>(request);
+		PaginationCriteria pagination = dataTableInRQ.getPaginationRequest();
+		
+		String baseQuery = "SELECT id, name, created_date, status,(SELECT COUNT(1) FROM ORDERPRODUCT) AS total_records FROM ORDERPRODUCT";
+		String paginatedQuery = AppUtil.buildPaginatedQuery(baseQuery, pagination);
+		
+		System.out.println(paginatedQuery);
+		
+		Query query = entityManager.createNativeQuery(paginatedQuery, OrderProductModel.class);
+		
+		@SuppressWarnings("unchecked")
+		List<OrderProductModel> orderProcessList = query.getResultList();
+		
+		DataTableResults<OrderProductModel> dataTableResult = new DataTableResults<OrderProductModel>();
+		dataTableResult.setDraw(dataTableInRQ.getDraw());
+		dataTableResult.setListOfDataObjects(orderProcessList);
+		if(!AppUtil.isObjectEmpty(orderProcessList)){
+			dataTableResult.setRecordsTotal(orderProcessList.get(0).getTotalRecords().toString());
+			if(dataTableInRQ.getPaginationRequest().isFilterByEmpty()){
+				dataTableResult.setRecordsFiltered(orderProcessList.get(0).getTotalRecords().toString());
+			} else {
+				dataTableResult.setRecordsFiltered(Integer.toString(orderProcessList.size()));
+			}
+		}
+		
+		return new Gson().toJson(dataTableResult);
 	}
 	
 	@GetMapping(value = "/dashboard/order/edit")
 	public ModelAndView getEditOrder(HttpServletRequest request,
 			@RequestParam(value="id", required = true) String id,
-			@ModelAttribute("orderProcess") OrderProcess order){
+			@ModelAttribute("orderProcess") OrderProduct order){
 		
 		ModelAndView modelAndView = new ModelAndView("editOrder");
 		if(request.getSession().getAttribute("userSession")==null){
         	return modelAndView = new ModelAndView("redirect:/login");
         }
 		
-		OrderProcess orderProcess = orderService.getOrderById(Integer.parseInt(id));
+		OrderProduct orderProcess = orderService.getOrderById(Integer.parseInt(id));
 		Product product = productService.getProductById(Integer.parseInt(orderProcess.getProductId()));
 		
 		modelAndView.addObject("userDetail", (User) request.getSession().getAttribute("userSession"));
@@ -276,7 +323,7 @@ public class OrderController {
 	
 	@PostMapping(value = "/dashboard/order/edit")
 	public ModelAndView postEditOrder(HttpServletRequest request, HttpServletResponse response,
-			@ModelAttribute("orderProcess") OrderProcess order, BindingResult bindingResult){
+			@ModelAttribute("orderProcess") OrderProduct order, BindingResult bindingResult){
 		
 		ModelAndView modelAndView = new ModelAndView("editOrder");
 		if(request.getSession().getAttribute("userSession")==null){
@@ -286,7 +333,7 @@ public class OrderController {
 		boolean updateStatus = orderService.updateOrderStatusById(order.getStatus(), Integer.parseInt(order.getOrderId()));
 		
 		if(updateStatus=true){
-			OrderProcess orderProcess = orderService.getOrderById(Integer.parseInt(order.getOrderId()));
+			OrderProduct orderProcess = orderService.getOrderById(Integer.parseInt(order.getOrderId()));
 			Product product = productService.getProductById(Integer.parseInt(orderProcess.getProductId()));
 			modelAndView.addObject("productName", product.getProductName());
 			modelAndView.addObject("image", orderProcess.getImageName());

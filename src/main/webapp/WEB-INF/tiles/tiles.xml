@@ -80,6 +80,11 @@
 		<put-attribute name="title" value="Mikatama Unika Indonesia - Login" />
 		<put-attribute name="body" value="/WEB-INF/pages/cms/dashboard-template.jsp" />
 	</definition>
+	
+	<definition name="orderDashboard" template="/WEB-INF/pages/cms/index-template.jsp">
+		<put-attribute name="title" value="Mikatama Unika Indonesia - Dashboard" />
+		<put-attribute name="body" value="/WEB-INF/pages/cms/dashboard/order.jsp" />
+	</definition>
 
 	<definition name="ourCulture" extends="dashboard">
 		<put-attribute name="body" value="/WEB-INF/pages/cms/dashboard/our_culture.jsp" />
@@ -161,6 +166,9 @@
 
 	<definition name="editOrder" extends="dashboard">
 		<put-attribute name="body" value="/WEB-INF/pages/cms/dashboard/edit_order.jsp"/>
+	</definition>
+	
+	<definition name="test" template="/WEB-INF/pages/cms/dashboard/test.jsp">
 	</definition>
 
 </tiles-definitions>

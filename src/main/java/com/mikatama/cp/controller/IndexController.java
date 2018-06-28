@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.mikatama.cp.bean.OrderProcess;
+import com.mikatama.cp.bean.OrderProduct;
 import com.mikatama.cp.bean.Product;
 import com.mikatama.cp.bean.ProductImage;
 import com.mikatama.cp.bean.User;
@@ -98,7 +98,7 @@ public class IndexController {
 	
 	@GetMapping(value="detail")
 	public ModelAndView detailProduct(HttpServletRequest request, @RequestParam(value="id", required=true) String id,
-			@ModelAttribute("orderProcess") OrderProcess orderProcess){
+			@ModelAttribute("orderProcess") OrderProduct orderProcess){
 		ModelAndView view = new ModelAndView("product_detail");
 		List<ProductImage> lists = productService.getProductImageListByProductId(Integer.parseInt(id));
 		view.addObject("moreProducts", productService.getRandomProductByLimit(5));

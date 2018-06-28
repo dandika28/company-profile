@@ -15,7 +15,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
-import com.mikatama.cp.bean.OrderProcess;
+import com.mikatama.cp.bean.OrderProduct;
 import com.mikatama.cp.bean.Product;
 import com.mikatama.cp.dao.OrderProcessDao;
 
@@ -29,12 +29,12 @@ public class OrderProcessDaoImpl implements OrderProcessDao {
 	@Autowired
 	JdbcTemplate jdbcTemplate;
 	
-	String sqlInsertOrderProcess = "INSERT INTO order_product(product_id, name, address, email, phone, total, imageName, updateBy, status)"
+	String sqlInsertOrderProcess = "INSERT INTO orderproduct(product_id, name, address, email, phone, total, imageName, updateBy, status)"
 			+ " VALUES (?,?,?,?,?,?,?,?,?)";
-	String sqlGetAllOrderProduct = "SELECT * FROM order_product order by id";
+	String sqlGetAllOrderProduct = "SELECT * FROM orderproduct order by id";
 	String sqlGetSequenceId = "SELECT Auto_increment FROM information_schema.tables WHERE table_schema = 'mikatama' and table_name=?";
-	String sqlGetOrderById = "SELECT * FROM order_product WHERE id=?";
-	String sqlUpdateOrderStatusById = "UPDATE order_product SET status = ? WHERE id=?";
+	String sqlGetOrderById = "SELECT * FROM orderproduct WHERE id=?";
+	String sqlUpdateOrderStatusById = "UPDATE orderproduct SET status = ? WHERE id=?";
 	
 	public void setDataSource(DataSource dataSource){
 		jdbcTemplate = new JdbcTemplate(dataSource);
@@ -46,8 +46,8 @@ public class OrderProcessDaoImpl implements OrderProcessDao {
 	}
 	
 	@Override
-	public OrderProcess getOrderById(int id){
-		List<OrderProcess> orders = null;
+	public OrderProduct getOrderById(int id){
+		List<OrderProduct> orders = null;
 		orders = jdbcTemplate.query(sqlGetOrderById, new Object[]{id}, new OrderProcessRowMapper());
 		if(orders.size() > 0){
 			logger.info("Order name: " + orders.get(0).getFullname());
@@ -57,31 +57,31 @@ public class OrderProcessDaoImpl implements OrderProcessDao {
 	}
 	
 	@Override
-	public void insertOrder(OrderProcess orderProcess){
+	public void insertOrder(OrderProduct orderProcess){
 		jdbcTemplate.update(sqlInsertOrderProcess, new Object[] {orderProcess.getProductId(),
 				orderProcess.getFullname(), orderProcess.getAddress(), orderProcess.getEmail(), orderProcess.getPhone(), 
 				orderProcess.getTotal(), orderProcess.getImageName(), null, 0});
 	}
 	
 	@Override
-	public List<OrderProcess> getOrder(){
-		List<OrderProcess> list = null;
+	public List<OrderProduct> getOrder(){
+		List<OrderProduct> list = null;
 		list = jdbcTemplate.query(sqlGetAllOrderProduct, new OrderProcessRowMapper());
 		return list;
 	}
 	
 	@Override
 	public String getLatestId(){
-		String id = jdbcTemplate.queryForObject(sqlGetSequenceId, new Object[] {"order_product"}, String.class);
+		String id = jdbcTemplate.queryForObject(sqlGetSequenceId, new Object[] {"orderproduct"}, String.class);
 		return id;
 	}
 }
 
-class OrderProcessRowMapper implements RowMapper<OrderProcess>{
+class OrderProcessRowMapper implements RowMapper<OrderProduct>{
 	
 	@Override
-	public OrderProcess mapRow(ResultSet rs, int rowNum) throws SQLException{
-		OrderProcess orderProcess = new OrderProcess();
+	public OrderProduct mapRow(ResultSet rs, int rowNum) throws SQLException{
+		OrderProduct orderProcess = new OrderProduct();
 		orderProcess.setOrderId(rs.getString("id"));
 		orderProcess.setProductId(rs.getString("product_id"));
 		orderProcess.setFullname(rs.getString("name"));

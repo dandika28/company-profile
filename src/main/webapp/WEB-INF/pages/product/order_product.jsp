@@ -200,7 +200,7 @@
 																	<div class="form-group">
 																		<label class="control-label col-md-3">Sample:</label>
 																		<div class="col-md-4">
-																			<div class="listPreviewUpload order file-mobile"
+																			<div class="listPreviewUpload-order file-mobile"
 																				data-type="mobile"></div>
 																		</div>
 																	</div>

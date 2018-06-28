@@ -41,6 +41,7 @@ $(document).ready(function(){
 	}).on('change', '.input-file-upload', function(evt){
 		var _this		= $(this),
 			screenWidth	= screen.width,
+			deviceWidth = $(window).width(),
 			dataType    = $(this).attr('data-type'),
 			dataNumber	= $(this).attr('data-number'),
 			_spaceError;
@@ -89,6 +90,7 @@ $(document).ready(function(){
 	}).on('change', '.input-file-upload-order', function(evt){
 		var _this		= $(this),
 		screenWidth	= screen.width,
+		deviceWidth = $(window).width(),
 		dataType    = $(this).attr('data-type'),
 		dataNumber	= $(this).attr('data-number'),
 		_spaceError;
