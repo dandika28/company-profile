@@ -275,7 +275,7 @@ public class OrderController {
 		DataTableRequest<OrderProduct> dataTableInRQ = new DataTableRequest<OrderProduct>(request);
 		PaginationCriteria pagination = dataTableInRQ.getPaginationRequest();
 		
-		String baseQuery = "SELECT id, name, created_date, status,(SELECT COUNT(1) FROM ORDERPRODUCT) AS total_records FROM ORDERPRODUCT";
+		String baseQuery = "SELECT id, name, created_date, status,(SELECT COUNT(1) FROM orderproduct) AS total_records FROM orderproduct";
 		String paginatedQuery = AppUtil.buildPaginatedQuery(baseQuery, pagination);
 		
 		System.out.println(paginatedQuery);

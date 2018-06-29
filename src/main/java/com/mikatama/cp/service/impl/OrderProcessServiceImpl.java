@@ -38,6 +38,7 @@ public class OrderProcessServiceImpl implements OrderProcessService {
 	    		try {
 					byte[] bytes = file.getBytes();
 					Path path = Paths.get(pathLocation + imageName);
+					System.out.println("path : " + path);
 					Files.write(path,bytes);
 					
 					uploadImageSuccess=true;
@@ -45,7 +46,7 @@ public class OrderProcessServiceImpl implements OrderProcessService {
 					e.printStackTrace();
 				}
 	    	}
-			
+			System.out.println("upload Image Success ? " + uploadImageSuccess);
 	    	if(uploadImageSuccess=true){
 	    		orderProcess.setImageName(imageName);
 	    		orderProcessDao.insertOrder(orderProcess);

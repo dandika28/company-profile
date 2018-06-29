@@ -116,9 +116,9 @@
 	<!-- END QUICK NAV -->
 
 	<!-- BEGIN CORE PLUGINS -->
-	<script src="assets/metronic/js/metronic.js"
-		type="text/javascript"></script>
 	<script src="assets/global/plugins/jquery.min.js"
+		type="text/javascript"></script>
+	<script src="assets/metronic/js/metronic.js"
 		type="text/javascript"></script>
 	<script src="assets/global/plugins/bootstrap/js/bootstrap.min.js"
 		type="text/javascript"></script>

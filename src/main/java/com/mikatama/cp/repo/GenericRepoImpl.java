@@ -18,7 +18,7 @@ public class GenericRepoImpl implements GenericRepo {
 	
 	@Override
 	public List<OrderProductModel> getOrderProductModel(){
-		String qry = "SELECT id, name, createdDate, status, 1 AS total_records FROM ORDERPRODUCT";
+		String qry = "SELECT id, name, createdDate, status, 1 AS total_records FROM orderproduct";
 		Query query = entityManager.createNativeQuery(qry, OrderProductModel.class);
 		
 		List<OrderProductModel> daoDtolist = query.getResultList();
