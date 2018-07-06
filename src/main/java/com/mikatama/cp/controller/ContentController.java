@@ -429,6 +429,7 @@ public class ContentController {
 		} catch (Exception e) {
 			model.addAttribute("message", "Fail! -> uploaded filename: " + file.getOriginalFilename());
 		}
+    	modelAndView.addObject("contents", contentHomepageService.getListContentHomepage());
     	return modelAndView;
     }
     
@@ -466,7 +467,7 @@ public class ContentController {
     	view.addObject("content", homepage);
     	view.addObject("id", homepage.getId());
     	
-    	return view;
+    	return new ModelAndView("redirect:/dashboard/content/homepage");
     }
     
 }
