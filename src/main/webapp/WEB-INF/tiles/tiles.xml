@@ -195,6 +195,30 @@
 		</put-list-attribute>
 	</definition>
 	
+	<definition name="dashboardBrochure" extends="dashboard">
+		<put-attribute name="body" value="/WEB-INF/pages/cms/dashboard/brosur.jsp"/>
+		<put-list-attribute name="page_level_plugins">
+			<add-attribute value="/mikatama/assets/metronic/js/plugins/jQuery/jQuery-2.1.4.min.js" type="string" />
+			<add-attribute value="/mikatama/assets/metronic/js/bootstrap.min.js" type="string" />
+		</put-list-attribute>
+	</definition>
+	
+	<definition name="dashboardHomeImage" extends="dashboard">
+		<put-attribute name="body" value="/WEB-INF/pages/cms/dashboard/homepage.jsp"/>
+		<put-list-attribute name="page_level_plugins">
+			<add-attribute value="/mikatama/assets/metronic/js/plugins/jQuery/jQuery-2.1.4.min.js" type="string" />
+			<add-attribute value="/mikatama/assets/metronic/js/bootstrap.min.js" type="string" />
+		</put-list-attribute>
+	</definition>
+	
+	<definition name="editContentHomepage" extends="dashboard">
+		<put-attribute name="body" value="/WEB-INF/pages/cms/dashboard/edit_content_homepage.jsp"/>
+		<put-list-attribute name="page_level_plugins">
+			<add-attribute value="/mikatama/assets/metronic/js/plugins/jQuery/jQuery-2.1.4.min.js" type="string" />
+			<add-attribute value="/mikatama/assets/metronic/js/bootstrap.min.js" type="string" />
+		</put-list-attribute>
+	</definition>
+	
 	<definition name="editProduct" extends="dashboard">
 		<put-attribute name="body" value="/WEB-INF/pages/cms/dashboard/edit_product.jsp"/>
 		<put-list-attribute name="page_level_plugins">

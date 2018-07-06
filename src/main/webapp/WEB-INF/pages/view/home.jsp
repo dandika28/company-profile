@@ -30,12 +30,12 @@
 						<!-- BEGIN PAGE CONTENT INNER -->
 						<div class="page-content-inner">
 							<!-- BEGIN CONTENT HEADER -->
-							<div class="row margin-bottom-40 about-header">
+							<div class="row margin-bottom-40 about-header" style="background-image: url(${homeImage});">
 								<div class="col-md-12">
 									<h1>MIKATAMA UNIKA</h1>
 									<h2>Solution Expert in Display and Stall</h2>
-									<button type="button" class="btn btn-danger">JOIN US
-										TODAY</button>
+									<a href="${pageContext.request.contextPath}/product" class="btn btn-danger">JOIN US
+										TODAY</a>
 								</div>
 							</div>
 							<!-- END CONTENT HEADER -->
@@ -47,11 +47,10 @@
 											<i class="icon-user-follow font-red-sunglo theme-font"></i>
 										</div>
 										<div class="card-title">
-											<span> Innovative </span>
+											<span> ${content[0].title }</span>
 										</div>
 										<div class="card-desc">
-											<span> Menjadi perusahaan manufaktur unggulan dalam
-												bidang acrylic melalui karya yang selalu inovatif</span>
+											<span>${content[0].content }</span>
 										</div>
 									</div>
 								</div>
@@ -61,11 +60,10 @@
 											<i class="icon-trophy font-green-haze theme-font"></i>
 										</div>
 										<div class="card-title">
-											<span> Creative </span>
+											<span> ${content[1].title }</span>
 										</div>
 										<div class="card-desc">
-											<span> Meningkatkan nilai perusahaan melalui
-												kreativitas, dan pengembangan kompetensi SDM</span>
+											<span>${content[1].content }</span>
 										</div>
 									</div>
 								</div>
@@ -75,10 +73,10 @@
 											<i class="icon-basket font-purple-wisteria theme-font"></i>
 										</div>
 										<div class="card-title">
-											<span> Valuable </span>
+											<span> ${content[2].title }</span>
 										</div>
 										<div class="card-desc">
-											<span> Menciptakan kemanfaataan jangka panjang antara perusahaan dengan seluruh mitra usaha </span>
+											<span>${content[2].content }</span>
 										</div>
 									</div>
 								</div>
@@ -88,11 +86,10 @@
 											<i class="icon-layers font-blue theme-font"></i>
 										</div>
 										<div class="card-title">
-											<span> Fairness </span>
+											<span> ${content[3].title }</span>
 										</div>
 										<div class="card-desc">
-											<span> Menjalankan usaha secara adil dengan
-												memperhatikan azas manfaat bagi semua pihak yang terlibat </span>
+											<span>${content[3].content }</span>
 										</div>
 									</div>
 								</div>

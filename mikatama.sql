@@ -51,6 +51,22 @@ REPLACE INTO `content_culture` (`id`, `title`, `content`, `image`) VALUES
 	(6, 'Ekonomis', '<p>Selalu berusaha agar produk tetap bernilai ekonomis dengan kualitas terbaik.</p>', 'economical.jpg');
 /*!40000 ALTER TABLE `content_culture` ENABLE KEYS */;
 
+-- Dumping structure for table mikatama.content_homepage
+CREATE TABLE IF NOT EXISTS `content_homepage` (
+  `id` int(11) DEFAULT NULL,
+  `title` varchar(50) DEFAULT NULL,
+  `content` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Dumping data for table mikatama.content_homepage: ~0 rows (approximately)
+/*!40000 ALTER TABLE `content_homepage` DISABLE KEYS */;
+REPLACE INTO `content_homepage` (`id`, `title`, `content`) VALUES
+	(1, 'Innovative', '<p>Menjadi perusahaan manufaktur unggulan dalam bidang acrylic melalui karya yang selalu inovatif ye gaa</p>'),
+	(2, 'Creative', '<p>Meningkatkan nilai perusahaan melalui kreativitas, dan pengembangan kompetensi SDM</p>'),
+	(3, 'Valuable', '<p>Menciptakan kemanfaataan jangka panjang antara perusahaan dengan seluruh mitra usaha</p>'),
+	(4, 'Fairness', '<p>Menjalankan usaha secara adil dengan memperhatikan azas manfaat bagi semua pihak yang terlibat</p>');
+/*!40000 ALTER TABLE `content_homepage` ENABLE KEYS */;
+
 -- Dumping structure for table mikatama.content_howtowork
 CREATE TABLE IF NOT EXISTS `content_howtowork` (
   `id` int(11) NOT NULL,
@@ -86,29 +102,12 @@ CREATE TABLE IF NOT EXISTS `orderproduct` (
   `updateBy` varchar(50) DEFAULT NULL,
   `status` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1002 DEFAULT CHARSET=latin1;
 
--- Dumping data for table mikatama.orderproduct: ~17 rows (approximately)
+-- Dumping data for table mikatama.orderproduct: ~1 rows (approximately)
 /*!40000 ALTER TABLE `orderproduct` DISABLE KEYS */;
 REPLACE INTO `orderproduct` (`id`, `product_id`, `name`, `address`, `email`, `phone`, `total`, `imageName`, `created_date`, `updateBy`, `status`) VALUES
-	(1, 1, 'test23', 'test23', 'test23@test.com', '80900023', 3, 'test23.jpg', '2018-06-10 22:00:00', '', 1),
-	(2, 1, 'test23', 'test23', 'test23@test.com', '80900023', 3, 'test23.jpg', '2018-06-10 22:00:00', '', 0),
-	(3, 1, 'test23', 'test23', 'test23@test.com', '80900023', 3, 'test23.jpg', '2018-06-10 22:00:00', '', 0),
-	(4, 1, 'test23', 'test23', 'test23@test.com', '80900023', 3, 'test23.jpg', '2018-06-10 22:00:00', '', 0),
-	(7, 2, 'test percobaan', 'percobaan', 'test@test.com', '081887387', 1, '7_dian_prio_pass.png', '2018-06-10 22:00:00', NULL, 0),
-	(8, 2, 'percobaan', 'perbaikan', 'test@test.com', '080808090', 1, '8_dian_prio_pass.png', '2018-06-10 22:00:00', NULL, 0),
-	(9, 2, 'tezt', 'jajal dlu yaaa', 'test@test.com', '0892829289', 1, '9_dian_prio_pass.png', '2018-06-10 22:00:00', NULL, 0),
-	(10, 1, 'test coy', 'percobaan', 'percobaa@tes.com', '087877287', 1, '10_prio pass.png', '2018-06-10 22:00:00', NULL, 0),
-	(11, 2, 'test jajal dulu', 'perum beee', 'test@test.com', '0817672627', 1, '11_prio pass.png', '2018-06-10 22:00:00', NULL, 0),
-	(12, 2, 'jajal', 'jajal', 'jajal@test.com', '989898', 1, '12_prio pass.png', '2018-06-10 22:00:00', NULL, 0),
-	(13, 2, 'test empat', 'test', 'test@test.com', '08892882', 4, '13_Capture.JPG', '2018-06-10 22:00:00', NULL, 0),
-	(14, 5, 'coba product lima', 'test', 'test@test.com', '08282728', 5, '14_dian_prio_pass.png', '2018-06-10 22:00:00', NULL, 0),
-	(15, 5, 'test', 'coba', 'test@coba.com', '0887878', 5, '15_XL Diamater.png', '2018-06-10 22:00:00', NULL, 0),
-	(18, 2, '', '', '', '', 0, '18_', '2018-06-10 22:00:00', NULL, 0),
-	(19, 2, 'jajal', 'poeoeieo', 'test@tes.com', '01010101', 1, '19_XL Diamater.png', '2018-06-11 22:58:11', NULL, 0),
-	(22, 3, 'percobaan produk tiga', 'alamat tiga', 'test@test.com', '088498489', 5, '22_logo.jpg', '2018-06-26 09:15:32', NULL, 0),
-	(23, 2, 'test produk dua', 'alamat produk dua', 'test@test', '08878837388', 32, '23_logo.jpg', '2018-06-26 09:38:57', NULL, 0),
-	(24, 3, 'percobaan', 'percobaan', 'test@test', '088989898', 2, '24_logo.jpg', '2018-06-28 14:28:45', NULL, 0);
+	(1001, 2, 'percobaan', 'test', 'test@test', '983838', 3, '1001_img3.jpg', '2018-07-05 14:38:46', NULL, 0);
 /*!40000 ALTER TABLE `orderproduct` ENABLE KEYS */;
 
 -- Dumping structure for table mikatama.orderproductmodel
@@ -140,9 +139,9 @@ CREATE TABLE IF NOT EXISTS `product` (
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
 REPLACE INTO `product` (`id`, `product_name`, `product_desc`, `price`, `image`, `stock`, `status`) VALUES
 	(1, 'Acrylic Grafir', 'Merupakan salah satu produk inovatif, cetakan gambar dibuat dengan grafir mesin laser PT Mikatama Unika Indonesia', '100000', 'grafir.jpg', 0, 1),
-	(2, 'Plakat Mikatama', 'Produk Unggulan yang sangat diminati', '75000', 'plakat.jpg', 20, 1),
-	(3, 'Acrylic Scorpion', 'Merupakan salah satu produk inovatif PT Mikatama Unika Indonesia, dapat dijadikan sebagai koleksi/hadiah.', '50000', 'scorpion.jpg', 43, 1),
-	(4, 'Short Acrylic', 'PT Mikatama Unika Indonesia bekerjasama dengan PT Standardpen Industries.digunakan untuk tempat alat tulis. (pena, pensil, stabilo dll)', '50000', 'short_acrylic.jpg', 10, 1),
+	(2, 'Plakat Mikatama', 'Produk Unggulan yang sangat diminati', '75000', 'plakat.jpg', 17, 1),
+	(3, 'Acrylic Scorpion', 'Merupakan salah satu produk inovatif PT Mikatama Unika Indonesia, dapat dijadikan sebagai koleksi/hadiah.', '50000', 'scorpion.jpg', 41, 1),
+	(4, 'Short Acrylic', 'PT Mikatama Unika Indonesia bekerjasama dengan PT Standardpen Industries.digunakan untuk tempat alat tulis. (pena, pensil, stabilo dll)', '50000', 'short_acrylic.jpg', 8, 1),
 	(7, 'test yaa', '<p>tesygvn</p>', '50000', 'dian_prio_pass.png', 10, 1),
 	(8, 'percobaan', '<p>percobaan</p>', '10000', 'dian_prio_pass.png', 10, 1);
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
@@ -199,7 +198,9 @@ SET SQL_MODE=@OLDTMP_SQL_MODE;
 -- Dumping structure for trigger mikatama.order_creation_timestamp
 SET @OLDTMP_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION';
 DELIMITER //
-CREATE TRIGGER `order_creation_timestamp` BEFORE INSERT ON `orderproduct` FOR EACH ROW SET NEW.created_date = NOW()//
+CREATE TRIGGER `order_creation_timestamp` BEFORE INSERT ON `orderproduct` FOR EACH ROW BEGIN
+	SET NEW.created_date = NOW();
+END//
 DELIMITER ;
 SET SQL_MODE=@OLDTMP_SQL_MODE;
 

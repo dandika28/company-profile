@@ -194,6 +194,14 @@ body {
 						href="${pageContext.request.contextPath}/dashboard/product"
 						class="name"> <i class="fa fa-bitbucket"></i> <span
 							class="title">Product</span></a></li>
+					<li><a
+						href="${pageContext.request.contextPath}/dashboard/document/brochure"
+						class="name"> <i class="fa fa-file"></i> <span
+							class="title">Upload Brochure</span></a></li>
+					<li><a
+						href="${pageContext.request.contextPath}/dashboard/content/homepage"
+						class="name"> <i class="fa fa-home"></i> <span
+							class="title">Homepage Content</span></a></li>
 				</ul>
 			</div>
 		</div>

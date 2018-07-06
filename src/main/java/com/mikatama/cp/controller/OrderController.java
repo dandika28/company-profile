@@ -7,6 +7,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -29,15 +30,18 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.method.annotation.MvcUriComponentsBuilder;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.google.gson.Gson;
+import com.mikatama.cp.bean.FileInfo;
 import com.mikatama.cp.bean.OrderProduct;
 import com.mikatama.cp.bean.OrderProductModel;
 import com.mikatama.cp.bean.Product;
 import com.mikatama.cp.bean.ProductAttribute;
 import com.mikatama.cp.bean.ProductImage;
 import com.mikatama.cp.bean.User;
+import com.mikatama.cp.filestorage.FileStorage;
 import com.mikatama.cp.service.OrderProcessService;
 import com.mikatama.cp.service.ProductService;
 import com.mikatama.cp.util.AppUtil;
@@ -54,9 +58,14 @@ public class OrderController {
 	@Autowired
 	ProductService productService;
 	
+	@Autowired
+	FileStorage fileStorage;
+	
 	@Value("${path.location.image.product}")
 	private String UPLOADED_FOLDER;
 	
+	@Value("${path.location.brochure.document}")
+	private String pathLocationDocument;
 	//private static String UPLOADED_FOLDER = "F://temp//mikatama//";
 	
 	@PersistenceContext
@@ -67,6 +76,19 @@ public class OrderController {
 			@ModelAttribute("orderProcess") OrderProduct orderProcess, BindingResult bindingResult){
 		
 		ModelAndView modelAndView = new ModelAndView("orderProduct");
+		List<FileInfo> fileInfos = fileStorage.loadFiles(pathLocationDocument).map(
+				path -> {
+					String filename = path.getFileName().toString();
+					String url = MvcUriComponentsBuilder.fromMethodName(IndexController.class,
+							"downloadFile", path.getFileName().toString()).build().toString();
+					return new FileInfo(filename, url);
+				}).collect(Collectors.toList());
+		if(fileInfos!=null){
+			if(fileInfos.size()>0){
+				FileInfo fileInfo = fileInfos.get(fileInfos.size()-1);
+				modelAndView.addObject("files", fileInfo);
+			}
+		}
 		
 		return modelAndView;
 	}
@@ -221,6 +243,10 @@ public class OrderController {
 		List<String> errorUploadImage = null;
 		List<MultipartFile> files = null;
 		
+		if(request.getSession().getAttribute("userSession")==null){
+        	return modelAndView = new ModelAndView("redirect:/login");
+        }
+		
 		if(!product.getFiles().isEmpty()){
 			errorUploadImage = new ArrayList<>();
 			files = new ArrayList<MultipartFile>();
@@ -260,10 +286,6 @@ public class OrderController {
 		if(request.getSession().getAttribute("userSession")==null){
 			return modelAndView = new ModelAndView("redirect:/login");
 		}
-		
-		//List<OrderProcess> list = orderService.getOrderProcess();
-		
-		//modelAndView.addObject("orders", list);
 		
 		return modelAndView;
 	}

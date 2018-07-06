@@ -59,6 +59,10 @@
 							Services<span class="arrow"></span>
 					</a></li>
 					<li aria-haspopup="true"
+						class="menu-dropdown classic-menu-dropdown "><a
+						href="${files.url}">Download Brochure<span class="arrow"></span>
+					</a></li>
+					<li aria-haspopup="true"
 						class="menu-dropdown classic-menu-dropdown scroll-to-bottom "><a
 						href="${pageContext.request.contextPath}/contact"
 						class="scroll-to-bottom">Contact Us<span

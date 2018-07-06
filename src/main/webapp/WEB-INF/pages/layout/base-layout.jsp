@@ -74,7 +74,8 @@
 	type="text/css" />
 <!-- END THEME LAYOUT STYLES -->
 
-<link rel="shortcut icon" href="favicon.png" />
+<link rel="shortcut icon"
+	href="${pageContext.request.contextPath}/assets/img/logo/favicon.png" />
 
 <link rel="stylesheet" href="assets/metronic/css/w3.css" type="text/css"/>
 <style>

@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -22,10 +23,13 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.mikatama.cp.bean.ContentHomepage;
 import com.mikatama.cp.bean.ContentHowWork;
 import com.mikatama.cp.bean.OurCommitment;
 import com.mikatama.cp.bean.OurCulture;
 import com.mikatama.cp.bean.User;
+import com.mikatama.cp.filestorage.FileStorage;
+import com.mikatama.cp.service.ContentHomepageService;
 import com.mikatama.cp.service.ContentHowWorkService;
 import com.mikatama.cp.service.OurCommitmentService;
 import com.mikatama.cp.service.OurCultureService;
@@ -42,8 +46,20 @@ public class ContentController {
 	@Autowired
 	private ContentHowWorkService contentHowWorkService;
 	
+	@Autowired
+	private ContentHomepageService contentHomepageService;
+	
 	@Value("${path.location.image.culture}")
 	private String UPLOADED_FOLDER;
+	
+	@Value("${path.location.brochure.document}")
+	private String pathLocationDocument;
+	
+	@Value("${path.location.homepage.image}")
+	private String pathLocationImageHomePage;
+	
+	@Autowired
+	FileStorage fileStorage;
 
     @RequestMapping(value = "/dashboard/content/culture", method = RequestMethod.GET)
     public ModelAndView getOurCulture(HttpServletRequest request, HttpServletResponse response,
@@ -81,11 +97,9 @@ public class ContentController {
     	
     	ModelAndView modelAndView = new ModelAndView("addOurCulture");
     	
-    	System.out.println("id: " + culture.getId());
-    	System.out.println("title: " + culture.getTitle());
-    	System.out.println("content: " + culture.getContent());
-    	System.out.println("image: " + culture.getImage());
-    	System.out.println("file: " + culture.getMultipartFile());
+    	if(request.getSession().getAttribute("userSession")==null){
+         	return modelAndView = new ModelAndView("redirect:/login");
+         }
     	
     	boolean successInsert = ourCultureService.insertContentCulture(culture);
     	if(successInsert=true)
@@ -166,6 +180,10 @@ public class ContentController {
     		HttpServletResponse response, @ModelAttribute("ourCommitment") OurCommitment commitment, BindingResult bindingResult){
     	
     	ModelAndView modelAndView = new ModelAndView("addOurCommitment");
+    	
+    	if(request.getSession().getAttribute("userSession")==null){
+        	return modelAndView = new ModelAndView("redirect:/login");
+        }
     	
     	boolean successInsert = ourCommitmentService.insertContentCommitment(commitment);
     	if(successInsert=true)
@@ -334,6 +352,10 @@ public class ContentController {
     	
     	ModelAndView modelAndView = new ModelAndView("addOurWork");
     	
+    	if(request.getSession().getAttribute("userSession")==null){
+        	return modelAndView = new ModelAndView("redirect:/login");
+        }
+    	
     	boolean successInsert = contentHowWorkService.insertContentHowWork(ourWork);
     	if(successInsert=true)
     		return modelAndView = new ModelAndView("redirect:/dashboard/content/ourwork");
@@ -351,6 +373,100 @@ public class ContentController {
     	contentHowWorkService.deleteContentHowWorkById(Integer.parseInt(id));
     	return "redirect:/dashboard/content/ourwork";
     	
+    }
+    
+    @GetMapping("/dashboard/document/brochure")
+    public ModelAndView documentBrosurDashboard(HttpServletRequest request){
+    	ModelAndView modelAndView = new ModelAndView("dashboardBrochure");
+    	if(request.getSession().getAttribute("userSession")==null){
+        	return modelAndView = new ModelAndView("redirect:/login");
+        }
+    	return modelAndView;
+    }
+    
+    @PostMapping("/dashboard/document/brochure")
+    public ModelAndView uploadDocumentBrosur(HttpServletRequest request, @RequestParam("uploadfile") MultipartFile file, Model model){
+    	ModelAndView modelAndView = new ModelAndView("dashboardBrochure");
+    	if(request.getSession().getAttribute("userSession")==null){
+        	return modelAndView = new ModelAndView("redirect:/login");
+        }
+    	fileStorage.deleteAll(pathLocationDocument);
+    	fileStorage.init(pathLocationDocument);
+    	try {
+			fileStorage.store(file, pathLocationDocument);
+			model.addAttribute("message", "File uploaded successfully! -> filename = " + file.getOriginalFilename());
+		} catch (Exception e) {
+			model.addAttribute("message", "Fail! -> uploaded filename: " + file.getOriginalFilename());
+		}
+    	return modelAndView;
+    }
+    
+    @GetMapping("/dashboard/content/homepage")
+    public ModelAndView contentHomepage(HttpServletRequest request, HttpServletResponse response){
+    	ModelAndView modelAndView = new ModelAndView("dashboardHomeImage");
+    	
+    	 if(request.getSession().getAttribute("userSession")==null){
+         	return modelAndView = new ModelAndView("redirect:/login");
+         }
+         
+         modelAndView.addObject("userDetail", (User) request.getSession().getAttribute("userSession"));
+         modelAndView.addObject("contents", contentHomepageService.getListContentHomepage());
+    	
+    	return modelAndView;
+    }
+    
+    @PostMapping("/dashboard/content/homepage")
+    public ModelAndView uploadImageContentHomepage(HttpServletRequest request,@RequestParam("uploadfile") MultipartFile file, Model model){
+    	ModelAndView modelAndView = new ModelAndView("dashboardHomeImage");
+    	if(request.getSession().getAttribute("userSession")==null){
+        	return modelAndView = new ModelAndView("redirect:/login");
+        }
+    	fileStorage.deleteAll(pathLocationImageHomePage);
+    	fileStorage.init(pathLocationImageHomePage);
+    	try {
+			fileStorage.store(file, pathLocationImageHomePage);
+			model.addAttribute("message", "File uploaded successfully! -> filename = " + file.getOriginalFilename());
+		} catch (Exception e) {
+			model.addAttribute("message", "Fail! -> uploaded filename: " + file.getOriginalFilename());
+		}
+    	return modelAndView;
+    }
+    
+    @GetMapping(value = "/dashboard/content/homepage/edit")
+    public ModelAndView editContentHomepage(HttpServletRequest request, HttpServletResponse response,
+    		@ModelAttribute("contentHomepage") ContentHomepage contentHompage,
+    		@RequestParam(value="id", required = true) String id){
+    	
+    	ModelAndView view = new ModelAndView("editContentHomepage");
+    	
+    	if(request.getSession().getAttribute("userSession")==null){
+        	return view = new ModelAndView("redirect:/login");
+        }
+    	
+    	ContentHomepage homepage = contentHomepageService.getContentHomepageById(Integer.parseInt(id));
+    	view.addObject("userDetail", (User) request.getSession().getAttribute("userSession"));
+    	view.addObject("content", homepage);
+    	view.addObject("id", id);
+    	
+    	return view;
+    }
+    
+    @PostMapping(value = "/dashboard/content/homepage/edit")
+    public ModelAndView postEditContentHomepage(HttpServletRequest request, HttpServletResponse response,
+    		@ModelAttribute("contentHomepage") ContentHomepage contentHomepage, BindingResult bindingResult){
+    	ModelAndView view = new ModelAndView("dashboardHomeImage");
+    	
+    	if(request.getSession().getAttribute("userSession")==null){
+        	return view = new ModelAndView("redirect:/login");
+        }
+    	
+    	contentHomepageService.updateContentHomepage(contentHomepage);
+    	ContentHomepage homepage = contentHomepageService.getContentHomepageById(contentHomepage.getId());
+    	view.addObject("userDetail", (User) request.getSession().getAttribute("userSession"));
+    	view.addObject("content", homepage);
+    	view.addObject("id", homepage.getId());
+    	
+    	return view;
     }
     
 }
