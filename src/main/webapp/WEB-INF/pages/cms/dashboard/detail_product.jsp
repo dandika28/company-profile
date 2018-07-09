@@ -48,7 +48,12 @@
 											<div class="form-group">
 												<label class="control-label col-md-4"> Status:</label>
 												<div class="col-md-8">
-													<p class="form-control-static">${product.status }</p>
+													<c:if test="${product.status eq 1 }">
+													<p class="form-control-static">Active</p>
+													</c:if>
+													<c:if test="${product.status eq 0 }">
+													<p class="form-control-static">In-Active</p>
+													</c:if>
 												</div>
 											</div>
 										</div>

@@ -46,6 +46,11 @@ public class ProductServiceImpl implements ProductService {
 	}
 	
 	@Override
+	public void deleteProductImageByProductId(int productId){
+		productDao.deleteProductImageByProductId(productId);
+	}
+	
+	@Override
 	public Product getProductById(int id){
 		return productDao.getProductById(id);
 	}
@@ -81,6 +86,11 @@ public class ProductServiceImpl implements ProductService {
 	@Override
 	public List<String> getProductImage(int productId){
 		return productDao.getProductImage(productId);
+	}
+	
+	@Override
+	public void updateProductImage(String imageName, int id){
+		productDao.updateImageProduct(imageName, id);
 	}
 	
 	@Override

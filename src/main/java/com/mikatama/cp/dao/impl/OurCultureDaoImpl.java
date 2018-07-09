@@ -30,7 +30,7 @@ public class OurCultureDaoImpl implements OurCultureDao {
 	String sqlGetContentCultureById = "SELECT * FROM content_culture where id=?";
 	String sqlUpdateImageContentCultureById = "UPDATE content_culture SET image=? WHERE id=?";
 	String sqlUpdateContentCulture = "UPDATE content_culture SET title=?, content=? WHERE id=?";
-	String sqlDeleteContentCultureById = "DELETE FROM content_culture WHERE id=";
+	String sqlDeleteContentCultureById = "DELETE FROM content_culture WHERE id=?";
 	String sqlInsertContentCulture = "INSERT INTO content_culture VALUES (?,?,?,?)";
 	String sqlGetLatestId = "SELECT MAX(id) FROM content_culture";
 	
@@ -79,8 +79,7 @@ public class OurCultureDaoImpl implements OurCultureDao {
 	
 	@Override
 	public void deleteContentCultureById(int id){
-		sqlDeleteContentCultureById = sqlDeleteContentCultureById + String.valueOf(id);
-		jdbcTemplate.execute(sqlDeleteContentCultureById);
+		jdbcTemplate.update(sqlDeleteContentCultureById, new Object[] {id});
 	}
 
 }

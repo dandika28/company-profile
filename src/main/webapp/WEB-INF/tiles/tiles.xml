@@ -253,5 +253,8 @@
 	
 	<definition name="test" template="/WEB-INF/pages/cms/dashboard/test.jsp">
 	</definition>
+	
+	<definition name="errorMaxUpload" template="/WEB-INF/pages/view/confirmation.jsp">
+	</definition>
 
 </tiles-definitions>

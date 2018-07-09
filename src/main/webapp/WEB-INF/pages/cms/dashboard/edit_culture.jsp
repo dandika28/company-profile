@@ -7,10 +7,10 @@
 		<div class="page-bar">
 			<ul class="page-breadcrumb">
 				<li><i class="fa fa-dashboard"></i> Overview</li>
-				<li><i class="fa fa-angle-right"></i> Edit Culture</li>
+				<li><i class="fa fa-angle-right"></i> Edit Culture Content</li>
 			</ul>
 		</div>
-		<h3 class="page-title">Our Culture</h3>
+		<h3 class="page-title">Culture Content</h3>
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="flexigrid crud-form box"

@@ -27,7 +27,7 @@ public class ContentHomepageDaoImpl implements ContentHomepageDao{
 	
 	String sqlGetContentHomepage = "SELECT * FROM content_homepage order by id";
 	String sqlUpdateContentHomepage = "UPDATE content_homepage SET title=?, content=? WHERE id=?";
-	String sqlDeleteContentHomepage = "DELETE FROM content_homepage where id=";
+	String sqlDeleteContentHomepage = "DELETE FROM content_homepage where id=?";
 	String sqlGetContentHomepageById = "SELECT * FROM content_homepage WHERE id=?";
 	
 	public void setDataSource(DataSource dataSource) {
@@ -49,8 +49,7 @@ public class ContentHomepageDaoImpl implements ContentHomepageDao{
 	
 	@Override
 	public void deleteContentHomepage(int id){
-		sqlDeleteContentHomepage = sqlDeleteContentHomepage + String.valueOf(id);
-		jdbcTemplate.execute(sqlDeleteContentHomepage);
+		jdbcTemplate.update(sqlDeleteContentHomepage, new Object[]{id});
 	}
 	
 	@Override

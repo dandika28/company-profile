@@ -6,10 +6,10 @@
 	<div class="page-content">
 		<div class="page-bar">
 			<ul class="page-breadcrumb">
-				<li><i class="fa fa-dashboard"></i> Our Culture</li>
+				<li><i class="fa fa-dashboard"></i> How We Work</li>
 			</ul>
 		</div>
-		<h3 class="page-title">Our Culture</h3>
+		<h3 class="page-title">How We Work</h3>
 		<div class="box box-info">
 			<div class="box-header with-border">
 				<h3 class="box-title">Table List</h3>

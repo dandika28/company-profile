@@ -17,18 +17,9 @@ import com.mikatama.cp.service.OrderProcessService;
 @SpringBootTest(classes=CompanyProfileApplicationTests.class)
 @TestPropertySource(locations = "classpath:application.properties")
 public class CompanyProfileApplicationTests {
-
-	@Autowired
-	OrderProcessService orderProcessService;
 	
 	@Test
 	public void contextLoads() {
-	}
-	
-	@Test
-	public void testGetLatestId(){
-		String latesId = orderProcessService.getLatestId();
-		assertEquals("5", latesId);
 	}
 
 }

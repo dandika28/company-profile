@@ -6,7 +6,7 @@
 	<div class="page-content">
 		<div class="page-bar">
 			<ul class="page-breadcrumb">
-				<li><i class="fa fa-dashboard"></i> Change Home Header Picture</li>
+				<li><i class="fa fa-dashboard"></i> Change Home Content & Picture</li>
 			</ul>
 		</div>
 		<h3 class="page-title">Upload Picture</h3>

@@ -30,7 +30,7 @@ public class ContentHowWorkDaoImpl implements ContentHowWorkDao {
 	String sqlInsertContentHowWork = "INSERT INTO content_howtowork VALUES (?,?,?,?,?,?)";
 	String sqlGetContentHowWorkById = "SELECT * FROM content_howtowork where id=?";
 	String sqlUpdateContentHowWorkById = "UPDATE content_howtowork SET title=?, content=?, icon=?, icon_color=?, process=? WHERE id=?";
-	String sqlDeleteContentById = "DELETE FROM content_howtowork WHERE id=";
+	String sqlDeleteContentById = "DELETE FROM content_howtowork WHERE id=?";
 	String sqlGetLatestId = "SELECT MAX(id) FROM content_howtowork";
 	
 	public void setDataSource(DataSource dataSource){
@@ -70,8 +70,7 @@ public class ContentHowWorkDaoImpl implements ContentHowWorkDao {
 	
 	@Override
 	public void deleteContentHowWorkById(int id){
-		sqlDeleteContentById = sqlDeleteContentById + String.valueOf(id);
-		jdbcTemplate.execute(sqlDeleteContentById);
+		jdbcTemplate.update(sqlDeleteContentById, new Object[] {id});
 	}
 	
 	@Override

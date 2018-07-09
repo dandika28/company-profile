@@ -12,7 +12,7 @@
 		<h3 class="page-title">List Product</h3>
 		<div class="box box-info">
 			<div class="box-header with-border">
-				<h3 class="box-title">Table List</h3>
+				<h3 class="box-title">Product List</h3>
 				<div class="box-tools pull-right">
 					<button class="btn btn-box-tool" data-widget="collapse">
 						<i class="fa fa-minus"></i>

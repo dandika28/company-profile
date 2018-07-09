@@ -32,4 +32,8 @@ public interface ProductDao {
 
 	public void deleteProductById(int id);
 
+	public void updateImageProduct(String imageName, int id);
+
+	public void deleteProductImageByProductId(int productId);
+
 }

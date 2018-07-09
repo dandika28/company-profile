@@ -7,17 +7,17 @@
 		<div class="page-bar">
 			<ul class="page-breadcrumb">
 				<li><i class="fa fa-dashboard"></i> Overview</li>
-				<li><i class="fa fa-angle-right"></i> Edit Commitment</li>
+				<li><i class="fa fa-angle-right"></i> Add Commitment Content</li>
 			</ul>
 		</div>
-		<h3 class="page-title">Our Commitment</h3>
+		<h3 class="page-title">Commitment Content</h3>
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="flexigrid crud-form box"
 					data-unique-hash="557498587ea6b8410b019e39815af033">
 					<div class="box-header with-border">
 						<h3 class="box-title">
-							<i class="fa fa-plus-circle fa-fw"></i> Edit Commitment Content
+							<i class="fa fa-plus-circle fa-fw"></i> Add Commitment Content
 						</h3>
 					</div>
 

@@ -10,7 +10,7 @@
 				<li><i class="fa fa-angle-right"></i> Edit Commitment</li>
 			</ul>
 		</div>
-		<h3 class="page-title">Our Commitment</h3>
+		<h3 class="page-title">Commitment Content</h3>
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="flexigrid crud-form box"

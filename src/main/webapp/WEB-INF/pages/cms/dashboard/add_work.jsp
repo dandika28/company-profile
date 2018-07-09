@@ -7,7 +7,7 @@
 		<div class="page-bar">
 			<ul class="page-breadcrumb">
 				<li><i class="fa fa-dashboard"></i> Overview</li>
-				<li><i class="fa fa-angle-right"></i> Add Content Our Work</li>
+				<li><i class="fa fa-angle-right"></i> Add How We Work Content</li>
 			</ul>
 		</div>
 		<h3 class="page-title">How We Work</h3>

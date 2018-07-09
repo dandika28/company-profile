@@ -32,4 +32,8 @@ public interface ProductService {
 
 	public void deleteProductById(int id);
 
+	public void updateProductImage(String imageName, int id);
+
+	public void deleteProductImageByProductId(int productId);
+
 }

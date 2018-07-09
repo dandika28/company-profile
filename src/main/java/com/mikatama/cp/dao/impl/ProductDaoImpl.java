@@ -34,13 +34,15 @@ public class ProductDaoImpl implements ProductDao {
 	String sqlGetProductById = "SELECT * FROM product where id =?";
 	String sqlGetImageProductByProductId = "SELECT * FROM product_image where product_id=? order by id";
 	String sqlInsertImageProduct = "INSERT INTO product_image (product_id, image) values (?, ?)";
+	String sqlUpdateImageProduct = "UPDATE product_image SET image=? WHERE id=?";
 	String sqlDecrementStockProduct = "update product set stock = stock - ? where id = ?";
 	String sqlUpdateProductById = "UPDATE product SET product_name = ?, product_desc=?, price=?, image=?, stock=?, status=? where id =?";
 	String sqlInsertProduct = "INSERT INTO product (product_name, product_desc, price, image, stock, status)"
 			+ "values (?, ?, ?, ?, ?, ?)";
 	String sqlGetSequenceId = "SELECT Auto_increment FROM information_schema.tables WHERE table_schema = 'mikatama' and table_name=?";
 	String sqlRandomProduct = "select * from product ORDER BY RAND() limit ?";
-	String sqlDeleteProduct = "DELETE FROM product WHERE id=";
+	String sqlDeleteProduct = "DELETE FROM product WHERE id=?";
+	String sqlDeleteProductImageByProductId = "DELETE FROM product_image WHERE product_id=?";
 	
 	public void setDataSource(DataSource dataSource){
 		jdbcTemplate = new JdbcTemplate(dataSource);
@@ -48,8 +50,12 @@ public class ProductDaoImpl implements ProductDao {
 	
 	@Override
 	public void deleteProductById(int id){
-		sqlDeleteProduct = sqlDeleteProduct + String.valueOf(id);
-		jdbcTemplate.execute(sqlDeleteProduct);
+		jdbcTemplate.update(sqlDeleteProduct, new Object[] {id});
+	}
+	
+	@Override
+	public void deleteProductImageByProductId(int productId){
+		jdbcTemplate.update(sqlDeleteProductImageByProductId, new Object[] {productId});
 	}
 	
 	@Override
@@ -58,6 +64,12 @@ public class ProductDaoImpl implements ProductDao {
 		products = jdbcTemplate.query(sqlRandomProduct, new Object[] {limit}, new ProductRowMapper());
 		logger.info("getProductList size: " + products.size());
 		return products;
+	}
+	
+	@Override
+	public void updateImageProduct(String imageName, int id){
+		System.out.println("updateImageProduct: " + imageName + ", " + id);		
+		jdbcTemplate.update(sqlUpdateImageProduct, new Object[] {imageName, id});
 	}
 	
 	@Override

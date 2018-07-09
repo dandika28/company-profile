@@ -92,8 +92,10 @@
 											<label> Status</label>
 										</div>
 										<div class="col-lg-10" id="no_po_input_box">
-											<form:input id="field-no_po" class="form-control"
-												path="status" value="" maxlength="50" type="text" />
+											<form:select path="status" class="form-control">
+												<form:option value="0" label="In-Active" />
+												<form:option value="1" label="Active" />
+											</form:select>
 										</div>
 									</div>
 									<br>
@@ -109,7 +111,7 @@
 													<form:input
 														class="input-file-upload file-mobile number-${productImage.id }"
 														name="file" accept="image/*" type="file"
-														path="productImages[${vs.index }]" multiple="multiple"
+														path="productImages[${vs.index }].file" multiple="multiple"
 														data-number="${productImage.id }"
 														style="margin-left:-10px; display:none;" />
 													<div class="row">
@@ -128,9 +130,11 @@
 															</div>
 														</div>
 													</div>
-													<form:hidden path="id" />
+													<form:input type="hidden" value="${productImage.id }"
+														path="productImages[${vs.index }].id"/>
 												</div>
 											</c:forEach>
+											<form:hidden path="image"/>
 										</div>
 									</div>
 									<br>

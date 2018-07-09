@@ -7,17 +7,17 @@
 		<div class="page-bar">
 			<ul class="page-breadcrumb">
 				<li><i class="fa fa-dashboard"></i> Overview</li>
-				<li><i class="fa fa-angle-right"></i> Edit Culture</li>
+				<li><i class="fa fa-angle-right"></i> Add Culture</li>
 			</ul>
 		</div>
-		<h3 class="page-title">Our Culture</h3>
+		<h3 class="page-title">Culture Content</h3>
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="flexigrid crud-form box"
 					data-unique-hash="557498587ea6b8410b019e39815af033">
 					<div class="box-header with-border">
 						<h3 class="box-title">
-							<i class="fa fa-plus-circle fa-fw"></i> Edit Culture Content
+							<i class="fa fa-plus-circle fa-fw"></i> Add Culture Content
 						</h3>
 					</div>
 

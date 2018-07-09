@@ -29,7 +29,7 @@ public class OurCommitmentDaoImpl implements OurCommitmentDao {
 	String sqlGetContentCommitment = "SELECT * FROM content_commitment order by id";
 	String sqlUpdateContentCommitment = "UPDATE content_commitment SET title=?, content=?, style=? WHERE id=?";
 	String sqlGetContentCommitmentById = "SELECT * FROM content_commitment WHERE id=?";
-	String sqlDeleteContentCommitmentById = "DELETE FROM content_commitment WHERE id=";
+	String sqlDeleteContentCommitmentById = "DELETE FROM content_commitment WHERE id=?";
 	String sqlGetLatestId = "SELECT MAX(id) FROM content_commitment";
 	String sqlInsertContentCommitment = "INSERT INTO content_commitment VALUES (?,?,?,?)";
 	
@@ -74,8 +74,7 @@ public class OurCommitmentDaoImpl implements OurCommitmentDao {
 	
 	@Override
 	public void deleteContentCommitmentById(int id){
-		sqlDeleteContentCommitmentById = sqlDeleteContentCommitmentById + String.valueOf(id);
-		jdbcTemplate.execute(sqlDeleteContentCommitmentById);
+		jdbcTemplate.update(sqlDeleteContentCommitmentById, new Object[] {id});
 	}
 }
 
