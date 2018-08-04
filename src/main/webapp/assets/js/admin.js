@@ -1,12 +1,13 @@
 	var table;
-
+	var url = $('.orderList').data('url');
+	
 	$(document).ready(function() {
 		table=$('#paginatedTable').DataTable( {
 	        "processing": true,
 	        "serverSide": true,
 	        "pageLength": 5,
 	        "ajax": {
-	            "url": "/mikatama/dashboard/order/paginated",
+	            "url": url+"/dashboard/order/paginated",
 	            "data": function ( data ) {
 				 //process data before sent to server.
 	         }},
@@ -39,7 +40,7 @@
 		    });
 		    console.log(dataArr);
 		    console.log(dataId);
-		    window.location = "/mikatama/dashboard/order/edit?id="+dataId;
+		    window.location = "${pageContext.request.contextPath}/dashboard/order/edit?id="+dataId;
 		});
 		
 		$('#paginatedTable').dataTable().fnSetFilteringEnterPress();

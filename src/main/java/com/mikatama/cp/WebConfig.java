@@ -16,6 +16,9 @@ public class WebConfig implements WebMvcConfigurer {
 	
 	@Value("${path.location.image}")
 	private String pathLocationImage;
+	
+	@Value("${path.location.image.mikatama2}")
+	private String pathLocationImageHome;
 
 	@Bean
 	public UrlBasedViewResolver tilesViewResolver() {
@@ -35,8 +38,8 @@ public class WebConfig implements WebMvcConfigurer {
 	
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry){
-		registry.addResourceHandler("/images/**", "/assets/**")
-		.addResourceLocations(pathLocationImage, "/assets/");
+		registry.addResourceHandler("/images/**", "/assets/**","/imagesHome/**")
+		.addResourceLocations(pathLocationImage, "/assets/", pathLocationImageHome);
 	}
 	
 }

@@ -51,7 +51,7 @@
 				</div>
 			</div>
 			<div class="col-md-7" style="padding: 10px;">
-			<form:form action="${pageContext.request.contextPath}/order" method="post" modelAttribute="orderProcess" autocomplete="off">
+			<form:form action="/order" method="post" modelAttribute="orderProcess" autocomplete="off">
 				<div class="cbp-l-project-desc-title">
 					<span>Rp. <fmt:formatNumber value = "${product.price }" 
 					type = "currency" pattern="##,##0.00;-##,##0.00"/></span>

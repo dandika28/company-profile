@@ -23,7 +23,7 @@
 			<div class="box-body">
 				<div class="col-xs-6" style="padding: 5px; margin: 0 0 0 5px;">
 					<!-- Button ADD  -->
-					<a href="${pageContext.request.contextPath}/dashboard/product/add"
+					<a href="/dashboard/product/add"
 						class="add-anchor add_button btn btn-primary"> <i
 						class="fa fa-plus-circle"></i> <span class="add">Add
 							Product</span>
@@ -31,7 +31,7 @@
 					<!-- Akhir Button ADD  -->
 				</div>
 				<div class="table-scrollable">
-					<table class="table table-striped table-hover">
+					<table class="table table-striped table-hover" id="tabel">
 						<thead>
 							<tr>
 								<th>Id</th>
@@ -68,13 +68,13 @@
 										<td class="td-action">
 											<ul class="tools list-unstyled table-menu">
 												<li><a
-													href="${pageContext.request.contextPath}/dashboard/product/detail?id=${product.id }"
+													href="/dashboard/product/detail?id=${product.id }"
 													class="detail_button"><i class="fa fa-list"></i> Detail</a></li>
 												<li><a
-													href="${pageContext.request.contextPath}/dashboard/product/edit?id=${product.id }"
+													href="/dashboard/product/edit?id=${product.id }"
 													class="edit_button"><i class="fa fa-pencil"></i> Edit</a></li>
 												<li><a
-													href="${pageContext.request.contextPath}/dashboard/product/delete?id=${product.id }"
+													href="/dashboard/product/delete?id=${product.id }"
 													class="delete-row"><i class="fa fa-trash-o"></i> Delete</a></li>
 											</ul>
 										</td>

@@ -116,13 +116,13 @@
 										class="report-div success alert alert-success"></div>
 
 
-									<a href="${pageContext.request.contextPath}/dashboard/product"
+									<a href="/dashboard/product"
 										class="btn btn-primary">OK</a>
 
 									<!--button type="button" id="save-and-go-back-button" class="btn btn-info">Save and go back to list</button-->
 									<!-- a href="${contextPath }/dashboard/product" class="btn btn-default">OK</a-->
 									<span class="small-loading" id="FormLoading"><img
-										src="${pageContext.request.contextPath}/assets/metronic/svg/loading-spin-primary.svg"
+										src="/assets/metronic/svg/loading-spin-primary.svg"
 										alt="loading..."> Loading, saving data...</span>
 								</div>
 							</form>

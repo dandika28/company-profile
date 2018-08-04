@@ -24,7 +24,7 @@
 					<div id="main-table-box" class="box-body">
 						<div class="col-lg-8">
 							<form:form
-								action="${pageContext.request.contextPath}/dashboard/order/edit"
+								action="/dashboard/order/edit"
 								method="post" modelAttribute="orderProcess"
 								class="form-horizontal" autocomplete="off"
 								enctype="multipart/form-data" accept-charset="utf-8">
@@ -168,10 +168,10 @@
 								<button type="submit" class="btn btn-primary">Update</button>
 
 								<!--button type="button" id="save-and-go-back-button" class="btn btn-info">Save and go back to list</button-->
-								<a href="${pageContext.request.contextPath}/dashboard/order"
+								<a href="/dashboard/order"
 									type="button" id="cancel-button" class="btn btn-default">Cancel</a>
 								<span class="small-loading" id="FormLoading"><img
-									src="${pageContext.request.contextPath}/assets/metronic/svg/loading-spin-primary.svg"
+									src="/assets/metronic/svg/loading-spin-primary.svg"
 									alt="loading..."> Loading, saving data...</span>
 							</form:form>
 						</div>

@@ -75,7 +75,7 @@
 <!-- END THEME LAYOUT STYLES -->
 
 <link rel="shortcut icon"
-	href="${pageContext.request.contextPath}/assets/img/logo/favicon.png" />
+	href="/assets/img/logo/favicon.png" />
 
 <link rel="stylesheet" href="assets/metronic/css/w3.css" type="text/css"/>
 <style>
@@ -176,7 +176,6 @@
 			Layout.init(); // init current layout
 			QuickSidebar.init(); // init quick sidebar
 			Demo.init(); // init demo features
-			FormWizard.init();
 		});
 	</script>
 

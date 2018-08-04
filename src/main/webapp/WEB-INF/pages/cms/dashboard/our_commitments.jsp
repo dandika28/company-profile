@@ -25,7 +25,7 @@
 				<div class="col-xs-6" style="padding: 5px; margin: 0 0 0 5px;">
 					<!-- Button ADD  -->
 					<a
-						href="${pageContext.request.contextPath}/dashboard/content/commitment/add"
+						href="/dashboard/content/commitment/add"
 						class="add-anchor add_button btn btn-primary"> <i
 						class="fa fa-plus-circle"></i> <span class="add">Add
 							Content</span>
@@ -54,10 +54,10 @@
 										<td class="td-action">
 											<ul class="tools list-unstyled table-menu">
 												<li><a
-													href="${pageContext.request.contextPath}/dashboard/content/commitment/edit?id=${ourCommitment.id }"
+													href="/dashboard/content/commitment/edit?id=${ourCommitment.id }"
 													class="edit_button"><i class="fa fa-pencil"></i> Edit</a></li>
 												<li><a
-													href="${pageContext.request.contextPath}/dashboard/content/commitment/delete?id=${ourCommitment.id }"
+													href="/dashboard/content/commitment/delete?id=${ourCommitment.id }"
 													class="delete-row"><i class="fa fa-trash-o"></i> Delete</a></li>
 											</ul>
 										</td>

@@ -5731,7 +5731,7 @@ Responsive & Scrollable Tables
   width: 100%;
   overflow-x: auto;
   overflow-y: hidden;
-  border: 1px solid #dddddd;
+  border: 0px solid #dddddd;
   margin: 10px 0 !important;
 }
 .table-scrollable.table-scrollable-borderless {

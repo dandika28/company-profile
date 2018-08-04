@@ -24,7 +24,7 @@
 					<div id="main-table-box" class="box-body">
 						<div class="col-lg-8">
 							<form:form
-								action="${pageContext.request.contextPath}/dashboard/content/commitment/add"
+								action="/dashboard/content/commitment/add"
 								method="post" modelAttribute="ourCommitment"
 								class="form-horizontal" autocomplete="off"
 								enctype="multipart/form-data" accept-charset="utf-8">
@@ -91,10 +91,10 @@
 
 								<!--button type="button" id="save-and-go-back-button" class="btn btn-info">Save and go back to list</button-->
 								<a
-									href="${pageContext.request.contextPath}/dashboard/content/commitment"
+									href="/dashboard/content/commitment"
 									type="button" id="cancel-button" class="btn btn-default">Cancel</a>
 								<span class="small-loading" id="FormLoading"><img
-									src="${pageContext.request.contextPath}/assets/metronic/svg/loading-spin-primary.svg"
+									src="/assets/metronic/svg/loading-spin-primary.svg"
 									alt="loading..."> Loading, saving data...</span>
 							</form:form>
 						</div>

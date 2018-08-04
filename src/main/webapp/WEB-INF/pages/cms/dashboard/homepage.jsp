@@ -49,10 +49,10 @@
 										<td class="td-action">
 											<ul class="tools list-unstyled table-menu">
 												<li><a
-													href="${pageContext.request.contextPath}/dashboard/content/homepage/edit?id=${content.id }"
+													href="/dashboard/content/homepage/edit?id=${content.id }"
 													class="edit_button"><i class="fa fa-pencil"></i> Edit</a></li>
 												<li><a
-													href="${pageContext.request.contextPath}/dashboard/content/homepage/delete?id=${content.id }"
+													href="/dashboard/content/homepage/delete?id=${content.id }"
 													class="delete-row"><i class="fa fa-trash-o"></i> Delete</a></li>
 											</ul>
 										</td>

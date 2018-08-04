@@ -1,3 +1,8 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <div class="page-wrapper-row full-height">
 	<div class="page-wrapper-middle">
 		<!-- BEGIN CONTAINER -->
@@ -30,11 +35,12 @@
 						<!-- BEGIN PAGE CONTENT INNER -->
 						<div class="page-content-inner">
 							<!-- BEGIN CONTENT HEADER -->
-							<div class="row margin-bottom-40 about-header" style="background-image: url(${homeImage});">
+							<div class="row margin-bottom-40 about-header" style="background-image: url(<c:url value="imagesHome/${homeImage }" />); background-repeat: no-repeat;
+    background-size: auto;">
 								<div class="col-md-12">
 									<h1>MIKATAMA UNIKA</h1>
 									<h2>Solution Expert in Display and Stall</h2>
-									<a href="${pageContext.request.contextPath}/product" class="btn btn-danger">JOIN US
+									<a href="/product" class="btn btn-danger">JOIN US
 										TODAY</a>
 								</div>
 							</div>

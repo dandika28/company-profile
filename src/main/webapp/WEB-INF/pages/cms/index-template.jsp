@@ -22,19 +22,19 @@
 	href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all"
 	rel="stylesheet" type="text/css">
 <link
-	href="${pageContext.request.contextPath}/assets/global/plugins/font-awesome/css/font-awesome.min.css"
+	href="/assets/global/plugins/font-awesome/css/font-awesome.min.css"
 	rel="stylesheet" type="text/css" />
 <link
-	href="${pageContext.request.contextPath}/assets/global/plugins/simple-line-icons/simple-line-icons.min.css"
+	href="/assets/global/plugins/simple-line-icons/simple-line-icons.min.css"
 	rel="stylesheet" type="text/css" />
 <link
-	href="${pageContext.request.contextPath}/assets/global/plugins/bootstrap/css/bootstrap.min.css"
+	href="/assets/global/plugins/bootstrap/css/bootstrap.min.css"
 	rel="stylesheet" type="text/css" />
 <link
-	href="${pageContext.request.contextPath}/assets/pages/css/login-custom.css"
+	href="/assets/pages/css/login-custom.css"
 	rel="stylesheet" type="text/css" />
 <link
-	href="${pageContext.request.contextPath}/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css"
+	href="/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css"
 	rel="stylesheet" type="text/css" />
 <!-- END GLOBAL MANDATORY STYLES -->
 
@@ -43,52 +43,56 @@
 	href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all"
 	rel="stylesheet" type="text/css"-->
 <link
-	href="${pageContext.request.contextPath}/assets/metronic/css/AdminLTE.min.css"
+	href="/assets/metronic/css/AdminLTE.min.css"
 	rel="stylesheet" type="text/css">
 <link
-	href="${pageContext.request.contextPath}/assets/metronic/css/font-awesome.min.css"
+	href="/assets/metronic/css/font-awesome.min.css"
 	rel="stylesheet" type="text/css">
 <link
-	href="${pageContext.request.contextPath}/assets/metronic/css/simple-line-icons.min.css"
+	href="/assets/metronic/css/simple-line-icons.min.css"
 	rel="stylesheet" type="text/css">
 <link
-	href="${pageContext.request.contextPath}/assets/metronic/css/bootstrap.min.css"
+	href="/assets/metronic/css/bootstrap.min.css"
 	rel="stylesheet" type="text/css">
 <link
-	href="${pageContext.request.contextPath}/assets/metronic/css/uniform.default.css"
+	href="/assets/metronic/css/uniform.default.css"
 	rel="stylesheet" type="text/css">
 <link
-	href="${pageContext.request.contextPath}/assets/metronic/css/bootstrap-switch.min.css"
+	href="/assets/metronic/css/bootstrap-switch.min.css"
 	rel="stylesheet" type="text/css">
 <!-- BEGIN THEME STYLES -->
 <link
-	href="${pageContext.request.contextPath}/assets/metronic/css/a-design.css"
+	href="/assets/metronic/css/a-design.css"
 	rel="stylesheet" type="text/css">
 <link
-	href="${pageContext.request.contextPath}/assets/metronic/css/components.css"
+	href="/assets/metronic/css/components.css"
 	id="style_components" rel="stylesheet" type="text/css">
 <link
-	href="${pageContext.request.contextPath}/assets/metronic/css/plugins.css"
+	href="/assets/metronic/css/plugins.css"
 	rel="stylesheet" type="text/css">
 <link
-	href="${pageContext.request.contextPath}/assets/metronic/css/layout.css"
+	href="/assets/metronic/css/layout.css"
 	rel="stylesheet" type="text/css">
 <link
-	href="${pageContext.request.contextPath}/assets/css/themes/darkblue.css"
+	href="/assets/css/themes/darkblue.css"
 	rel="stylesheet" type="text/css" id="style_color">
-
+<!--link
+	href="/assets/css/themes/dataTables.bootstrap.min.css"
+	rel="stylesheet" type="text/css"-->
 <link
-	href="${pageContext.request.contextPath}/assets/metronic/css/custom.css"
+	href="/assets/metronic/css/custom.css"
 	rel="stylesheet" type="text/css">
 <link
-	href="${pageContext.request.contextPath}/assets/metronic/css/simplegrid.css"
+	href="/assets/metronic/css/simplegrid.css"
 	rel="stylesheet" type="text/css">
 <link
-	href="${pageContext.request.contextPath}/assets/layouts/layout3/css/custom.css"
+	href="/assets/layouts/layout3/css/custom.css"
 	rel="stylesheet" type="text/css" />
 
 <link rel="shortcut icon"
-	href="${pageContext.request.contextPath}/assets/img/logo/favicon.png" />
+	href="/assets/img/logo/favicon.png" />
+	
+<link rel="stylesheet" href="/assets/css/jquery.dataTables.min.css" type="text/css"/>
 
 <style type="text/css" media="print">
 @page {
@@ -116,8 +120,8 @@ body {
 		<div class="page-header-inner">
 			<!-- BEGIN LOGO -->
 			<div class="page-logo">
-				<a href="${pageContext.request.contextPath}/home"> <img
-					src="${pageContext.request.contextPath}/assets/layouts/layout3/img/logo_mikatama.png"
+				<a href="/home"> <img
+					src="/assets/layouts/layout3/img/logo_mikatama.png"
 					alt="logo" class="logo-default" style="height: 20px;" />
 				</a>
 			</div>
@@ -132,7 +136,7 @@ body {
 					<li class="dropdown dropdown-user"><a href="javascript:;"
 						class="dropdown-toggle" data-toggle="dropdown"
 						data-hover="dropdown" data-close-others="true"> <img
-							src="${pageContext.request.contextPath}/assets/img/avatar04.png"
+							src="/assets/img/avatar04.png"
 							class="user-image" alt="User Image"> <span class="username">admin</span>
 							<i class="fa fa-angle-down"></i>
 					</a> <c:set var="now" value="<%=new java.util.Date()%>" />
@@ -141,7 +145,7 @@ body {
 							<li>
 								<center>
 									<img
-										src="${pageContext.request.contextPath}/assets/img/avatar04.png"
+										src="/assets/img/avatar04.png"
 										class="img-circle" alt="User Image" height="70" width="70">
 									<p>
 										Admin System <br>
@@ -151,7 +155,7 @@ body {
 							</li>
 							<li>
 								<center>
-									<a href="${pageContext.request.contextPath}/logout"> <i
+									<a href="/logout"> <i
 										class="icon-key"></i> Log Out
 									</a>
 								</center>
@@ -176,30 +180,30 @@ body {
 					</li>
 					<li class="heading"></li>
 					<li><a
-						href="${pageContext.request.contextPath}/dashboard/order"
+						href="/dashboard/order"
 						class="name"> <i class="icon-basket"></i> <span class="title">Order</span></a></li>
 					<li><a
-						href="${pageContext.request.contextPath}/dashboard/content/culture"
+						href="/dashboard/content/culture"
 						class="name"> <i class="icon-eye"></i> <span class="title">Our Culture</span>
 					</a></li>
 					<li><a
-						href="${pageContext.request.contextPath}/dashboard/content/commitment"
+						href="/dashboard/content/commitment"
 						class="name"> <i class="icon-speech"></i> <span class="title">Our Commitment</span>
 					</a></li>
 					<li><a
-						href="${pageContext.request.contextPath}/dashboard/content/ourwork"
+						href="/dashboard/content/ourwork"
 						class="name"> <i class="icon-check"></i> <span class="title">How We Work</span>
 					</a></li>
 					<li><a
-						href="${pageContext.request.contextPath}/dashboard/product"
+						href="/dashboard/product"
 						class="name"> <i class="fa fa-bitbucket"></i> <span
 							class="title">Product</span></a></li>
 					<li><a
-						href="${pageContext.request.contextPath}/dashboard/document/brochure"
+						href="/dashboard/document/brochure"
 						class="name"> <i class="fa fa-file"></i> <span
 							class="title">Upload Brochure</span></a></li>
 					<li><a
-						href="${pageContext.request.contextPath}/dashboard/content/homepage"
+						href="/dashboard/content/homepage"
 						class="name"> <i class="fa fa-home"></i> <span
 							class="title">Homepage Content</span></a></li>
 				</ul>
@@ -232,16 +236,16 @@ body {
 
 	<!--JS Plugins
 	<script
-		src="${pageContext.request.contextPath}/assets/metronic/js/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+		src="/assets/metronic/js/plugins/jQuery/jQuery-2.1.4.min.js"></script>
 	<!--Bootstrap JS
 	<script
-		src="${pageContext.request.contextPath}/assets/metronic/js/bootstrap.min.js"></script>
+		src="/assets/metronic/js/bootstrap.min.js"></script>
 	<!--Alertify JS-->
 	<script
-		src="${pageContext.request.contextPath}/assets/metronic/js/alertify.min.js"></script>
+		src="/assets/metronic/js/alertify.min.js"></script>
 
 	<script>
-		site = '${pageContext.request.contextPath}/dashboard/order';
+		site = '/dashboard/order';
 		ur_class = '';
 		url_function = '';
 		function datatablesOptions() {
@@ -257,66 +261,69 @@ body {
 
 	<!--AdminLTE JS-->
 	<script
-		src="${pageContext.request.contextPath}/assets/metronic/js/jquery.slimscroll.min.js"></script>
+		src="/assets/metronic/js/jquery.slimscroll.min.js"></script>
 	<script
-		src="${pageContext.request.contextPath}/assets/metronic/js/plugins/fastclick/fastclick.min.js"></script>
+		src="/assets/metronic/js/plugins/fastclick/fastclick.min.js"></script>
 	<script
-		src="${pageContext.request.contextPath}/assets/metronic/js/app.min.js"></script>
+		src="/assets/metronic/js/app.min.js"></script>
 
 	<script
-		src="${pageContext.request.contextPath}/assets/metronic/js/list.min.js"></script>
+		src="/assets/metronic/js/list.min.js"></script>
 	<!--Custom JS-->
 	<script
-		src="${pageContext.request.contextPath}/assets/metronic/js/jquery-easypiechart/jquery.easypiechart.min.js"></script>
+		src="/assets/metronic/js/jquery-easypiechart/jquery.easypiechart.min.js"></script>
 	<script
-		src="${pageContext.request.contextPath}/assets/metronic/js/metronic.js"></script>
+		src="/assets/metronic/js/metronic.js"></script>
 	<script
-		src="${pageContext.request.contextPath}/assets/metronic/js/layout.js"></script>
+		src="/assets/metronic/js/layout.js"></script>
 	<script
-		src="${pageContext.request.contextPath}/assets/metronic/js/demo.js"></script>
+		src="/assets/metronic/js/demo.js"></script>
 	<script
-		src="${pageContext.request.contextPath}/assets/metronic/js/a-design.js"></script>
+		src="/assets/metronic/js/a-design.js"></script>
 	<script
-		src="${pageContext.request.contextPath}/assets/metronic/js/index.js"></script>
+		src="/assets/metronic/js/index.js"></script>
 
 	<script
-		src="${pageContext.request.contextPath}/assets/metronic/js/quick-sidebar.js"></script>
+		src="/assets/metronic/js/quick-sidebar.js"></script>
 	<script
-		src="${pageContext.request.contextPath}/assets/metronic/js/jquery.uniform.min.js"></script>
+		src="/assets/metronic/js/jquery.uniform.min.js"></script>
 	<script
-		src="${pageContext.request.contextPath}/assets/metronic/js/flot/jquery.flot.js"></script>
+		src="/assets/metronic/js/flot/jquery.flot.js"></script>
 	<script
-		src="${pageContext.request.contextPath}/assets/metronic/js/jquery.cokie.min.js"></script>
+		src="/assets/metronic/js/jquery.cokie.min.js"></script>
 	<script
-		src="${pageContext.request.contextPath}/assets/metronic/js/jquery.blockui.min.js"></script>
+		src="/assets/metronic/js/jquery.blockui.min.js"></script>
 	<script
-		src="${pageContext.request.contextPath}/assets/metronic/js/jquery-ui.min.js"></script>
+		src="/assets/metronic/js/jquery-ui.min.js"></script>
 	<script
-		src="${pageContext.request.contextPath}/assets/metronic/js/jquery-migrate.min.js"></script>
+		src="/assets/metronic/js/jquery-migrate.min.js"></script>
 	<script
-		src="${pageContext.request.contextPath}/assets/metronic/js/ecommerce-index.js"></script>
+		src="/assets/metronic/js/ecommerce-index.js"></script>
 	<script
-		src="${pageContext.request.contextPath}/assets/metronic/js/bootstrap-switch.min.js"></script>
+		src="/assets/metronic/js/bootstrap-switch.min.js"></script>
 	<script
-		src="${pageContext.request.contextPath}/assets/metronic/js/bootstrap-hover-dropdown.min.js"></script>
+		src="/assets/metronic/js/bootstrap-hover-dropdown.min.js"></script>
+	<script 
+		src="/assets/js/datatable/jquery.dataTables.js"></script>
+	<script 
+		src="/assets/js/datatable/jquery.dataTables.min.js"></script>
+	<script
+		src="/assets/metronic/js/jquery.pulsate.min.js"></script>
+	<script
+		src="/assets/metronic/js/jquery.sparkline.min.js"></script>
+	<script
+		src="/assets/metronic/js/index.js"></script>
+	<script
+		src="/assets/metronic/js/tasks.js"></script>
 
 	<script
-		src="${pageContext.request.contextPath}/assets/metronic/js/jquery.pulsate.min.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/assets/metronic/js/jquery.sparkline.min.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/assets/metronic/js/index.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/assets/metronic/js/tasks.js"></script>
-
-	<script
-		src="${pageContext.request.contextPath}/assets/metronic/js/custom-script.js"
+		src="/assets/metronic/js/custom-script.js"
 		type="text/javascript"></script>
 
 	<script language="javascript" type="text/javascript"
-		src="${pageContext.request.contextPath}/assets/js/tinymce/tinymce.min.js"></script>
+		src="/assets/js/tinymce/tinymce.min.js"></script>
 	<script
-		src="${pageContext.request.contextPath}/assets/js/tinymce/jquery.tinymce.min.js"></script>
+		src="/assets/js/tinymce/jquery.tinymce.min.js"></script>
 
 	<script>
 		jQuery(document).ready(function() {
@@ -332,6 +339,14 @@ body {
 			//Index.initChat();
 			//Index.initMiniCharts();
 			//Tasks.initDashboardWidget();
+			var tabel = $("#tabel").DataTable({
+				'paging'      : true,
+				'lengthChange': true,
+				'searching'   : true,
+				'ordering'    : true,
+				'info'        : true,
+				'autoWidth'   : false
+			});
 		});
 	</script>
 

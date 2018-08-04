@@ -97,8 +97,8 @@ public class IndexController {
 		
 		List<ContentHomepage> list = contentHomepageService.getListContentHomepage();
 		
-		String urlImage = "/mikatama/assets/pages/media/bg/"+ imageName;
-		view.addObject("homeImage", urlImage);
+		//String urlImage = "/assets/pages/media/bg/"+ imageName;
+		view.addObject("homeImage", imageName);
 		view.addObject("content", list);
 		return view;
 	}

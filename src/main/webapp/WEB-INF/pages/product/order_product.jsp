@@ -50,7 +50,7 @@
 										</div>
 										<div class="portlet-body form">
 											<div class="form-section">
-												<form:form action="${pageContext.request.contextPath}/confirmation" class="form-horizontal"
+												<form:form action="/confirmation" class="form-horizontal"
 													id="submit_form" method="POST" autocomplete="off" enctype="multipart/form-data"
 													modelAttribute="orderProcess">
 													<div class="form-wizard">
@@ -152,7 +152,7 @@
 																				data-type="mobile">
 																				<div class="rounded">
 																					<img class="inner-text"
-																						src="${pageContext.request.contextPath}/assets/img/camera.png" alt="Camera Icon" />
+																						src="/assets/img/camera.png" alt="Camera Icon" />
 																				</div>
 																				<div class="input-file order">
 																					<form:input id="file" class="input-file-upload-order file-mobile form-control"

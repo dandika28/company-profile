@@ -65,13 +65,12 @@
 <!-- END THEME LAYOUT STYLES -->
 
 <link rel="shortcut icon" href="favicon.png" />
-
 <script src="assets/custom/zdesk-widget.js" type="text/javascript"></script>
 </head>
 
 <body class="page-container-bg-solid page-md login">
 	<div class="logo">
-		<a href="${pageContext.request.contextPath}/home"><img
+		<a href="/home"><img
 			src="assets/layouts/layout3/img/logo_mikatama.png"></a>
 	</div>
 	<div class="content">

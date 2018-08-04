@@ -8,8 +8,8 @@
 		<div class="container">
 			<!-- BEGIN LOGO -->
 			<div class="page-logo">
-				<a href="${pageContext.request.contextPath}/home"> <img
-					src="${pageContext.request.contextPath}/assets/layouts/layout3/img/logo_mikatama.png"
+				<a href="/home"> <img
+					src="/assets/layouts/layout3/img/logo_mikatama.png"
 					alt="logo" class="logo-default" style="height: 35px;">
 				</a>
 			</div>
@@ -42,20 +42,20 @@
 				<ul class="nav navbar-nav">
 					<li aria-haspopup="true"
 						class="menu-dropdown classic-menu-dropdown "><a
-						href="${pageContext.request.contextPath}/home">Home<span
+						href="/home">Home<span
 							class="arrow"></span></a></li>
 
 					<li aria-haspopup="true" class=" "><a
-						href="${pageContext.request.contextPath}/culture"> Our Culture<span
+						href="/culture"> Our Culture<span
 							class="arrow"></span>
 					</a></li>
 					<li aria-haspopup="true" class=" "><a
-						href="${pageContext.request.contextPath}/how_we_work"> How We Work<span
+						href="/how_we_work"> How We Work<span
 							class="arrow"></span>
 					</a></li>
 					<li aria-haspopup="true"
 						class="menu-dropdown classic-menu-dropdown "><a
-						href="${pageContext.request.contextPath}/product">Products &
+						href="/product">Products &
 							Services<span class="arrow"></span>
 					</a></li>
 					<li aria-haspopup="true"
@@ -64,7 +64,7 @@
 					</a></li>
 					<li aria-haspopup="true"
 						class="menu-dropdown classic-menu-dropdown scroll-to-bottom "><a
-						href="${pageContext.request.contextPath}/contact"
+						href="/contact"
 						class="scroll-to-bottom">Contact Us<span
 							class="arrow scroll-to-bottom"></span>
 					</a></li>

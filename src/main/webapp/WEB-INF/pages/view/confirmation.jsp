@@ -85,7 +85,7 @@ License: You must have a valid license purchased only from themeforest(the above
 				<div class="details">
 					<h3>Thank You for your order <i	class="fa fa-smile-o"></i></h3>
 					<p>
-						We will process your order as soon as possible<br /> <a href="${pageContext.request.contextPath}/product">
+						We will process your order as soon as possible<br /> <a href="/product">
 							Return to product list </a>
 					</p>
 				</div>
@@ -98,7 +98,7 @@ License: You must have a valid license purchased only from themeforest(the above
 					<h3>We are sorry</h3>
 					<p>
 						System can't process the order, please contact the administrator<br /> <a
-							href="${pageContext.request.contextPath}/product"> Return to product list </a>
+							href="/product"> Return to product list </a>
 					</p>
 				</div>
 			</c:if>
@@ -110,7 +110,7 @@ License: You must have a valid license purchased only from themeforest(the above
 					<h3>We are sorry</h3>
 					<p>
 						Process can not be continued due to out of stock<br /> <a
-							href="${pageContext.request.contextPath}/product"> Return to product list </a>
+							href="/product"> Return to product list </a>
 					</p>
 				</div>
 			</c:if>

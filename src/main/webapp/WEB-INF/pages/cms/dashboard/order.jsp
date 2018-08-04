@@ -10,10 +10,6 @@
 
 <script src="${pageContext.request.contextPath}/assets/js/datatable/bootstrap.min.js"></script>
 
-<script src="${pageContext.request.contextPath}/assets/js/admin.js"></script>
-<script src="${pageContext.request.contextPath}/assets/js/datatables.min.js"></script>
-<script src="${pageContext.request.contextPath}/assets/js/fnSetFilteringEnterPress.js"></script>
-
 <div class="page-content-wrapper">
 	<div class="page-content">
 		<div class="page-bar">
@@ -24,7 +20,7 @@
 		<h3 class="page-title">Order Details</h3>
 		<div class="box box-info">
 			<div class="box-header with-border">
-				<h3 class="box-title">Order List</h3>
+				<h3 class="box-title orderList" data-url="${pageContext.request.contextPath}">Order List</h3>
 				<div class="box-tools pull-right">
 					<button class="btn btn-box-tool" data-widget="collapse">
 						<i class="fa fa-minus"></i>
@@ -55,3 +51,7 @@
 		</div>
 	</div>
 </div>
+
+<script src="${pageContext.request.contextPath}/assets/js/admin.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/datatables.min.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/fnSetFilteringEnterPress.js"></script>

@@ -7,8 +7,8 @@
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
 	rel="stylesheet" media="screen" />
 
-<link href="${pageContext.request.contextPath}/assets/css/starter-template.css" rel="stylesheet" media="screen" />
-<link href="${pageContext.request.contextPath}/assets/css/datatables.min.css" rel="stylesheet" media="screen" />
+<link href="/assets/css/starter-template.css" rel="stylesheet" media="screen" />
+<link href="/assets/css/datatables.min.css" rel="stylesheet" media="screen" />
 
 <script
   src="https://code.jquery.com/jquery-3.1.1.min.js"
@@ -17,9 +17,9 @@
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<script src="${pageContext.request.contextPath}/assets/js/admin.js"></script>
-<script src="${pageContext.request.contextPath}/assets/js/datatables.min.js"></script>
-<script src="${pageContext.request.contextPath}/assets/js/fnSetFilteringEnterPress.js"></script>
+<script src="/assets/js/admin.js"></script>
+<script src="/assets/js/datatables.min.js"></script>
+<script src="/assets/js/fnSetFilteringEnterPress.js"></script>
 
 </head>
 <body>

@@ -52,7 +52,7 @@
 										</td>
 										<td class="td-action">
 											<ul class="tools list-unstyled table-menu">
-												<li><a href="${pageContext.request.contextPath}/dashboard/order/edit?id=${order.orderId }" class="edit_button"><i
+												<li><a href="/dashboard/order/edit?id=${order.orderId }" class="edit_button"><i
 														class="fa fa-file-excel-o"></i> <span class="export"> Edit </span></a></li>
 											</ul>
 										</td>

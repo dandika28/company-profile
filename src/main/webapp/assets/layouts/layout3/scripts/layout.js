@@ -49,14 +49,11 @@ var Layout = function () {
     
  // handle menu toggler icon click
     $(".page-header .menu-toggler").on("click", function(event) {
-    	console.log("click")
         if (App.getViewPort().width < resBreakpointMd) {
             var menu = $(".page-header .page-header-menu");
             if (menu.is(":visible")) {
-            	console.log("here")
                 menu.slideUp(300);
             } else {  
-            	console.log("dieu")
                 menu.slideDown(300);
             }
 
@@ -274,7 +271,6 @@ var Layout = function () {
             $('.hor-menu').find('li.open').removeClass('open');
 
             if (App.getViewPort().width < resBreakpointMd && $('.page-header-menu').is(":visible")) { // close the menu on mobile view while laoding a page 
-                console.log("disini ga")
             	$('.page-header .menu-toggler').click();
             }
         },

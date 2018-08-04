@@ -86,6 +86,7 @@ public class OrderController {
 			}
 		}
 
+		modelAndView.addObject("wizardInit", "FormWizard.init();");
 		return modelAndView;
 	}
 
