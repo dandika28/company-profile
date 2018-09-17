@@ -45,7 +45,7 @@
 								</div>
 								<div id="js-grid-juicy-projects" class="cbp">
 								<c:forEach var="product" items="${productList }">
-									<div class="cbp-item graphic">
+									<div class="cbp-item graphic" style="width: 430px;left: 0px;top: 0px;height: 430px;">
 										<div class="cbp-caption">
 											<div class="cbp-caption-defaultWrap">
 												<img src="<c:url value="images/product/${product.image }" />" alt="">
@@ -66,17 +66,6 @@
 									</div>
 									</c:forEach>
 								</div>
-								<!-- <div id="js-loadMore-juicy-projects"
-									class="cbp-l-loadMore-button">
-									<a
-										href="/assets/global/plugins/cubeportfolio/ajax/loadMore.html"
-										class="cbp-l-loadMore-link btn grey-mint btn-outline"
-										rel="nofollow"> <span class="cbp-l-loadMore-defaultText">LOAD
-											MORE</span> <span class="cbp-l-loadMore-loadingText">LOADING...</span>
-										<span class="cbp-l-loadMore-noMoreLoading">NO MORE
-											WORKS</span>
-									</a>
-								</div> -->
 							</div>
 						</div>
 						<!-- END PAGE CONTENT INNER -->

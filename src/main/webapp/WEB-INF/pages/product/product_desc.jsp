@@ -57,7 +57,7 @@
 					type = "currency" pattern="##,##0.00;-##,##0.00"/></span>
 				</div>
 				<div class="cbp-l-project-desc-text">${product.productDesc }</div>
-				<form:input class="totalOrder" type="number" step="1" max="500" value="" path="total"/>
+				<form:input class="totalOrder" type="number" step="1" max="500" min="1" value="1" path="total"/>
 				<form:hidden path="productId" value="${product.id }"/>
 				
 				<button type="submit"

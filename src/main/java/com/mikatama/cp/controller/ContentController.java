@@ -25,6 +25,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.mikatama.cp.bean.ContentHomepage;
 import com.mikatama.cp.bean.ContentHowWork;
+import com.mikatama.cp.bean.ContentImageHomepage;
 import com.mikatama.cp.bean.OurCommitment;
 import com.mikatama.cp.bean.OurCulture;
 import com.mikatama.cp.bean.User;
@@ -409,8 +410,10 @@ public class ContentController {
          	return modelAndView = new ModelAndView("redirect:/login");
          }
          
+    	 ContentImageHomepage contentImageHomepage = contentHomepageService.getContentImageHomepage();
          modelAndView.addObject("userDetail", (User) request.getSession().getAttribute("userSession"));
          modelAndView.addObject("contents", contentHomepageService.getListContentHomepage());
+         modelAndView.addObject("contentImageHomepage", contentImageHomepage);
     	
     	return modelAndView;
     }
@@ -431,6 +434,16 @@ public class ContentController {
 		}
     	modelAndView.addObject("contents", contentHomepageService.getListContentHomepage());
     	return modelAndView;
+    }
+    
+    @PostMapping("/dashboard/content/image/homepage")
+    public ModelAndView updateContentImageHomepage(HttpServletRequest request, HttpServletResponse response,
+    		@ModelAttribute("contentImageHomepage") ContentImageHomepage contentImageHomepage){
+    	
+    	contentHomepageService.updateContentImageHomepage(contentImageHomepage);
+    	
+    	return new ModelAndView("redirect:/dashboard/content/homepage");
+    	
     }
     
     @GetMapping(value = "/dashboard/content/homepage/edit")

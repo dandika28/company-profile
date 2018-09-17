@@ -20,6 +20,8 @@
 				</div>
 			</div>
 			<div class="box-body">
+				<div class="row">
+				<div class="col-md-4">
 				<form method="POST" enctype="multipart/form-data" id="fileUploadForm">
 					<div class="form-group">
 						<label class="control-label" for="uploadfile">Upload File:</label>
@@ -28,7 +30,48 @@
 					<button type="submit" class="btn btn-default" id="btnSubmit">Upload</button>
 				</form>
 					<div><span>${message}</span></div>
-					
+				</div>
+				<div class="col-md-8">
+				<form:form method="POST" action="/dashboard/content/image/homepage" modelAttribute="contentImageHomepage">
+					<div class="row" id="no_po_field_box" style="padding-top:10px;">
+						<div class="form-display-as-box col-lg-4 control-label"
+							id="no_po_display_as_box">
+							<label> Title Image</label>
+						</div>
+						<div class="col-lg-8" id="no_po_input_box">
+							<form:input id="field-no_po" class="form-control" path="title"
+								value="" maxlength="50" type="text" />
+						</div>
+					</div>	
+					<div class="row" id="no_po_field_box" style="padding-top:10px;">
+						<div class="form-display-as-box col-lg-4 control-label"
+							id="no_po_display_as_box">
+							<label> Sub Title Image</label>
+						</div>
+						<div class="col-lg-8" id="no_po_input_box">
+							<form:input id="field-no_po" class="form-control" path="subtitle"
+								value="" maxlength="50" type="text" />
+						</div>
+					</div>	
+					<div class="row" id="no_po_field_box" style="padding-top:10px;">
+						<div class="form-display-as-box col-lg-4 control-label"
+							id="no_po_display_as_box">
+							<label> Button Status</label>
+						</div>
+						<div class="col-lg-6" id="no_po_input_box">
+							<form:select path="button" id="button" name="button" class="form-control">
+								<option value="">--Please Select--</option>
+								<option value="1">Active</option>
+								<option value="0">Inactive</option>
+							</form:select>
+						</div>
+						<div class="col-lg-2">
+							<button type="submit" class="btn btn-md btn-primary">Update</button>
+						</div>
+					</div>
+				</form:form>	
+				</div>
+				</div>
 				<div class="table-scrollable">
 					<table class="table table-striped table-hover">
 						<thead>

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.mikatama.cp.bean.ContentHomepage;
+import com.mikatama.cp.bean.ContentImageHomepage;
 import com.mikatama.cp.dao.ContentHomepageDao;
 import com.mikatama.cp.service.ContentHomepageService;
 
@@ -33,6 +34,31 @@ public class ContentHomepageServiceImpl implements ContentHomepageService{
 	@Override
 	public ContentHomepage getContentHomepageById(int id){
 		return contentHomepageDao.getContentHomepageById(id);
+	}
+	
+	@Override
+	public void updateContentImageHomepage(ContentImageHomepage contentImageHomepage){
+		contentHomepageDao.updateContentImageHomepage(contentImageHomepage);
+	}
+	
+	@Override
+	public String getTitleContentHomepage(){
+		return contentHomepageDao.getTitleContentHomepage();
+	}
+	
+	@Override
+	public ContentImageHomepage getContentImageHomepage(){
+		return contentHomepageDao.getContentImageHomepage();
+	}
+	
+	@Override
+	public String getSubtitleContentHomepage(){
+		return contentHomepageDao.getSubtitleContentHomepage();
+	}
+	
+	@Override
+	public int getButtonHomepageValue(){
+		return contentHomepageDao.getButtonContentHomepageValue();
 	}
 
 }

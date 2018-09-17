@@ -311,9 +311,22 @@ public class OrderController {
 	@ResponseBody
 	public String dashboardOrderPaginated(HttpServletRequest request, HttpServletResponse response, Model model) {
 
+		System.out.println(request.getParameter(PaginationCriteria.PAGE_NO));
 		DataTableRequest<OrderProduct> dataTableInRQ = new DataTableRequest<OrderProduct>(request);
+		System.out.println("uniqueId: "+dataTableInRQ.getUniqueId());
+		System.out.println("draw: "+dataTableInRQ.getDraw());
+		System.out.println("start: "+dataTableInRQ.getStart());
+		System.out.println("length: "+dataTableInRQ.getLength());
+		System.out.println("search: "+dataTableInRQ.getSearch());
+		System.out.println("regex: "+dataTableInRQ.isRegex());
+		
 		PaginationCriteria pagination = dataTableInRQ.getPaginationRequest();
-
+		System.out.println("pageNumber: "+pagination.getPageNumber());
+		System.out.println("pageSize: "+pagination.getPageSize());
+		System.out.println("totalRecords: "+pagination.getTotalRecords());
+		System.out.println("sortby: "+pagination.getSortBy());
+		System.out.println("filterby: "+pagination.getFilterBy());
+		
 		String baseQuery = "SELECT id, name, created_date, status,(SELECT COUNT(1) FROM orderproduct) AS total_records FROM orderproduct";
 		String paginatedQuery = AppUtil.buildPaginatedQuery(baseQuery, pagination);
 
@@ -336,6 +349,7 @@ public class OrderController {
 			}
 		}
 
+		System.out.println(new Gson().toJson(dataTableResult));
 		return new Gson().toJson(dataTableResult);
 	}
 

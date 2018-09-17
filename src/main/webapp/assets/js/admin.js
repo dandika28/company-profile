@@ -3,14 +3,15 @@
 	
 	$(document).ready(function() {
 		table=$('#paginatedTable').DataTable( {
-	        "processing": true,
+			"processing": true,
 	        "serverSide": true,
 	        "pageLength": 5,
 	        "ajax": {
 	            "url": url+"/dashboard/order/paginated",
-	            "data": function ( data ) {
-				 //process data before sent to server.
-	         }},
+//	            "data": function ( data ) {
+//				 //process data before sent to server.
+//	         }
+	            },
 	        "columns": [
 	                    { "data": "id" },
 	                    { "data": "name"},
@@ -40,8 +41,8 @@
 		    });
 		    console.log(dataArr);
 		    console.log(dataId);
-		    window.location = "${pageContext.request.contextPath}/dashboard/order/edit?id="+dataId;
+		    window.location = "/dashboard/order/edit?id="+dataId;
 		});
 		
-		$('#paginatedTable').dataTable().fnSetFilteringEnterPress();
+//		$('#paginatedTable').dataTable().fnSetFilteringEnterPress();
 	});

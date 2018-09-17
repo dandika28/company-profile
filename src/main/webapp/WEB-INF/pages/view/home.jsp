@@ -38,11 +38,15 @@
 							<div class="row margin-bottom-40 about-header" style="background-image: url(<c:url value="imagesHome/${homeImage }" />); background-repeat: no-repeat;
     background-size: auto;">
 								<div class="col-md-12">
-									<h1>MIKATAMA UNIKA</h1>
-									<h2>Solution Expert in Display and Stall</h2>
-									<a href="/product" class="btn btn-danger">JOIN US
-										TODAY</a>
+									<h1>${title }</h1>
+									<h2>${subtitle }</h2>
 								</div>
+								<c:choose>
+									<c:when test="${button eq '1' }">
+										<a href="/product" class="btn btn-danger">ORDER NOW</a>
+									</c:when>
+									<c:otherwise></c:otherwise>
+								</c:choose>
 							</div>
 							<!-- END CONTENT HEADER -->
 							<!-- BEGIN CARDS -->

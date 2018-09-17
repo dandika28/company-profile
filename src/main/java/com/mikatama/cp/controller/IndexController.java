@@ -63,6 +63,12 @@ public class IndexController {
 	@Value("${path.location.homepage.image}")
 	private String pathLocationImageHomePage;
 	
+	@Value("${url.download.index.char}")
+	private String urlIndexChar;
+	
+	@Value("${url.domain}")
+	private String urlDomain;
+	
 	@RequestMapping({ "/", "/home" })
 	public ModelAndView home() {
 		ModelAndView view = new ModelAndView("home");
@@ -83,7 +89,13 @@ public class IndexController {
 		if(fileInfos!=null){
 			if(fileInfos.size()>0){
 				FileInfo fileInfo = fileInfos.get(fileInfos.size()-1);
-				view.addObject("files", fileInfo);
+				String subdomain = fileInfo.getUrl();
+				System.out.println("subdomain: " + subdomain);
+				int index = subdomain.indexOf(urlIndexChar);
+				System.out.println("index: " + index);
+				String url = urlDomain+subdomain.substring(index);
+				System.out.println("url: " + url);
+				view.addObject("files", url);
 			}
 		}
 		
@@ -100,6 +112,9 @@ public class IndexController {
 		//String urlImage = "/assets/pages/media/bg/"+ imageName;
 		view.addObject("homeImage", imageName);
 		view.addObject("content", list);
+		view.addObject("title", contentHomepageService.getTitleContentHomepage().toUpperCase());
+		view.addObject("subtitle", contentHomepageService.getSubtitleContentHomepage());
+		view.addObject("button", contentHomepageService.getButtonHomepageValue());
 		return view;
 	}
 
@@ -116,7 +131,10 @@ public class IndexController {
 		if(fileInfos!=null){
 			if(fileInfos.size()>0){
 				FileInfo fileInfo = fileInfos.get(fileInfos.size()-1);
-				view.addObject("files", fileInfo);
+				String subdomain = fileInfo.getUrl();
+				int index = subdomain.indexOf(urlIndexChar);
+				String url = urlDomain+subdomain.substring(index);
+				view.addObject("files", url);
 			}
 		}
 		view.addObject("productList", productService.getProductList());
@@ -137,7 +155,10 @@ public class IndexController {
 		if(fileInfos!=null){
 			if(fileInfos.size()>0){
 				FileInfo fileInfo = fileInfos.get(fileInfos.size()-1);
-				view.addObject("files", fileInfo);
+				String subdomain = fileInfo.getUrl();
+				int index = subdomain.indexOf(urlIndexChar);
+				String url = urlDomain+subdomain.substring(index);
+				view.addObject("files", url);
 			}
 		}
 		view.addObject("ourCultures", ourCultureService.getContentCulture());
@@ -159,7 +180,10 @@ public class IndexController {
 		if(fileInfos!=null){
 			if(fileInfos.size()>0){
 				FileInfo fileInfo = fileInfos.get(fileInfos.size()-1);
-				view.addObject("files", fileInfo);
+				String subdomain = fileInfo.getUrl();
+				int index = subdomain.indexOf(urlIndexChar);
+				String url = urlDomain+subdomain.substring(index);
+				view.addObject("files", url);
 			}
 		}
 		view.addObject("ouwWorks", ourWorkService.getContentHowWork());
@@ -216,7 +240,10 @@ public class IndexController {
 		if(fileInfos!=null){
 			if(fileInfos.size()>0){
 				FileInfo fileInfo = fileInfos.get(fileInfos.size()-1);
-				view.addObject("files", fileInfo);
+				String subdomain = fileInfo.getUrl();
+				int index = subdomain.indexOf(urlIndexChar);
+				String url = urlDomain+subdomain.substring(index);
+				view.addObject("files", url);
 			}
 		}
 		return view;

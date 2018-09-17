@@ -226,7 +226,13 @@ public class DataTableRequest<T> {
     	
     	if(parameterNames.hasMoreElements()) {
     		
-    		this.setStart(Integer.parseInt(request.getParameter(PaginationCriteria.PAGE_NO)));
+    		int pageSize = Integer.parseInt(request.getParameter(PaginationCriteria.PAGE_SIZE));
+    		int pageNo = Integer.parseInt(request.getParameter(PaginationCriteria.PAGE_NO));
+    		
+    		int start = (pageNo/pageSize)+1;
+    		
+//    		this.setStart(Integer.parseInt(request.getParameter(PaginationCriteria.PAGE_NO)));
+    		this.setStart(start);
     		this.setLength(Integer.parseInt(request.getParameter(PaginationCriteria.PAGE_SIZE)));
     		this.setUniqueId(request.getParameter("_"));
     		this.setDraw(request.getParameter(PaginationCriteria.DRAW));
@@ -316,4 +322,12 @@ public class DataTableRequest<T> {
 	
 	/** The max params to check. */
 	private int maxParamsToCheck = 0;
+	
+	public static void main(String[] args) {
+		int pageSize = 10;
+		int pageNo = 20;
+		
+		int start = (pageNo/pageSize)+1;
+		System.out.println(start);
+	}
 }

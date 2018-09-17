@@ -42,29 +42,29 @@
 				<ul class="nav navbar-nav">
 					<li aria-haspopup="true"
 						class="menu-dropdown classic-menu-dropdown "><a
-						href="/home">Home<span
+						href="http://mikatama-unika.com/home">Home<span
 							class="arrow"></span></a></li>
 
 					<li aria-haspopup="true" class=" "><a
-						href="/culture"> Our Culture<span
+						href="http://mikatama-unika.com/culture"> Our Culture<span
 							class="arrow"></span>
 					</a></li>
 					<li aria-haspopup="true" class=" "><a
-						href="/how_we_work"> How We Work<span
+						href="http://mikatama-unika.com/how_we_work"> How We Work<span
 							class="arrow"></span>
 					</a></li>
 					<li aria-haspopup="true"
 						class="menu-dropdown classic-menu-dropdown "><a
-						href="/product">Products &
+						href="http://mikatama-unika.com/product">Products &
 							Services<span class="arrow"></span>
 					</a></li>
 					<li aria-haspopup="true"
 						class="menu-dropdown classic-menu-dropdown "><a
-						href="${files.url}">Download Brochure<span class="arrow"></span>
+						href="${files}">Download Brochure<span class="arrow"></span>
 					</a></li>
 					<li aria-haspopup="true"
 						class="menu-dropdown classic-menu-dropdown scroll-to-bottom "><a
-						href="/contact"
+						href="http://mikatama-unika.com/contact"
 						class="scroll-to-bottom">Contact Us<span
 							class="arrow scroll-to-bottom"></span>
 					</a></li>
